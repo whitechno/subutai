@@ -11,7 +11,8 @@ Now you can clone this new repository on your desktop with `git clone https://gi
 and open and edit it with your favorite IDE.
 
 ### Set scala version(s) in build.sbt
-Add this line: `ThisBuild / scalaVersion := "2.12.10"`  
+Add this line to build.sbt:  
+`ThisBuild / scalaVersion := "2.12.10"`  
 
 As of Dec 11, 2019:  
 2.13.1 - Sep 18, 2019  
