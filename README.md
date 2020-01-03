@@ -21,3 +21,12 @@ As of Dec 11, 2019:
 2.11.12 - Nov 9, 2017  
 2.10.7 - Nov 9, 2017
 
+Now you have a minimal setup to start using Scala with SBT.
+
+### Checking SBT version
+`> sbt about`  
+`> sbt -v`  
+`> sbt sbtVersion`  
+
+To see which version of Java does SBT use:  
+`> sbt "eval System.getProperty(\"java.version\")" "eval System.getProperty(\"java.home\")"`
