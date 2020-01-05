@@ -2,12 +2,23 @@ ThisBuild / organization := "whitechno.subutai"
 ThisBuild / scalaVersion := library.versions.scala213
 
 lazy val hello = (project in file("."))
+  .aggregate(helloCore) // Set aggregate so that the command sent to hello is broadcast to helloCore too
+  .dependsOn(helloCore)
   .settings(
     name := "Hello",
     commonSettings,
     libraryDependencies ++= Seq(
+      library.scalaTest % Test
+    )
+  )
+
+lazy val helloCore = (project in file("core"))
+  .settings(
+    name := "Hello Core",
+    commonSettings,
+    libraryDependencies ++= Seq(
       library.playJson,
-      library.gigahorseOkhttp,
+      library.gigahorse,
       library.scalaTest % Test
     )
   )
@@ -22,9 +33,9 @@ lazy val library = new {
     val scalaTest = "3.1.0"
   }
 
-  val playJson        = "com.typesafe.play" %% "play-json"        % versions.play
-  val gigahorseOkhttp = "com.eed3si9n"      %% "gigahorse-okhttp" % versions.gigahorse
-  val scalaTest       = "org.scalatest"     %% "scalatest"        % versions.scalaTest
+  val playJson  = "com.typesafe.play" %% "play-json"        % versions.play
+  val gigahorse = "com.eed3si9n"      %% "gigahorse-okhttp" % versions.gigahorse
+  val scalaTest = "org.scalatest"     %% "scalatest"        % versions.scalaTest
 
 }
 
