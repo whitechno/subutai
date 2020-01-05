@@ -1,7 +1,7 @@
 # subutai
-Experiments with SBT
+Experiments with SBT.
 
-### Simplest SBT project setup
+### Simplest SBT project setup (with new github repo)
 1. Create repository (like `subutai`)
 2. In it `touch build.sbt`
 3. Create `project/build.properties` with the following content: `sbt.version = 1.3.6`
@@ -23,10 +23,21 @@ As of Dec 11, 2019:
 
 Now you have a minimal setup to start using Scala with SBT.
 
-### Checking SBT version
+### Checking SBT, Scala, Java version
+SBT:
 `> sbt about`  
 `> sbt -v`  
 `> sbt sbtVersion`  
 
+Scala:  
+`> sbt scalaVersion`
+
 To see which version of Java does SBT use:  
-`> sbt "eval System.getProperty(\"java.version\")" "eval System.getProperty(\"java.home\")"`
+`> sbt "eval System.getProperty(\"java.version\")" "eval System.getProperty(\"java.home\")"`  
+or in sbt shell:  
+`sbt:subutai> eval System.getProperty("java.version")`   
+`sbt:subutai> eval System.getProperty("java.home")`  
+
+### Create a source file
+In the `subutai` directory create nested directories and `.scala` file:  
+`src/main/scala/example/Hello.scala`  
