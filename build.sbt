@@ -4,6 +4,7 @@ ThisBuild / scalaVersion := library.versions.scala213
 lazy val hello = (project in file("."))
   .aggregate(helloCore) // Set aggregate so that the command sent to hello is broadcast to helloCore too
   .dependsOn(helloCore)
+  .enablePlugins(JavaAppPackaging)
   .settings(
     name := "Hello",
     commonSettings,
