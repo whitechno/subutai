@@ -1,10 +1,11 @@
+ThisBuild / version := "0.1.0"
 ThisBuild / organization := "whitechno.subutai"
 ThisBuild / scalaVersion := library.versions.scala213
 
 lazy val hello = (project in file("."))
   .aggregate(helloCore) // Set aggregate so that the command sent to hello is broadcast to helloCore too
   .dependsOn(helloCore)
-  .enablePlugins(JavaAppPackaging)
+  .enablePlugins(JavaAppPackaging) // sbt-native-packager
   .settings(
     name := "Hello",
     commonSettings,
