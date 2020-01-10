@@ -23,4 +23,12 @@ object Weather {
 
   private def parse = Gigahorse.asString andThen Json.parse
 
+  def addSbtModule(
+      p: String,
+      path: Option[String],
+      projectName: String,
+      moduleId: String,
+      c: Option[String] = None,
+  ) = ???
+
 }
