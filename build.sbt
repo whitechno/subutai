@@ -8,6 +8,7 @@ lazy val hello = (project in file("."))
   .enablePlugins(JavaAppPackaging) // sbt-native-packager
   .settings(
     name := "Hello",
+    helloTask := { println("Hello!") },
     commonSettings,
     libraryDependencies ++= Seq(
       library.scalaTest % Test
@@ -47,3 +48,6 @@ lazy val commonSettings = List(
     "-unchecked"
   )
 )
+
+// Defining tasks and settings
+lazy val helloTask = taskKey[Unit]("An example task")
