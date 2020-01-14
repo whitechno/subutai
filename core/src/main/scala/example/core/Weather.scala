@@ -21,7 +21,7 @@ object Weather {
     } yield (weather \\ "weather_state_name")(0).as[String].toLowerCase
   }
 
-  private def parse = Gigahorse.asString andThen Json.parse
+  private def parse: FullResponse => JsValue = Gigahorse.asString andThen Json.parse
 
   def addSbtModule(
       p: String,
