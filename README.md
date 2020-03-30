@@ -15,11 +15,12 @@ and open and edit it with your favorite IDE.
 Add this line to build.sbt:  
 `ThisBuild / scalaVersion := "2.13.1"`  
 
-As of Dec 11, 2019:  
-2.13.1 - Sep 18, 2019  
+As of Mar 27, 2020:  
+2.13.1  - Sep 18, 2019  
+2.12.11 - Mar 16, 2020
 2.12.10 - Sep 10, 2019  
 2.11.12 - Nov 9, 2017  
-2.10.7 - Nov 9, 2017
+2.10.7  - Nov 9, 2017
 
 Now you have a minimal setup to start using Scala with SBT.
 

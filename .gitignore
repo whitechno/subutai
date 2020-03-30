@@ -9,7 +9,7 @@ artifacts
 build
 
 # Worksheets (Eclipse or IntelliJ)
-*.sc
+#*.sc
 
 # Eclipse
 .cache*
