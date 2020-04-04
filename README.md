@@ -4,7 +4,8 @@ Experiments with SBT.
 ### Simplest SBT project setup (with new github repo)
 1. Create repository (like `subutai`)
 2. In it `touch build.sbt`
-3. Create `project/build.properties` with the following content: `sbt.version = 1.3.6`
+3. Create `project/build.properties` with the following content: 
+`sbt.version = 1.3.9`. Use `sbt> reboot` if changed.
 4. If needed, add `.gitignore` and `LICENSE`
 
 Now you can clone this new repository on your desktop with  
@@ -15,17 +16,20 @@ and open and edit it with your favorite IDE.
 Add this line to build.sbt:  
 `ThisBuild / scalaVersion := "2.13.1"`  
 
-As of Mar 27, 2020:  
+As of Mar 27, 2020   
+Scala:  
 2.13.1  - Sep 18, 2019  
-2.12.11 - Mar 16, 2020
+2.12.11 - Mar 16, 2020  
 2.12.10 - Sep 10, 2019  
 2.11.12 - Nov 9, 2017  
-2.10.7  - Nov 9, 2017
+2.10.7  - Nov 9, 2017  
+SBT:  
+1.3.9 - as seen on Apr 1, 2020
 
 Now you have a minimal setup to start using Scala with SBT.
 
 You can also switch scalaVersion temporarily:  
-`sbt:Hello>  ++2.12.10!`
+`sbt:Hello>  ++2.12.11!`
 
 ### Checking SBT, Scala, Java version
 SBT:  
@@ -49,6 +53,41 @@ In the `subutai` directory create nested directories and `.scala` file:
 `src/main/scala/example/Hello.scala`  
 In SBT shell:  
 `sbt:Hello> clean; compile; test; run`
+
+### Slow start because of "Getting the hostname ... was slow"
+Sometimes the startup time for test and run might be pretty long and you might see 
+the following command:  
+`[warn] Getting the hostname Olegs-MacBook-Pro was slow (18020.887197 ms). 
+This is likely because the computer's hostname is not set. You can set the hostname with the command: scutil --set HostName $(scutil --get LocalHostName).`
+
+I found the following solution.
+
+I used to have:
+```
+$ scutil --get HostName
+Olegs-MacBook-Pro
+$ scutil --get LocalHostName
+Olegs-MacBook-Pro
+$ time python -c 'import socket; socket.getfqdn()'
+  real	0m18.134s
+  user	0m0.037s
+  sys	0m0.025s
+```
+
+Then I changed:
+```text
+$ sudo scutil --set HostName Olegs-MacBook-Pro.local
+    real    0m0.047s
+    user    0m0.030s
+    sys     0m0.012s
+```
+and then added into `/etc/hosts`
+```text
+127.0.0.1   localhost Olegs-MacBook-Pro.local
+::1         localhost Olegs-MacBook-Pro.local
+```
+
+
 
 ### Use Scala REPL
 ```

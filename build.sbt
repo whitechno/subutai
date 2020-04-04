@@ -9,7 +9,7 @@ ThisBuild / scalaVersion := library.versions.scala213
 // *** root project
 lazy val hello = (project in file("."))
   // Set aggregate so that the command sent to hello is broadcast to helloCore too
-  .aggregate(helloCore, scalaVersions) 
+  .aggregate(helloCore) //, scalaVersions
   .dependsOn(helloCore)
   .enablePlugins(JavaAppPackaging) // sbt-native-packager
   .settings(
@@ -25,7 +25,7 @@ lazy val hello = (project in file("."))
       ur.allConfigurations.take(3).map(_.toString)
     },
     libraryDependencies ++= Seq(
-      library.scalaTest % Test
+      library.scalatest % Test
     )
   )
 
@@ -37,14 +37,14 @@ lazy val helloCore = (project in file("core"))
     libraryDependencies ++= Seq(
       library.playJson,
       library.gigahorse,
-      library.scalaTest % Test
+      library.scalatest % Test
     )
   )
 
 // *** scalaVersions project
 lazy val scalaVersions = (project in file("scalaVersions"))
   .settings(
-    scalaVersion := library.versions.scala211,
+    scalaVersion := library.versions.scala212,
     commonSettings
   )
 
@@ -69,12 +69,12 @@ lazy val library = new {
     val scala213  = "2.13.1" // Sep 18, 2019 https://github.com/scala/scala/releases/tag/v2.13.1
     val play      = "2.8.1" // as seen on Mar 27, 2020
     val gigahorse = "0.5.0" // as seen on Mar 27, 2020
-    val scalaTest = "3.1.1" // as seen on Mar 27, 2020
+    val scalatest = "3.1.1" // as seen on Mar 27, 2020
   }
 
   val playJson  = "com.typesafe.play" %% "play-json"        % versions.play
   val gigahorse = "com.eed3si9n"      %% "gigahorse-okhttp" % versions.gigahorse
-  val scalaTest = "org.scalatest"     %% "scalatest"        % versions.scalaTest
+  val scalatest = "org.scalatest"     %% "scalatest"        % versions.scalatest
 
 }
 
