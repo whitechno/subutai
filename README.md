@@ -29,7 +29,13 @@ SBT:
 Now you have a minimal setup to start using Scala with SBT.
 
 You can also switch scalaVersion temporarily:  
-`sbt:Hello>  ++2.12.11!`
+`sbt:Hello>  ++2.12.11! -v`  
+`!` is to force version switch (without it, 
+the switch happens only in projects where this particular version is included 
+in `crossScalaVersions` of project `settings`)  
+`-v` is for verbose
+
+## Important techniques
 
 ### Checking SBT, Scala, Java version
 SBT:  
@@ -46,13 +52,124 @@ or in sbt shell:
 `sbt:subutai> eval System.getProperty("java.version")`   
 `sbt:subutai> eval System.getProperty("java.home")`  
 
+### clean;compile;test;run
+Run one particular main class:  
+`sbt:Hello> runMain example.Hello`
+
+For code in `test` folder:  
+`sbt:Hello> test:compile`
+
+Run one particular main class in `test` folder of `scalaVersions` project:  
+`sbt:Hello> scalaVersions / test:runMain example.scalaVersions.TestScalaVersionsMain`
+
+Run one particular test class (of "scalatest" kind):  
+`sbt:Hello> testOnly example.HelloSpec`
+
+### Cross-building
+https://www.scala-sbt.org/release/docs/Cross-Build.html
+
+The underlying mechanism used to indicate which version of Scala a library 
+was compiled against is to append `_<scala-binary-version>` to the library’s name. 
+For example, the artifact name `dispatch-core_2.12` is used 
+when compiled against Scala 2.12.0, 2.12.1 or any 2.12.x version. 
+This fairly simple approach allows interoperability with users of 
+Maven, Ant and other build tools.
+
+Define the versions of Scala to build against in the `crossScalaVersions` setting. 
+Versions of Scala 2.10.2 or later are allowed.
+
+*Note:* `crossScalaVersions` must be set to Nil on the root project 
+(or all aggregating projects) to avoid double publishing.
+
+To build against all versions listed in `crossScalaVersions`, 
+prefix the action to run with `+`. For example:  
+`> + test`
+
+You can use `++ <version> [command]` to temporarily switch the Scala version 
+currently being used to build the subprojects given that `<version>` is listed 
+in their `crossScalaVersions`.
+
+When a `[command]` is passed in to `++`, it will execute the command on the 
+subprojects that supports the given `<version>`.
+
+Sometimes you might want to force the Scala version switch regardless of the 
+`crossScalaVersions` values. 
+You can use `++ <version>!` with exclamation mark for that. For example:  
+`> ++ 2.13.0-M5! -v`
+
+### Scala Worksheets in IntelliJ
+
+"Use compile server for Scala" tick box is in  
+`Preferences > Build, Execution, Deployment > Compiler > Scala Compiler > Scala Compile Server`  
+you can also get to this view from the speedometer-like icon 
+in the bottom right of IntelliJ, 
+which can be used to Stop/Run Scala Compile Server.
+
+"Run worksheet in the compiler process" tick box is in  
+`Preferences > Languages & Frameworks > Scala > Worksheet (tab)`  
+A typical way to use this feature is to do development on a single Scala version 
+(no `+` prefix) and then cross-build (using `+`) occasionally and when releasing.
+
+#### Experiments
+All experiments below are with
+"Make project before run": On
+
+Experiment 1  
+Run type: REPL  
+"Use compile server for Scala": On  
+"Run worksheet in the compiler process": On  
+Result: doesn't pick the change even with restart
+
+Experiment 2  
+Run type: REPL  
+"Use compile server for Scala": On  
+"Run worksheet in the compiler process": Off  
+Result: doesn't pick the change even with restart
+
+Experiment 3  
+Run type: REPL  
+"Use compile server for Scala": Off  
+Result: REPL doesn't work in this mode at all
+
+Experiment 4  
+Run type: Plain  
+"Use compile server for Scala": On  
+"Run worksheet in the compiler process": On  
+Result: picks the change after restart
+
+Experiment 5  
+Run type: Plain  
+"Use compile server for Scala": On  
+"Run worksheet in the compiler process": Off  
+Result: always picks the change, no need to restart
+
+Experiment 6  
+Run type: Plain  
+"Use compile server for Scala": Off  
+Result: always picks the change (feels a tiny bit slower)
+
+#### Final recommendations.
+For dev/test/debug cycle:  
+"Make project before run": On  
+Run type: Plain  
+"Use compile server for Scala": On  
+"Run worksheet in the compiler process": Off
+
+For exploring stable libraries:  
+"Make project before run": On (?)  
+Run type: REPL  
+"Use compile server for Scala": On  
+"Run worksheet in the compiler process": On
+
 ### SBT by example
-See and try https://www.scala-sbt.org/1.x/docs/sbt-by-example.html
+See and try https://www.scala-sbt.org/release/docs/sbt-by-example.html
 
 In the `subutai` directory create nested directories and `.scala` file:  
 `src/main/scala/example/Hello.scala`  
 In SBT shell:  
-`sbt:Hello> clean; compile; test; run`
+`sbt:Hello> clean;compile;test;run`
+
+## Special topics
 
 ### Slow start because of "Getting the hostname ... was slow"
 Sometimes the startup time for test and run might be pretty long and you might see 

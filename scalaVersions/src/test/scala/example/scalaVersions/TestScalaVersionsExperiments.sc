@@ -1,0 +1,2 @@
+import example.scalaVersions.VersionNumber
+VersionNumber.run

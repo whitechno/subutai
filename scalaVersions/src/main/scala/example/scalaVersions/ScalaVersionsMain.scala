@@ -1,12 +1,13 @@
 package example.scalaVersions
 
-object ScalaVersionsMain extends App {
+// scalaVersions / runMain example.scalaVersions.ScalaVersionsMain
+private object ScalaVersionsMain extends App {
   //sys.props.toSeq.foreach(println)
-  println("Scala version: " + VersionNumber.run)
+  println("ScalaVersions Main: " + VersionNumber.run)
 
 }
 
 object VersionNumber {
-  def run      = util.Properties.versionNumberString
-  def runPrint1 = println("Test 1 Scala version: " + run)
+  def run: String     = util.Properties.versionNumberString
+  def runPrint1: Unit = println("Test 1 Scala version: " + run)
 }
