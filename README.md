@@ -65,6 +65,9 @@ Run one particular main class in `test` folder of `scalaVersions` project:
 Run one particular test class (of "scalatest" kind):  
 `sbt:Hello> testOnly example.HelloSpec`
 
+### Publishing
+
+
 ### Cross-building
 https://www.scala-sbt.org/release/docs/Cross-Build.html
 
