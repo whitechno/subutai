@@ -1,4 +1,4 @@
-ThisBuild / version := "0.1.0"
+ThisBuild / version      := "0.1.0"
 ThisBuild / organization := "whitechno.subutai"
 ThisBuild / scalaVersion := library.versions.scala213
 
@@ -16,7 +16,7 @@ lazy val subutai = (project in file("."))
     helloTask := { println("Hello from root project!") },
     baseDirectoryTask := {
       import java.io.File
-      val baseDir = baseDirectory.value.toString
+      val baseDir    = baseDirectory.value.toString
       val baseLength = baseDir.size + 1
       val projectDirs = baseDirectory
         .all(ScopeFilter(inAnyProject -- inProjects(trie)))
@@ -59,7 +59,7 @@ lazy val scalaVersions = (project in file("scalaVersions"))
       val baseDir = baseDirectory.value.toString
       println("baseDirectoryTask:\n\t" + baseDir)
     },
-    scalaVersion := library.versions.scala212,
+    scalaVersion       := library.versions.scala212,
     crossScalaVersions := library.supportedScalaVersions,
     commonSettings
   )
@@ -78,14 +78,14 @@ lazy val trie = (project in file("trie"))
 lazy val library = new {
 
   val versions = new {
-    val scala210 = "2.10.7"  // Nov 9, 2017 https://github.com/scala/scala/releases/tag/v2.10.7
+    val scala210 = "2.10.7" // Nov 9, 2017 https://github.com/scala/scala/releases/tag/v2.10.7
     val scala211 = "2.11.12" // Nov 9, 2017 https://github.com/scala/scala/releases/tag/v2.11.12
     // val scala212  = "2.12.10" // Sep 10, 2019 https://github.com/scala/scala/releases/tag/v2.12.10
     val scala212  = "2.12.11" // Mar 16, 2020 https://github.com/scala/scala/releases/tag/v2.12.11
-    val scala213  = "2.13.1"  // Sep 18, 2019 https://github.com/scala/scala/releases/tag/v2.13.1
-    val play      = "2.8.1"   // as seen on Mar 27, 2020
-    val gigahorse = "0.5.0"   // as seen on Mar 27, 2020
-    val scalatest = "3.1.1"   // as seen on Mar 27, 2020
+    val scala213  = "2.13.1" // Sep 18, 2019 https://github.com/scala/scala/releases/tag/v2.13.1
+    val play      = "2.8.1" // as seen on Mar 27, 2020
+    val gigahorse = "0.5.0" // as seen on Mar 27, 2020
+    val scalatest = "3.1.1" // as seen on Mar 27, 2020
   }
 
   val supportedScalaVersions = List(versions.scala211, versions.scala212, versions.scala213)
