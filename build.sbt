@@ -52,8 +52,18 @@ lazy val helloCore = (project in file("core"))
     )
   )
 
+// *** hocon project
+lazy val hocon = project
+  .settings(
+    scalaVersion := library.versions.scala212,
+    commonSettings,
+    libraryDependencies ++= Seq(
+      library.typesafeConfig
+    )
+  )
+
 // *** scalaVersions project
-lazy val scalaVersions = (project in file("scalaVersions"))
+lazy val scalaVersions = project
   .settings(
     baseDirectoryTask := {
       val baseDir = baseDirectory.value.toString
@@ -65,7 +75,7 @@ lazy val scalaVersions = (project in file("scalaVersions"))
   )
 
 // *** trie project
-lazy val trie = (project in file("trie"))
+lazy val trie = project
   .settings(
     scalaVersion := library.versions.scala212,
     commonSettings
@@ -81,18 +91,20 @@ lazy val library = new {
     val scala210 = "2.10.7" // Nov 9, 2017 https://github.com/scala/scala/releases/tag/v2.10.7
     val scala211 = "2.11.12" // Nov 9, 2017 https://github.com/scala/scala/releases/tag/v2.11.12
     // val scala212  = "2.12.10" // Sep 10, 2019 https://github.com/scala/scala/releases/tag/v2.12.10
-    val scala212  = "2.12.11" // Mar 16, 2020 https://github.com/scala/scala/releases/tag/v2.12.11
-    val scala213  = "2.13.1" // Sep 18, 2019 https://github.com/scala/scala/releases/tag/v2.13.1
-    val play      = "2.8.1" // as seen on Mar 27, 2020
-    val gigahorse = "0.5.0" // as seen on Mar 27, 2020
-    val scalatest = "3.1.1" // as seen on Mar 27, 2020
+    val scala212       = "2.12.11" // Mar 16, 2020 https://github.com/scala/scala/releases/tag/v2.12.11
+    val scala213       = "2.13.1" // Sep 18, 2019 https://github.com/scala/scala/releases/tag/v2.13.1
+    val gigahorse      = "0.5.0" // as seen on Mar 27, 2020
+    val play           = "2.8.1" // as seen on Mar 27, 2020
+    val scalatest      = "3.1.1" // as seen on Mar 27, 2020
+    val typesafeConfig = "1.4.0" // Oct 11, 2019 https://github.com/lightbend/config/blob/master/NEWS.md
   }
 
   val supportedScalaVersions = List(versions.scala211, versions.scala212, versions.scala213)
 
-  val playJson  = "com.typesafe.play" %% "play-json"        % versions.play
-  val gigahorse = "com.eed3si9n"      %% "gigahorse-okhttp" % versions.gigahorse
-  val scalatest = "org.scalatest"     %% "scalatest"        % versions.scalatest
+  val gigahorse      = "com.eed3si9n"      %% "gigahorse-okhttp" % versions.gigahorse
+  val playJson       = "com.typesafe.play" %% "play-json"        % versions.play
+  val scalatest      = "org.scalatest"     %% "scalatest"        % versions.scalatest
+  val typesafeConfig = "com.typesafe"      % "config"            % versions.typesafeConfig
 
 }
 
