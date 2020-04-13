@@ -7,13 +7,12 @@ ThisBuild / scalaVersion := library.versions.scala213
 //
 
 // *** root project
-lazy val hello = (project in file("."))
+lazy val subutai = (project in file("."))
 // Set aggregate so that the command sent to hello is broadcast to helloCore too
   .aggregate(helloCore) //, scalaVersions
   .dependsOn(helloCore)
   .enablePlugins(JavaAppPackaging) // sbt-native-packager
   .settings(
-    name := "Hello",
     helloTask := { println("Hello from root project!") },
     baseDirectoryTask := {
       import java.io.File
