@@ -4,7 +4,6 @@ package example.scalaVersions
 private object ScalaVersionsMain extends App {
   //sys.props.toSeq.foreach(println)
   println("ScalaVersions Main: " + VersionNumber.run)
-
 }
 
 object VersionNumber {

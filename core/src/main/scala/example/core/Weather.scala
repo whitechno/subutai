@@ -14,14 +14,15 @@ object Weather {
     val rLoc       = Gigahorse.url(locUrl).get.addQueryString("query" -> "New York")
     import ExecutionContext.Implicits.global
     for {
-      loc      <- http.run(rLoc, parse)
+      loc <- http.run(rLoc, parse)
       woeid    = (loc \ 0 \ "woeid").get
       rWeather = Gigahorse.url(weatherUrl format woeid).get
-      weather  <- http.run(rWeather, parse)
+      weather <- http.run(rWeather, parse)
     } yield (weather \\ "weather_state_name")(0).as[String].toLowerCase
   }
 
-  private def parse: FullResponse => JsValue = Gigahorse.asString andThen Json.parse
+  private def parse: FullResponse => JsValue =
+    Gigahorse.asString andThen Json.parse
 
   def addSbtModule(
       p: String,
