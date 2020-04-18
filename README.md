@@ -24,7 +24,9 @@ Scala:
 2.11.12 - Nov 9, 2017  
 2.10.7  - Nov 9, 2017  
 SBT:  
-1.3.9 - as seen on Apr 1, 2020
+1.3.10 - Apr 14, 2020 
+1.3.9  - Mar 31, 2020
+1.3.8  - Feb 3, 2020
 
 Now you have a minimal setup to start using Scala with SBT.
 
@@ -67,6 +69,9 @@ Run one particular test class (of "scalatest" kind):
 
 ### Publishing
 
+### Assembly
+https://github.com/sbt/sbt-assembly  
+`addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.10")`
 
 ### Cross-building
 https://www.scala-sbt.org/release/docs/Cross-Build.html
