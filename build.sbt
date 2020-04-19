@@ -63,7 +63,7 @@ lazy val hocon = project
   )
 
 // *** scalaVersions project
-lazy val scalaVersions = project
+lazy val `scala-versions` = project
   .settings(
     baseDirectoryTask := {
       val baseDir = baseDirectory.value.toString

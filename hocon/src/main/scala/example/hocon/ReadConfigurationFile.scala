@@ -3,7 +3,7 @@ package example.hocon
 import com.typesafe.config.{ Config, ConfigFactory }
 
 // > hocon / runMain example.hocon.ReadConfigurationFile
-object ReadConfigurationFile extends App {
+private object ReadConfigurationFile extends App {
 
   val config: Config = ConfigFactory.load("lightbend.conf")
 
