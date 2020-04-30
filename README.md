@@ -71,7 +71,8 @@ Run one particular test class (of "scalatest" kind):
 
 ### Assembly
 https://github.com/sbt/sbt-assembly  
-`addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.10")`
+`addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.10")`  
+0.14.10 - Jul 11, 2019
 
 ### Cross-building
 https://www.scala-sbt.org/release/docs/Cross-Build.html
