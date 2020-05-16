@@ -58,8 +58,9 @@ lazy val hocon = project
     scalaVersion := library.versions.scala212,
     commonSettings,
     libraryDependencies ++= Seq(
-      library.typesafeConfig
-    )
+      library.typesafeConfig % "provided"
+    ),
+    assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false)
   )
 
 // *** scalaVersions project
@@ -113,7 +114,8 @@ lazy val commonSettings = List(
     "-deprecation",
     "-unchecked",
     "-feature" // [warn] there were 21 feature warnings; re-run with -feature for details
-  )
+  ),
+  test in assembly := {}
 )
 
 // Defining tasks and settings

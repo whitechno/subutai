@@ -56,23 +56,64 @@ or in sbt shell:
 
 ### clean;compile;test;run
 Run one particular main class:  
-`sbt:Hello> runMain example.Hello`
+`sbt:subutai> runMain example.Hello`
 
 For code in `test` folder:  
-`sbt:Hello> test:compile`
+`sbt:subutai> test:compile`
 
 Run one particular main class in `test` folder of `scalaVersions` project:  
-`sbt:Hello> scalaVersions / test:runMain example.scalaVersions.TestScalaVersionsMain`
+`sbt:subutai> scalaVersions / test:runMain example.scalaVersions.TestScalaVersionsMain`
 
 Run one particular test class (of "scalatest" kind):  
-`sbt:Hello> testOnly example.HelloSpec`
+`sbt:subutai> testOnly example.HelloSpec`
 
-### Publishing
+### Package
+
+`sbt:hocon> package` to generate JAR in 
+`target/scala-2.12/hocon_2.12-0.1.0.jar`  
+You can list its contents with the usual jar tvf command:
+```text
+$ jar tvf target/scala-2.12/hocon_2.12-0.1.0.jar
+   271 Wed Apr 29 19:15:58 PDT 2020 META-INF/MANIFEST.MF
+     0 Wed Apr 29 19:15:58 PDT 2020 example/
+     0 Wed Apr 29 19:15:58 PDT 2020 example/hocon/
+   854 Wed Apr 29 19:14:24 PDT 2020 example/hocon/ReadConfigurationFile.class
+  1020 Wed Apr 29 19:14:24 PDT 2020 example/hocon/ReadConfigurationFile$.class
+   130 Wed Apr 29 19:15:58 PDT 2020 lightbend.conf
+```
 
 ### Assembly
 https://github.com/sbt/sbt-assembly  
-`addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.10")`  
+Add 
+`addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.10")` 
+to `project/plugins.sbt`  
 0.14.10 - Jul 11, 2019
+
+`sbt:hocon> assembly` to generate assembly JAR in 
+`target/scala-2.12/hocon-assembly-0.1.0.jar`  
+You can list its contents with the usual jar tvf command:
+```text
+$ jar tvf target/scala-2.12/hocon-assembly-0.1.0.jar
+```
+
+Add `test in assembly := {}` to project settings 
+to skip the test during assembly.
+
+To exclude Scala library 
+(JARs that start with `scala-` and are included in the binary 
+Scala distribution) 
+to run with `scala` command:
+```text
+assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false)
+```
+
+To make a JAR file containing only the external dependencies, type  
+`> assemblyPackageDependency`  
+This is intended to be used with a JAR that only contains your project:
+```text
+assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false, includeDependency = false)
+
+```
 
 ### Cross-building
 https://www.scala-sbt.org/release/docs/Cross-Build.html
