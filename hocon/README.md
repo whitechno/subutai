@@ -21,3 +21,17 @@ and a superset of [JSON](https://json.org/).
  - references to a _file_ ("the file being parsed") can be
    understood to mean any byte stream being parsed, not just
    literal files in a filesystem.
+
+
+# ClassLoader
+
+## How to print out the current project classpath
+
+```scala
+import java.lang.ClassLoader
+val cl = ClassLoader.getSystemClassLoader
+cl.asInstanceOf[java.net.URLClassLoader].getURLs.foreach(println)
+
+cl.asInstanceOf[java.net.URLClassLoader].getURLs
+  .map(_.toString).sorted.foreach(println)
+```
