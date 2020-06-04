@@ -115,6 +115,24 @@ assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeSca
 
 ```
 
+### Spark & Assembly
+[SBT Assembly, Spark](
+https://coderwall.com/p/6gr84q/sbt-assembly-spark-and-you
+)
+
+### Publishing
+[Publish JAR To Central Maven Repository](
+http://tutorials.jenkov.com/maven/publish-to-central-maven-repository.html
+)
+
+[How to Publish Your Artifacts to Maven Central](
+https://dzone.com/articles/publish-your-artifacts-to-maven-central
+)
+
+[Nexus Repository Publisher for GitHub Actions](
+https://github.com/marketplace/actions/nexus-repository-publisher-for-github-actions
+)
+
 ### Cross-building
 https://www.scala-sbt.org/release/docs/Cross-Build.html
 
