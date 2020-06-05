@@ -1,8 +1,11 @@
-This is a brief installation guide for Java SDK on Mac OS.
+This is a brief installation guide for Java SDK on Mac OS
+=========================================================
+
 See https://docs.oracle.com/javase/8/docs/technotes/guides/install/mac_jdk.html for more details.
 
 
-=== Determining the Default Version of the JDK
+Determining the Default Version of the JDK
+------------------------------------------
 
     You can determine which version of the JDK is the default by typing
     % java -version or $ javac -version
@@ -24,7 +27,8 @@ See https://docs.oracle.com/javase/8/docs/technotes/guides/install/mac_jdk.html 
     For more information, see the java_home(1) man page.
 
 
-=== Installing the JDK
+Installing the JDK
+------------------
 
     At the Oracle’s Java 8 download page
     https://www.oracle.com/technetwork/java/javase/downloads
@@ -39,7 +43,8 @@ See https://docs.oracle.com/javase/8/docs/technotes/guides/install/mac_jdk.html 
     jdk-8u251-macosx-x64.dmg
 
 
-=== Uninstalling the JDK
+Uninstalling the JDK
+--------------------
 
     To uninstall the JDK, you must have Administrator privileges and execute the remove command
     either as root or by using the sudo(8) tool.
@@ -58,7 +63,8 @@ See https://docs.oracle.com/javase/8/docs/technotes/guides/install/mac_jdk.html 
     by Apple the next time you perform an update of the OS.
 
 
-=== Setting JAVA_HOME on macOS Mojave (10.14) to Lion (10.7)
+Setting JAVA_HOME on macOS Mojave (10.14) to Lion (10.7)
+--------------------------------------------------------
 
     % vim ~/.bash_profile
 
