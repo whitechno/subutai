@@ -16,20 +16,20 @@ object Weather {
     for {
       loc <- http.run(rLoc, parse)
       woeid    = (loc \ 0 \ "woeid").get
-      rWeather = Gigahorse.url(weatherUrl format woeid).get
+      rWeather = Gigahorse.url(weatherUrl.format(woeid)).get
       weather <- http.run(rWeather, parse)
     } yield (weather \\ "weather_state_name")(0).as[String].toLowerCase
   }
 
   private def parse: FullResponse => JsValue =
-    Gigahorse.asString andThen Json.parse
+    Gigahorse.asString.andThen(Json.parse)
 
   def addSbtModule(
       p: String,
       path: Option[String],
       projectName: String,
       moduleId: String,
-      c: Option[String] = None,
+      c: Option[String] = None
   ) = ???
 
 }

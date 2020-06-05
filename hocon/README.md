@@ -1,4 +1,6 @@
-# Experiments with HOCON and typesafe config
+HOCON and typesafe config
+=========================
+Experiments with HOCON and typesafe config
 
 [HOCON](https://github.com/lightbend/config/blob/master/HOCON.md), 
 or Human-Optimized Config Object Notation is a format for human-readable data, 
@@ -23,7 +25,8 @@ and a superset of [JSON](https://json.org/).
    literal files in a filesystem.
 
 
-# ClassLoader
+ClassLoader
+===========
 
 ## How to print out the current project classpath
 

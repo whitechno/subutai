@@ -1,11 +1,12 @@
-# subutai
+subutai
+=======
 Experiments with SBT.
 
 ### Simplest SBT project setup (with new github repo)
 1. Create repository (like `subutai`)
 2. In it `touch build.sbt`
 3. Create `project/build.properties` with the following content: 
-`sbt.version = 1.3.9`. Use `sbt> reboot` if changed.
+`sbt.version = 1.3.12`. Use `sbt> reboot` if changed.
 4. If needed, add `.gitignore` and `LICENSE`
 
 Now you can clone this new repository on your desktop with  
@@ -14,19 +15,49 @@ and open and edit it with your favorite IDE.
 
 ### Set scala version(s) in build.sbt
 Add this line to build.sbt:  
-`ThisBuild / scalaVersion := "2.13.1"`  
-
-As of Mar 27, 2020   
-Scala:  
-2.13.1  - Sep 18, 2019  
-2.12.11 - Mar 16, 2020  
-2.12.10 - Sep 10, 2019  
-2.11.12 - Nov 9, 2017  
-2.10.7  - Nov 9, 2017  
-SBT:  
-1.3.10 - Apr 14, 2020  
-1.3.9  - Mar 31, 2020  
-1.3.8  - Feb 3, 2020  
+`ThisBuild / scalaVersion := "2.13.2"`  
+#### Versions:
+- Scala  
+  https://github.com/scala/scala/releases
+  - 2.13.2  - Apr 22, 2020
+  - 2.13.1  - Sep 18, 2019
+  - 2.12.11 - Mar 16, 2020
+  - 2.12.10 - Sep 10, 2019
+  - 2.11.12 - Nov 9, 2017
+  - 2.10.7  - Nov 9, 2017
+- SBT  
+  https://github.com/sbt/sbt/releases
+  - 1.3.12 - May 30, 2020
+  - 1.3.11 - May 29, 2020  
+    There was a regression in sbt 1.3.11. Please use sbt 1.3.12 instead.
+  - 1.3.10 - Apr 14, 2020
+  - 1.3.9  - Mar 31, 2020
+  - 1.3.8  - Feb 3, 2020
+- ScalaTest  
+  https://www.scalatest.org/  
+  https://www.scalatest.org/release_notes/3.1.2  
+  https://github.com/scalatest/scalatest
+  - 3.1.2 - May 8, 2020
+  - 3.1.1 - before 2020
+- Scalafmt  
+  https://github.com/scalameta/scalafmt  
+  https://github.com/scalameta/scalafmt/releases
+  - 2.5.3 - May 25, 2020
+  - 2.5.2 - May 9, 2020
+  - 2.5.1 - May 3, 2020
+  - 2.5.0 - Apr 30, 2020
+  - 2.5.0-RC3 - Apr 28, 2020
+  - 2.5.0-RC2 - Apr 25, 2020
+  - 2.5.0-RC1 - Apr 15, 2020
+  - 2.4.2 - Feb 22, 2020
+- sbt-scalafmt (Scalafmt sbt plugin)  
+  https://github.com/scalameta/sbt-scalafmt  
+  https://github.com/scalameta/sbt-scalafmt/releases  
+  - 2.4.0 - May 14, 2020
+  - 2.3.4 - Apr 10, 2020
+  - 2.3.3 - Apr 10, 2020
+  - 2.3.2 - Mar 5, 2020
+  - 2.3.1 - Jan 27, 2020
 
 Now you have a minimal setup to start using Scala with SBT.
 
@@ -37,7 +68,8 @@ the switch happens only in projects where this particular version is included
 in `crossScalaVersions` of project `settings`)  
 `-v` is for verbose
 
-## Important techniques
+Important techniques
+--------------------
 
 ### Checking SBT, Scala, Java version
 SBT:  
@@ -53,6 +85,18 @@ To see which version of Java does SBT use:
 or in sbt shell:  
 `sbt:subutai> eval System.getProperty("java.version")`   
 `sbt:subutai> eval System.getProperty("java.home")`  
+
+### scalafmt Task keys
+ - `myproject/scalafmt`: Format main sources of myproject project
+ - `myproject/test`:scalafmt: Format test sources of myproject project
+ - `scalafmtCheck`: Check if the scala sources under the project has been formatted.
+ - `scalafmtSbt`: Format *.sbt and project/*.scala files.
+ - `scalafmtSbtCheck`: Check if the files has been formatted by scalafmtSbt.
+ - `scalafmtOnly`: Format a single given file.
+ - `scalafmtAll`: Execute the scalafmt task for all configurations in which it is enabled.  
+   (By default this means the Compile and Test configurations.) (available as of v2.0.0-RC5)
+ - `scalafmtCheckAll`: Execute the scalafmtCheck task for all configurations in which it is enabled.  
+   (By default this means the Compile and Test configurations.) (available as of v2.0.0-RC5)
 
 ### clean;compile;test;run
 Run one particular main class:  

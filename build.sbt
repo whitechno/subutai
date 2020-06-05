@@ -1,5 +1,5 @@
-ThisBuild / version      := "0.1.0"
-ThisBuild / organization := "whitechno.subutai"
+ThisBuild / version      := "0.1.0-SNAPSHOT"
+ThisBuild / organization := "com.github.whitechno.subutai"
 ThisBuild / scalaVersion := library.versions.scala213
 
 //
@@ -58,7 +58,8 @@ lazy val hocon = project
     scalaVersion := library.versions.scala212,
     commonSettings,
     libraryDependencies ++= Seq(
-      library.typesafeConfig % "provided"
+      library.typesafeConfig % "provided",
+      library.sHocon         % "provided"
     ),
     assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false)
   )
@@ -89,15 +90,16 @@ lazy val trie = project
 lazy val library = new {
 
   val versions = new {
-    val scala210 = "2.10.7" // Nov 9, 2017 https://github.com/scala/scala/releases/tag/v2.10.7
-    val scala211 = "2.11.12" // Nov 9, 2017 https://github.com/scala/scala/releases/tag/v2.11.12
-    // val scala212  = "2.12.10" // Sep 10, 2019 https://github.com/scala/scala/releases/tag/v2.12.10
-    val scala212       = "2.12.11" // Mar 16, 2020 https://github.com/scala/scala/releases/tag/v2.12.11
-    val scala213       = "2.13.1" // Sep 18, 2019 https://github.com/scala/scala/releases/tag/v2.13.1
-    val gigahorse      = "0.5.0" // as seen on Mar 27, 2020
-    val play           = "2.8.1" // as seen on Mar 27, 2020
-    val scalatest      = "3.1.1" // as seen on Mar 27, 2020
-    val typesafeConfig = "1.4.0" // Oct 11, 2019 https://github.com/lightbend/config/blob/master/NEWS.md
+    val scala210  = "2.10.7"
+    val scala211  = "2.11.12"
+    val scala212  = "2.12.11"
+    val scala213  = "2.13.2"
+    val gigahorse = "0.5.0" // as seen on Mar 27, 2020
+    val play      = "2.8.1" // as seen on Mar 27, 2020
+    val scalatest = "3.1.2"
+    val sHocon    = "1.0.0" // Mar 17, 2020 https://github.com/akka-js/shocon
+    val typesafeConfig =
+      "1.4.0" // Oct 11, 2019 https://github.com/lightbend/config/blob/master/NEWS.md
   }
 
   val supportedScalaVersions = List(versions.scala211, versions.scala212, versions.scala213)
@@ -105,7 +107,8 @@ lazy val library = new {
   val gigahorse      = "com.eed3si9n"      %% "gigahorse-okhttp" % versions.gigahorse
   val playJson       = "com.typesafe.play" %% "play-json"        % versions.play
   val scalatest      = "org.scalatest"     %% "scalatest"        % versions.scalatest
-  val typesafeConfig = "com.typesafe"      % "config"            % versions.typesafeConfig
+  val sHocon         = "org.akka-js"       %% "shocon"           % versions.sHocon
+  val typesafeConfig = "com.typesafe"       % "config"           % versions.typesafeConfig
 
 }
 
