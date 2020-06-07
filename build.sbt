@@ -54,6 +54,7 @@ lazy val helloCore = (project in file("core"))
 
 // *** hocon project
 lazy val hocon = project
+  .enablePlugins(ShoconPlugin)
   .settings(
     scalaVersion := library.versions.scala212,
     commonSettings,
@@ -61,6 +62,9 @@ lazy val hocon = project
       library.typesafeConfig % "provided",
       library.sHocon         % "provided"
     ),
+    // add dependency on shocon file generation task
+    // (not required, but otherwise you need to call shoconConcat manually before compilation!)
+    compile in Compile         := (compile in Compile).dependsOn(shoconConcat).value,
     assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false)
   )
 
