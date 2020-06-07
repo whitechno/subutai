@@ -54,17 +54,12 @@ lazy val helloCore = (project in file("core"))
 
 // *** hocon project
 lazy val hocon = project
-  .enablePlugins(ShoconPlugin)
   .settings(
     scalaVersion := library.versions.scala212,
     commonSettings,
     libraryDependencies ++= Seq(
-      library.typesafeConfig % "provided",
-      library.sHocon         % "provided"
+      library.typesafeConfig % "provided"
     ),
-    // add dependency on shocon file generation task
-    // (not required, but otherwise you need to call shoconConcat manually before compilation!)
-    compile in Compile         := (compile in Compile).dependsOn(shoconConcat).value,
     assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false)
   )
 
@@ -101,7 +96,6 @@ lazy val library = new {
     val gigahorse = "0.5.0" // as seen on Mar 27, 2020
     val play      = "2.8.1" // as seen on Mar 27, 2020
     val scalatest = "3.1.2"
-    val sHocon    = "1.0.0" // Mar 17, 2020 https://github.com/akka-js/shocon
     val typesafeConfig =
       "1.4.0" // Oct 11, 2019 https://github.com/lightbend/config/blob/master/NEWS.md
   }
@@ -111,7 +105,6 @@ lazy val library = new {
   val gigahorse      = "com.eed3si9n"      %% "gigahorse-okhttp" % versions.gigahorse
   val playJson       = "com.typesafe.play" %% "play-json"        % versions.play
   val scalatest      = "org.scalatest"     %% "scalatest"        % versions.scalatest
-  val sHocon         = "org.akka-js"       %% "shocon"           % versions.sHocon
   val typesafeConfig = "com.typesafe"       % "config"           % versions.typesafeConfig
 
 }

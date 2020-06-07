@@ -1,7 +1,7 @@
-package example.hocon
+package subutai.hocon
 
 // > hocon / test:run
-// > hocon / test:runMain example.hocon.ReadConfigurationFileMain
+// > hocon / test:runMain subutai.hocon.ReadConfigurationFileMain
 private object ReadConfigurationFileMain extends App {
 
   import ReadConfigurationFile.config

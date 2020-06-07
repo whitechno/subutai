@@ -1,4 +1,4 @@
-package example.hocon
+package subutai.hocon
 
 import com.typesafe.config.{ Config, ConfigFactory }
 

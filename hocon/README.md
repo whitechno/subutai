@@ -44,6 +44,24 @@ specifically so it can be ordered on top.
 If you are not building a library that will be reused in several places you don't need 
 to touch `reference.conf` at all. Just put all properties in `application.conf`.
 
+
+circe-config
+============
+https://github.com/circe/circe-config  
+
+Small library for translating between HOCON, Java properties, and JSON documents and 
+circe's JSON AST.
+
+At a high-level it can be used as a circe powered front-end for the Typesafe config 
+library to enable boilerplate free loading of settings into Scala types. 
+More generally it provides parsers and printers for interoperating with 
+Typesafe config's JSON AST.
+
+To use this library configure your sbt project with the following line:
+```
+libraryDependencies += "io.circe" %% "circe-config" % "0.8.0"
+```
+
 SHocon
 ======
 
