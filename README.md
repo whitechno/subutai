@@ -2,21 +2,35 @@ subutai
 =======
 Experiments with SBT.
 
-### Simplest SBT project setup (with new github repo)
+Simplest SBT project setup (with new github repo)
+-------------------------------------------------
 1. Create repository (like `subutai`)
 2. In it `touch build.sbt`
-3. Create `project/build.properties` with the following content: 
-`sbt.version = 1.3.12`. Use `sbt> reboot` if changed.
+3. Set scala version(s) in build.sbt
+   Add this line to build.sbt:  
+   `ThisBuild / scalaVersion := "2.13.2"`
+3. Create `project/build.properties` with the following content:  
+   `sbt.version = 1.3.12`.  
+   Use `sbt> reboot` if changed.
 4. If needed, add `.gitignore` and `LICENSE`
 
 Now you can clone this new repository on your desktop with  
 `git clone https://github.com/whitechno/subutai.git`,  
 and open and edit it with your favorite IDE.
 
-### Set scala version(s) in build.sbt
-Add this line to build.sbt:  
-`ThisBuild / scalaVersion := "2.13.2"`  
-#### Versions:
+Now you have a minimal setup to start using Scala with SBT.
+
+You can also switch scalaVersion temporarily:  
+`sbt:Hello>  ++2.12.11! -v`  
+`!` is to force version switch (without it, 
+the switch happens only in projects where this particular version is included 
+in `crossScalaVersions` of project `settings`)  
+`-v` is for verbose
+
+
+Versions of key components
+--------------------------
+
 - Scala  
   https://github.com/scala/scala/releases
   - 2.13.2  - Apr 22, 2020
@@ -59,19 +73,12 @@ Add this line to build.sbt:
   - 2.3.2 - Mar 5, 2020
   - 2.3.1 - Jan 27, 2020
 
-Now you have a minimal setup to start using Scala with SBT.
-
-You can also switch scalaVersion temporarily:  
-`sbt:Hello>  ++2.12.11! -v`  
-`!` is to force version switch (without it, 
-the switch happens only in projects where this particular version is included 
-in `crossScalaVersions` of project `settings`)  
-`-v` is for verbose
 
 Important techniques
 --------------------
 
 ### Checking SBT, Scala, Java version
+
 SBT:  
 `> sbt about`  
 `> sbt -v`  
@@ -87,6 +94,7 @@ or in sbt shell:
 `sbt:subutai> eval System.getProperty("java.home")`  
 
 ### scalafmt Task keys
+
  - `myproject/scalafmt`: Format main sources of myproject project
  - `myproject/test`:scalafmt: Format test sources of myproject project
  - `scalafmtCheck`: Check if the scala sources under the project has been formatted.
@@ -99,6 +107,7 @@ or in sbt shell:
    (By default this means the Compile and Test configurations.) (available as of v2.0.0-RC5)
 
 ### clean;compile;test;run
+
 Run one particular main class:  
 `sbt:subutai> runMain example.Hello`
 
@@ -127,21 +136,22 @@ $ jar tvf target/scala-2.12/hocon_2.12-0.1.0.jar
 ```
 
 ### Assembly
-https://github.com/sbt/sbt-assembly  
-Add 
-`addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.10")` 
-to `project/plugins.sbt`  
-0.14.10 - Jul 11, 2019
 
-`sbt:hocon> assembly` to generate assembly JAR in 
+- https://github.com/sbt/sbt-assembly  
+  - 0.14.10 - Jul 11, 2019
+
+Add  
+`addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.10")`  
+to `project/plugins.sbt`
+
+`sbt:hocon> assembly` to generate assembly JAR in  
 `target/scala-2.12/hocon-assembly-0.1.0.jar`  
 You can list its contents with the usual jar tvf command:
 ```text
 $ jar tvf target/scala-2.12/hocon-assembly-0.1.0.jar
 ```
 
-Add `test in assembly := {}` to project settings 
-to skip the test during assembly.
+Add `test in assembly := {}` to project settings to skip the test during assembly.
 
 To exclude Scala library 
 (JARs that start with `scala-` and are included in the binary 
@@ -160,6 +170,7 @@ assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeSca
 ```
 
 ### Spark & Assembly
+
 [SBT Assembly, Spark](
 https://coderwall.com/p/6gr84q/sbt-assembly-spark-and-you
 )
@@ -173,21 +184,32 @@ Other builds on the same machine can then list the project as a dependency.
 The `publish` action is used to publish your project to a remote repository. 
 To use publishing, you need to specify the repository to publish to and the credentials to use.
 
-- [SBT Publishing](https://www.scala-sbt.org/1.x/docs/Publishing.html)
+- scala-sbt's [SBT Publishing](https://www.scala-sbt.org/1.x/docs/Publishing.html)
 
-- [Publish JAR To Central Maven Repository](
-http://tutorials.jenkov.com/maven/publish-to-central-maven-repository.html
+- sonatype's [Producers Guide to Publishing to Central Maven Repository](
+https://central.sonatype.org/pages/producers.html
 )
 
-- [How to Publish Your Artifacts to Maven Central](
-https://dzone.com/articles/publish-your-artifacts-to-maven-central
-)
+- sonatype's [OSSRH Guide](https://central.sonatype.org/pages/ossrh-guide.html)
 
-- [Nexus Repository Publisher for GitHub Actions](
+- github's [Nexus Repository Publisher for GitHub Actions](
 https://github.com/marketplace/actions/nexus-repository-publisher-for-github-actions
 )
 
+- jenkov's [Publish JAR To Central Maven Repository with maven](
+http://tutorials.jenkov.com/maven/publish-to-central-maven-repository.html
+) Jan 25, 2020
+
+- Leonard Ehrenfried's [An in depth guide to deploying to Maven Central with sbt](
+https://leonard.io/blog/2017/01/an-in-depth-guide-to-deploying-to-maven-central/
+) Jan 15, 2017
+
+- dzone's [How to Publish Your Artifacts to Maven Central](
+https://dzone.com/articles/publish-your-artifacts-to-maven-central
+) Sep 20, 2016
+
 ### Cross-building
+
 https://www.scala-sbt.org/release/docs/Cross-Build.html
 
 The underlying mechanism used to indicate which version of Scala a library 
@@ -219,7 +241,14 @@ Sometimes you might want to force the Scala version switch regardless of the
 You can use `++ <version>!` with exclamation mark for that. For example:  
 `> ++ 2.13.0-M5! -v`
 
-### Scala Worksheets in IntelliJ
+
+<hr/>
+
+Other Special topics
+====================
+
+Scala Worksheets in IntelliJ
+----------------------------
 
 "Use compile server for Scala" tick box is in  
 `Preferences > Build, Execution, Deployment > Compiler > Scala Compiler > Scala Compile Server`  
@@ -283,17 +312,10 @@ Run type: REPL
 "Use compile server for Scala": On  
 "Run worksheet in the compiler process": On
 
-### SBT by example
-See and try https://www.scala-sbt.org/release/docs/sbt-by-example.html
 
-In the `subutai` directory create nested directories and `.scala` file:  
-`src/main/scala/example/Hello.scala`  
-In SBT shell:  
-`sbt:Hello> clean;compile;test;run`
+Slow start because of "Getting the hostname ... was slow"
+---------------------------------------------------------
 
-## Special topics
-
-### Slow start because of "Getting the hostname ... was slow"
 Sometimes the startup time for test and run might be pretty long and you might see 
 the following command:  
 `[warn] Getting the hostname Olegs-MacBook-Pro was slow (18020.887197 ms). 
@@ -328,6 +350,15 @@ and then added into `/etc/hosts`
 ```
 
 
+SBT by example
+--------------
+
+See and try https://www.scala-sbt.org/release/docs/sbt-by-example.html
+
+In the `subutai` directory create nested directories and `.scala` file:  
+`src/main/scala/example/Hello.scala`  
+In SBT shell:  
+`sbt:Hello> clean;compile;test;run`
 
 ### Use Scala REPL
 ```
