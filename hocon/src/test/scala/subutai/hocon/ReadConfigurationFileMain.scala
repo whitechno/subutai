@@ -17,3 +17,12 @@ private object ReadConfigurationFileMain extends App {
   println(s"password = $password")
 
 }
+
+private object DebugConfigFactoryMain extends App {
+  import com.typesafe.config.{ Config, ConfigFactory }
+  val config: Config = ConfigFactory.load(getClass().getClassLoader())
+  println("config = " + config.entrySet())
+
+
+  //println("jdbc = " + config.getConfig("jdbc"))
+}

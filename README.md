@@ -165,15 +165,25 @@ https://coderwall.com/p/6gr84q/sbt-assembly-spark-and-you
 )
 
 ### Publishing
-[Publish JAR To Central Maven Repository](
+
+The `publishLocal` task will publish to the “local” Ivy repository. 
+By default, this is at `$HOME/.ivy2/local/`. 
+Other builds on the same machine can then list the project as a dependency. 
+
+The `publish` action is used to publish your project to a remote repository. 
+To use publishing, you need to specify the repository to publish to and the credentials to use.
+
+- [SBT Publishing](https://www.scala-sbt.org/1.x/docs/Publishing.html)
+
+- [Publish JAR To Central Maven Repository](
 http://tutorials.jenkov.com/maven/publish-to-central-maven-repository.html
 )
 
-[How to Publish Your Artifacts to Maven Central](
+- [How to Publish Your Artifacts to Maven Central](
 https://dzone.com/articles/publish-your-artifacts-to-maven-central
 )
 
-[Nexus Repository Publisher for GitHub Actions](
+- [Nexus Repository Publisher for GitHub Actions](
 https://github.com/marketplace/actions/nexus-repository-publisher-for-github-actions
 )
 
@@ -287,7 +297,8 @@ In SBT shell:
 Sometimes the startup time for test and run might be pretty long and you might see 
 the following command:  
 `[warn] Getting the hostname Olegs-MacBook-Pro was slow (18020.887197 ms). 
-This is likely because the computer's hostname is not set. You can set the hostname with the command: scutil --set HostName $(scutil --get LocalHostName).`
+This is likely because the computer's hostname is not set. 
+You can set the hostname with the command: scutil --set HostName $(scutil --get LocalHostName).`
 
 I found the following solution.
 
@@ -396,7 +407,11 @@ In terminal shell:
 > /tmp/someother/hello-0.1.0-SNAPSHOT/bin/hello
 ```
 
-### [warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.
+### run 'evicted'
+```
+[warn] There may be incompatibilities among your library dependencies; 
+run 'evicted' to see detailed eviction warnings.
+```
 With some plugins (like `sbt-native-packager`), sbt might show eviction warning on sbt shell start,
 however `> evicted` command shows nothing.
 
@@ -408,7 +423,8 @@ You can check that by running the evicted command in the meta project using the 
 To return to the main project execute the `reload return` command
 ```
 $ sbt
-[warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.
+[warn] There may be incompatibilities among your library dependencies; 
+run 'evicted' to see detailed eviction warnings.
 sbt:Hello> evicted
 [success] Total time: 0 s, completed Jan 8, 2020 11:21:26 PM
 
@@ -432,7 +448,9 @@ sbt:Hello> evicted
 
 ### Is it wise to fix eviction warnings of library dependencies?
 Is it a good idea to fix SBT eviction warning messages using `dependencyOverrides` in build.sbt 
-as per [SBT Documentation Eviction warning](https://www.scala-sbt.org/1.x/docs/Library-Management.html#Eviction+warning)?
+as per [SBT Documentation Eviction warning](
+https://www.scala-sbt.org/1.x/docs/Library-Management.html#Eviction+warning
+)?
 
 If these warnings are for dependencies you use directly in your code, 
 you should definitely add the upgraded version to your libraryDependencies.
