@@ -23,6 +23,5 @@ private object DebugConfigFactoryMain extends App {
   val config: Config = ConfigFactory.load(getClass().getClassLoader())
   println("config = " + config.entrySet())
 
-
   //println("jdbc = " + config.getConfig("jdbc"))
 }

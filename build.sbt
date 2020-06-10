@@ -17,7 +17,7 @@ lazy val subutai = (project in file("."))
     baseDirectoryTask := {
       import java.io.File
       val baseDir    = baseDirectory.value.toString
-      val baseLength = baseDir.size + 1
+      val baseLength = baseDir.length + 1
       val projectDirs = baseDirectory
         .all(ScopeFilter(inAnyProject -- inProjects(trie)))
         .value
@@ -93,9 +93,9 @@ lazy val library = new {
     val scala211  = "2.11.12"
     val scala212  = "2.12.11"
     val scala213  = "2.13.2"
+    val scalatest = "3.1.2"
     val gigahorse = "0.5.0" // as seen on Mar 27, 2020
     val play      = "2.8.1" // as seen on Mar 27, 2020
-    val scalatest = "3.1.2"
     val typesafeConfig =
       "1.4.0" // Oct 11, 2019 https://github.com/lightbend/config/blob/master/NEWS.md
   }
