@@ -175,7 +175,8 @@ assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeSca
 https://coderwall.com/p/6gr84q/sbt-assembly-spark-and-you
 )
 
-### Publishing
+Publishing
+----------
 
 The `publishLocal` task will publish to the “local” Ivy repository. 
 By default, this is at `$HOME/.ivy2/local/`. 
@@ -185,6 +186,8 @@ The `publish` action is used to publish your project to a remote repository.
 To use publishing, you need to specify the repository to publish to and the credentials to use.
 
 - scala-sbt's [SBT Publishing](https://www.scala-sbt.org/1.x/docs/Publishing.html)
+
+### Sonatype OSSRH (OSS Repository Hosting)
 
 - sonatype's [Producers Guide to Publishing to Central Maven Repository](
 https://central.sonatype.org/pages/producers.html
@@ -207,6 +210,28 @@ https://leonard.io/blog/2017/01/an-in-depth-guide-to-deploying-to-maven-central/
 - dzone's [How to Publish Your Artifacts to Maven Central](
 https://dzone.com/articles/publish-your-artifacts-to-maven-central
 ) Sep 20, 2016
+
+- lightbend/config [example of publishing to sonatype with sbt](
+https://github.com/lightbend/config/blob/master/build.sbt
+)
+
+- circe/circe-config [example of publishing to sonatype with sbt](
+https://github.com/circe/circe-config/blob/master/build.sbt
+)
+
+Step-by-step
+- Created Sonatype JIRA account and filed JIRA issue to claim my namespace  
+  https://issues.sonatype.org/browse/OSSRH-58349
+- Created a public repo called  
+  https://github.com/whitechno/OSSRH-58349  
+  to verify github account ownership.
+- com.github.whitechno has been prepared, now user(s) whitechno can:
+  - Deploy snapshot artifacts into repository  
+    https://oss.sonatype.org/content/repositories/snapshots
+  - Deploy release artifacts into the staging repository  
+    https://oss.sonatype.org/service/local/staging/deploy/maven2
+  - Release staged artifacts into repository 'Releases'  
+  Please comment on this ticket when you promoted your first release, thanks
 
 ### Cross-building
 
