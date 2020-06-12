@@ -135,7 +135,8 @@ $ jar tvf target/scala-2.12/hocon_2.12-0.1.0.jar
    130 Wed Apr 29 19:15:58 PDT 2020 lightbend.conf
 ```
 
-### Assembly
+Assembly
+--------
 
 - https://github.com/sbt/sbt-assembly  
   - 0.14.10 - Jul 11, 2019
@@ -174,6 +175,7 @@ assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeSca
 [SBT Assembly, Spark](
 https://coderwall.com/p/6gr84q/sbt-assembly-spark-and-you
 )
+
 
 Publishing
 ----------
@@ -233,7 +235,9 @@ Step-by-step
   - Release staged artifacts into repository 'Releases'  
   Please comment on this ticket when you promoted your first release, thanks
 
-### Cross-building
+
+Cross-building
+--------------
 
 https://www.scala-sbt.org/release/docs/Cross-Build.html
 
@@ -271,6 +275,22 @@ You can use `++ <version>!` with exclamation mark for that. For example:
 
 Other Special topics
 ====================
+
+Reading resources
+-----------------
+
+See stackoverflow's [How to read files from resources folder in Scala?](
+https://stackoverflow.com/questions/27360977/how-to-read-files-from-resources-folder-in-scala
+)
+
+The idea is to use `getClass.getResourceAsStream` because it works fine 
+when the resources are part of a jar.
+```scala
+val stream: java.io.InputStream = getClass.getResourceAsStream("/readme.txt")
+val lines: Iterator[String] = scala.io.Source.fromInputStream( stream ).getLines
+
+```
+
 
 Scala Worksheets in IntelliJ
 ----------------------------
