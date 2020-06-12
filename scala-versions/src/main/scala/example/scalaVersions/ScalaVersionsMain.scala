@@ -7,6 +7,6 @@ private object ScalaVersionsMain extends App {
 }
 
 object VersionNumber {
-  def run: String     = util.Properties.versionNumberString
+  def run: String     = scala.util.Properties.versionNumberString
   def runPrint1: Unit = println("Test 1 Scala version: " + run)
 }
