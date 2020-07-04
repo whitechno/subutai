@@ -28,37 +28,49 @@ in `crossScalaVersions` of project `settings`)
 `-v` is for verbose
 
 
-Versions of key components
---------------------------
+Versions of key dependencies
+----------------------------
 
 - Scala  
   https://github.com/scala/scala/releases
+  - 2.13.3  - Jun 25, 2020
   - 2.13.2  - Apr 22, 2020
   - 2.13.1  - Sep 18, 2019
   - 2.12.11 - Mar 16, 2020
   - 2.12.10 - Sep 10, 2019
-  - 2.11.12 - Nov 9, 2017
-  - 2.10.7  - Nov 9, 2017
+  - 2.11.12 - Nov  9, 2017
+  - 2.10.7  - Nov  9, 2017
 - SBT  
   https://github.com/sbt/sbt/releases
+  - 1.3.13 - Jun 27, 2020
   - 1.3.12 - May 30, 2020
   - 1.3.11 - May 29, 2020  
     There was a regression in sbt 1.3.11. Please use sbt 1.3.12 instead.
   - 1.3.10 - Apr 14, 2020
   - 1.3.9  - Mar 31, 2020
-  - 1.3.8  - Feb 3, 2020
+  - 1.3.8  - Feb  3, 2020
 - ScalaTest  
   https://www.scalatest.org/  
-  https://www.scalatest.org/release_notes/3.1.2  
-  https://github.com/scalatest/scalatest
-  - 3.1.2 - May 8, 2020
-  - 3.1.1 - before 2020
+  https://github.com/scalatest/scalatest/releases
+  - 3.2.0 - Jun 20, 2020
+  - 3.1.2 - May 13, 2020
+  - 3.1.1 - Feb 20, 2020
+  - 3.1.0 - Nov 28, 2019
+- typesafe config
+  https://github.com/lightbend/config/releases
+  - 1.4.0 - Oct 14, 2019
+  - 1.3.4 - Apr 18, 2019
+  - 1.3.0 - May  8, 2015
+  - 1.2.1 - May  2, 2014
+  - 1.2.0 - Jan 15, 2014
 - Scalafmt  
   https://github.com/scalameta/scalafmt  
   https://github.com/scalameta/scalafmt/releases
+  - 2.6.1 - Jun 19, 2020
+  - 2.6.0 - Jun 16, 2020
   - 2.5.3 - May 25, 2020
-  - 2.5.2 - May 9, 2020
-  - 2.5.1 - May 3, 2020
+  - 2.5.2 - May  9, 2020
+  - 2.5.1 - May  3, 2020
   - 2.5.0 - Apr 30, 2020
   - 2.5.0-RC3 - Apr 28, 2020
   - 2.5.0-RC2 - Apr 25, 2020
@@ -70,8 +82,15 @@ Versions of key components
   - 2.4.0 - May 14, 2020
   - 2.3.4 - Apr 10, 2020
   - 2.3.3 - Apr 10, 2020
-  - 2.3.2 - Mar 5, 2020
+  - 2.3.2 - Mar  5, 2020
   - 2.3.1 - Jan 27, 2020
+  - 2.3.0 - Dec  9, 2019
+- sbt-assembly  
+  https://github.com/sbt/sbt-assembly  
+  https://github.com/sbt/sbt-assembly/releases
+  - 0.15.0  - Jun 22, 2020
+  - 0.14.10 - Jul 11, 2019
+  - 0.14.9  - Oct 28, 2018
 
 
 Important techniques
@@ -135,11 +154,14 @@ $ jar tvf target/scala-2.12/hocon_2.12-0.1.0.jar
    130 Wed Apr 29 19:15:58 PDT 2020 lightbend.conf
 ```
 
+To build against all versions listed in `crossScalaVersions`, 
+prefix the action to run with `+`. For example:  
+`> + package`
+
 Assembly
 --------
 
-- https://github.com/sbt/sbt-assembly  
-  - 0.14.10 - Jul 11, 2019
+- https://github.com/sbt/sbt-assembly 
 
 Add  
 `addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.10")`  
