@@ -63,6 +63,28 @@ lazy val hocon = project
     assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false)
   )
 
+// *** joda-time based project
+lazy val `jebe-time` = project
+  .settings(
+    scalaVersion := library.versions.scala212,
+    commonSettings,
+    libraryDependencies ++= Seq(
+      library.jodatime % "provided"
+    ),
+    assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false)
+  )
+
+// json4s-jackson project
+lazy val json4s = project
+  .settings(
+    scalaVersion := library.versions.scala212,
+    commonSettings,
+    libraryDependencies ++= Seq(
+      library.json4sJackson % "provided"
+    ),
+    assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false)
+  )
+
 // *** scalaVersions project
 lazy val `scala-versions` = project
   .settings(
@@ -91,10 +113,12 @@ lazy val library = new {
   val versions = new {
     val scala210       = "2.10.7"
     val scala211       = "2.11.12"
-    val scala212       = "2.12.11"
+    val scala212       = "2.12.12"
     val scala213       = "2.13.3"
     val scalatest      = "3.2.0"
     val typesafeConfig = "1.4.0"
+    val jodatime       = "2.10.6"
+    val json4s         = "3.6.9"
     val gigahorse      = "0.5.0" // as seen on Mar 27, 2020
     val play           = "2.8.1" // as seen on Mar 27, 2020
   }
@@ -103,6 +127,10 @@ lazy val library = new {
 
   val scalatest      = "org.scalatest"     %% "scalatest"        % versions.scalatest
   val typesafeConfig = "com.typesafe"       % "config"           % versions.typesafeConfig
+  val jodatime       = "joda-time"          % "joda-time"        % versions.jodatime
+  val json4sCore     = "org.json4s"        %% "json4s-core"      % versions.json4s
+  val json4sJackson  = "org.json4s"        %% "json4s-jackson"   % versions.json4s
+  val json4sNative   = "org.json4s"        %% "json4s-native"    % versions.json4s
   val gigahorse      = "com.eed3si9n"      %% "gigahorse-okhttp" % versions.gigahorse
   val playJson       = "com.typesafe.play" %% "play-json"        % versions.play
 

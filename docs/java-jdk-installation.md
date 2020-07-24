@@ -41,6 +41,10 @@ Installing the JDK
 
     JDK 8u251 1.8.0_251-b08 April 14, 2020
     jdk-8u251-macosx-x64.dmg
+    
+    TODO:
+    JDK 8u261 1.8.0_261-b12 July 14, 2020
+    jdk-8u261-macosx-x64.dmg
 
 
 Uninstalling the JDK

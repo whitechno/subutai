@@ -36,6 +36,7 @@ Versions of key dependencies
   - 2.13.3  - Jun 25, 2020
   - 2.13.2  - Apr 22, 2020
   - 2.13.1  - Sep 18, 2019
+  - 2.12.12 - Jul 12, 2020
   - 2.12.11 - Mar 16, 2020
   - 2.12.10 - Sep 10, 2019
   - 2.11.12 - Nov  9, 2017
@@ -66,6 +67,8 @@ Versions of key dependencies
 - Scalafmt  
   https://github.com/scalameta/scalafmt  
   https://github.com/scalameta/scalafmt/releases
+  - 2.6.4 - Jul 20, 2020
+  - 2.6.3 - Jul 14, 2020
   - 2.6.2 - Jul  5, 2020
   - 2.6.1 - Jun 19, 2020
   - 2.6.0 - Jun 16, 2020
@@ -93,6 +96,21 @@ Versions of key dependencies
   - 0.14.10 - Jul 11, 2019
   - 0.14.9  - Oct 28, 2018
 
+
+Versions of common dependencies
+-------------------------------
+
+- Joda-Time  
+  https://github.com/JodaOrg/joda-time  
+  https://github.com/JodaOrg/joda-time/releases  
+  - 2.10.6 - Apr 24, 2020
+  - 2.10.5 - Oct 24, 2019
+  - 2.10.4 - Sep 20, 2019
+- json4s  
+  https://github.com/json4s/json4s/releases
+  - 3.6.9 - Jun 15, 2020
+  - 3.6.8 - May  5, 2020
+  - 3.6.7 - Jun 26, 2020
 
 Important techniques
 --------------------
