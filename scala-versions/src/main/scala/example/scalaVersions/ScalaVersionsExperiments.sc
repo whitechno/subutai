@@ -6,3 +6,6 @@ Run type: Plain
 */
 import example.scalaVersions.VersionNumber
 VersionNumber.runPrint1
+
+val cnt = 2977397954L
+println(f"${cnt}%,d")

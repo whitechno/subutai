@@ -1,3 +1,6 @@
+# Mac
+.DS_Store
+
 # sbt
 lib_managed
 project/project
@@ -28,9 +31,6 @@ build
 .ensime
 .ensime_lucene
 .ensime_cache
-
-# Mac
-.DS_Store
 
 # Akka Persistence
 journal
