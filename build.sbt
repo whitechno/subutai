@@ -69,7 +69,8 @@ lazy val `jebe-time` = project
     scalaVersion := library.versions.scala212,
     commonSettings,
     libraryDependencies ++= Seq(
-      library.jodatime % "provided"
+      library.jodatime  % "provided",
+      library.scalatest % Test
     ),
     assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false)
   )
