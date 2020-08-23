@@ -53,6 +53,7 @@ Versions of key dependencies
 - ScalaTest  
   https://www.scalatest.org/  
   https://github.com/scalatest/scalatest/releases
+  - 3.2.1 - Aug 11, 2020
   - 3.2.0 - Jun 20, 2020
   - 3.1.2 - May 13, 2020
   - 3.1.1 - Feb 20, 2020
@@ -83,6 +84,7 @@ Versions of key dependencies
 - sbt-scalafmt (Scalafmt sbt plugin)  
   https://github.com/scalameta/sbt-scalafmt  
   https://github.com/scalameta/sbt-scalafmt/releases  
+  - 2.4.2 - Aug 01, 2020 
   - 2.4.0 - May 14, 2020
   - 2.3.4 - Apr 10, 2020
   - 2.3.3 - Apr 10, 2020
