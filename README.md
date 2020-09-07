@@ -51,8 +51,9 @@ Versions of key dependencies
   - 1.3.9  - Mar 31, 2020
   - 1.3.8  - Feb  3, 2020
 - ScalaTest  
-  https://www.scalatest.org/  
+  https://www.scalatest.org  
   https://github.com/scalatest/scalatest/releases
+  - 3.2.2 - Sep 04, 2020
   - 3.2.1 - Aug 11, 2020
   - 3.2.0 - Jun 20, 2020
   - 3.1.2 - May 13, 2020
