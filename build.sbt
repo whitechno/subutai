@@ -2,6 +2,10 @@ ThisBuild / version      := "0.1.0-SNAPSHOT"
 ThisBuild / organization := "com.github.whitechno.subutai"
 ThisBuild / scalaVersion := library.versions.scala213
 
+ThisBuild / useCoursier := false
+//ThisBuild / resolvers += Resolver.mavenCentral
+//ThisBuild / resolvers += Resolver.sbtPluginRepo("releases")
+
 //
 // *** projects
 //
@@ -149,3 +153,37 @@ lazy val commonSettings = List(
 // Defining tasks and settings
 lazy val helloTask         = taskKey[Unit]("An example task")
 lazy val baseDirectoryTask = taskKey[Unit]("Task to print base directory")
+lazy val printTask         = taskKey[Unit]("Print SBT vars")
+printTask := {
+  println("baseDirectory: " + baseDirectory.value)
+  println("unmanagedBase: " + unmanagedBase.value)
+
+  Seq(
+    Resolver.mavenLocal,
+    DefaultMavenRepository,
+    Resolver.mavenCentral,
+    JavaNet2Repository,
+    Resolver.sonatypeRepo("public"), //(or “snapshots”, “staging”, “releases”)
+    Resolver.sonatypeRepo("snapshots"), //(or “snapshots”, “staging”, “releases”)
+    Resolver.typesafeRepo("releases"), //(or “snapshots”)
+    Resolver.typesafeIvyRepo("releases"), //(or “snapshots”)
+    Resolver.sbtPluginRepo("releases"), //(or “snapshots”)
+    Resolver.bintrayRepo("owner", "repo"),
+    Resolver.jcenterRepo,
+    Resolver.ivyStylePatterns,
+    Resolver.mavenStylePatterns
+  ).foreach { s => println("\t" + s) }
+
+  val (art, file) = (Compile / packageBin / packagedArtifact).value
+  println("Artifact definition: " + art)
+  println("Packaged file: " + file.getAbsolutePath)
+
+  println("\n externalResolvers:")
+  externalResolvers.value.foreach { s => println("\t" + s) }
+
+  println("\n resolvers:")
+  resolvers.value.foreach { s => println("\t" + s) }
+
+  println("\n combineDefaultResolvers:")
+  Resolver.combineDefaultResolvers(resolvers.value.toVector).foreach { s => println("\t" + s) }
+}
