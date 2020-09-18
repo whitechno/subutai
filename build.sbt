@@ -13,7 +13,7 @@ ThisBuild / useCoursier := false
 // *** root project
 lazy val subutai = (project in file("."))
 // Set aggregate so that the command sent to hello is broadcast to helloCore too
-  .aggregate(helloCore) //, scalaVersions
+  .aggregate(helloCore, `scala-versions`)
   .dependsOn(helloCore)
   .enablePlugins(JavaAppPackaging) // sbt-native-packager
   .settings(

@@ -69,6 +69,9 @@ Versions of key dependencies
 - Scalafmt  
   https://github.com/scalameta/scalafmt  
   https://github.com/scalameta/scalafmt/releases
+  - 2.7.2 - Sep 18, 2020
+  - 2.7.1 - Sep 14, 2020
+  - 2.7.0 - Sep 08, 2020
   - 2.6.4 - Jul 20, 2020
   - 2.6.3 - Jul 14, 2020
   - 2.6.2 - Jul  5, 2020
