@@ -43,6 +43,7 @@ Versions of key dependencies
   - 2.10.7  - Nov  9, 2017
 - SBT  
   https://github.com/sbt/sbt/releases
+  - 1.4.0  - Oct 04, 2020
   - 1.3.13 - Jun 27, 2020
   - 1.3.12 - May 30, 2020
   - 1.3.11 - May 29, 2020  
@@ -56,6 +57,7 @@ Versions of key dependencies
   - 3.2.2 - Sep 04, 2020
   - 3.2.1 - Aug 11, 2020
   - 3.2.0 - Jun 20, 2020
+  - 3.1.4 - Sep 04, 2020
   - 3.1.2 - May 13, 2020
   - 3.1.1 - Feb 20, 2020
   - 3.1.0 - Nov 28, 2019
@@ -69,6 +71,8 @@ Versions of key dependencies
 - Scalafmt  
   https://github.com/scalameta/scalafmt  
   https://github.com/scalameta/scalafmt/releases
+  - 2.7.4 - Oct 06, 2020
+  - 2.7.3 - Sep 29, 2020
   - 2.7.2 - Sep 18, 2020
   - 2.7.1 - Sep 14, 2020
   - 2.7.0 - Sep 08, 2020
@@ -114,9 +118,10 @@ Versions of common dependencies
   - 2.10.4 - Sep 20, 2019
 - json4s  
   https://github.com/json4s/json4s/releases
-  - 3.6.9 - Jun 15, 2020
-  - 3.6.8 - May  5, 2020
-  - 3.6.7 - Jun 26, 2020
+  - 3.6.10 - Sep 28, 2020
+  - 3.6.9  - Jun 15, 2020
+  - 3.6.8  - May  5, 2020
+  - 3.6.7  - Jun 26, 2020
 
 Important techniques
 --------------------

@@ -3,8 +3,8 @@ ThisBuild / organization := "com.github.whitechno.subutai"
 ThisBuild / scalaVersion := library.versions.scala213
 
 ThisBuild / useCoursier := false
-//ThisBuild / resolvers += Resolver.mavenCentral
-//ThisBuild / resolvers += Resolver.sbtPluginRepo("releases")
+ThisBuild / resolvers += Resolver.mavenCentral
+ThisBuild / resolvers += Resolver.sbtPluginRepo("releases")
 
 //
 // *** projects
@@ -26,7 +26,10 @@ lazy val subutai = (project in file("."))
         .all(ScopeFilter(inAnyProject -- inProjects(trie)))
         .value
         .map(_.getAbsolutePath)
-        .collect { case s if s.length >= baseLength => File.separator + s.substring(baseLength) }
+        .collect {
+          case s if s.length >= baseLength =>
+            File.separator + s.substring(baseLength)
+        }
         .mkString("\n\t\t")
       println("baseDirectoryTask:\n\t" + baseDir + "\n\t\t" + projectDirs)
     },
@@ -64,7 +67,8 @@ lazy val hocon = project
     libraryDependencies ++= Seq(
       library.typesafeConfig % "provided"
     ),
-    assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false)
+    assemblyOption in assembly := (assemblyOption in assembly).value
+      .copy(includeScala = false)
   )
 
 // *** joda-time based project
@@ -76,7 +80,8 @@ lazy val `jebe-time` = project
       library.jodatime  % "provided",
       library.scalatest % Test
     ),
-    assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false)
+    assemblyOption in assembly := (assemblyOption in assembly).value
+      .copy(includeScala = false)
   )
 
 // json4s-jackson project
@@ -87,7 +92,8 @@ lazy val json4s = project
     libraryDependencies ++= Seq(
       library.json4sJackson % "provided"
     ),
-    assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false)
+    assemblyOption in assembly := (assemblyOption in assembly).value
+      .copy(includeScala = false)
   )
 
 // *** scalaVersions project
@@ -123,12 +129,13 @@ lazy val library = new {
     val scalatest      = "3.2.2"
     val typesafeConfig = "1.4.0"
     val jodatime       = "2.10.6"
-    val json4s         = "3.6.9"
+    val json4s         = "3.6.10"
     val gigahorse      = "0.5.0" // as seen on Mar 27, 2020
     val play           = "2.8.1" // as seen on Mar 27, 2020
   }
 
-  val supportedScalaVersions = List(versions.scala211, versions.scala212, versions.scala213)
+  val supportedScalaVersions =
+    List(versions.scala211, versions.scala212, versions.scala213)
 
   val scalatest      = "org.scalatest"     %% "scalatest"        % versions.scalatest
   val typesafeConfig = "com.typesafe"       % "config"           % versions.typesafeConfig
@@ -185,5 +192,7 @@ printTask := {
   resolvers.value.foreach { s => println("\t" + s) }
 
   println("\n combineDefaultResolvers:")
-  Resolver.combineDefaultResolvers(resolvers.value.toVector).foreach { s => println("\t" + s) }
+  Resolver.combineDefaultResolvers(resolvers.value.toVector).foreach { s =>
+    println("\t" + s)
+  }
 }
