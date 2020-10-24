@@ -1,6 +1,23 @@
 package subutai.jebe.time
 
-object TimeStepperTestMain extends App {
+object TestMain_01_TimeStepper extends App {
+  import org.joda.time.{ DateTime, Period }
+  import org.joda.time.format.{ DateTimeFormat, DateTimeFormatter, ISOPeriodFormat }
+
+  val unixStart = DateTime.parse("1970-01-01T00:00:00Z")
+  println("unixStart = " + unixStart + " | " + unixStart.getMillis)
+
+  val now = DateTime.now
+  println(f"now = ${now} | ${now.getMillis.toDouble / 1000d}%,f")
+  val billionSec = 1e9.toInt
+  println(f"now MOD billionSec = ${now.getMillis / 1000 % billionSec}%,d")
+
+  val period = s"PT${billionSec}S"
+  print(period + " = ")
+  val periodJt = ISOPeriodFormat.standard.parsePeriod(period)
+  print(periodJt.normalizedStandard + " = ")
+  println(periodJt.toDurationFrom(now).getStandardDays / 365 + " years")
+  println("\n================================\n")
 
 //  var i = 0
 //  while (i < 10) {
@@ -10,7 +27,7 @@ object TimeStepperTestMain extends App {
   val start = "2020_07_01_00"
   val end   = "2020_07_01_03"
   val ts    = TimeStepper(start, end)
-  println(ts.isStepping)
+  println("isStepping: " + ts.isStepping)
 
   while (ts.isStepping) println(ts.next)
 }
@@ -32,6 +49,7 @@ case class TimeStepper(
   private val stepJt: Period           = ISOPeriodFormat.standard.parsePeriod(step)
 
   private var jt          = startJt
+  def startUnix: Double   = jt.getMillis.toDouble / 1000d
   def isStepping: Boolean = jt.isBefore(endJt)
   def next: String = {
     val dt = fmtJt.print(jt)
