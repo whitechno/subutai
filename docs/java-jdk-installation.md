@@ -44,6 +44,9 @@ Installing the JDK
     
     JDK 8u261 1.8.0_261-b12 July 14, 2020
     jdk-8u261-macosx-x64.dmg
+    
+    JDK 8u271 1.8.0_271-b09 October 20, 2020
+    jdk-8u271-macosx-x64.dmg
 
 
 Uninstalling the JDK
@@ -72,7 +75,7 @@ Setting JAVA_HOME on macOS Mojave (10.14) to Lion (10.7)
     % vim ~/.bash_profile
 
     Add the following two lines (or edit version):
-        export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_261`
+        export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_271`
         PATH=$JAVA_HOME/bin:$PATH
     Make sure you also have this line at the end:
         export PATH
@@ -82,16 +85,16 @@ Setting JAVA_HOME on macOS Mojave (10.14) to Lion (10.7)
     Test the result of change:
 
     % echo $JAVA_HOME
-        /Library/Java/JavaVirtualMachines/jdk1.8.0_261.jdk/Contents/Home
+        /Library/Java/JavaVirtualMachines/jdk1.8.0_271.jdk/Contents/Home
 
     % echo $PATH
-        /Library/Java/JavaVirtualMachines/jdk1.8.0_261.jdk/Contents/Home/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+        /Library/Java/JavaVirtualMachines/jdk1.8.0_271.jdk/Contents/Home/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
     % which java
-        /Library/Java/JavaVirtualMachines/jdk1.8.0_261.jdk/Contents/Home/bin/java
+        /Library/Java/JavaVirtualMachines/jdk1.8.0_271.jdk/Contents/Home/bin/java
 
     % java -version
-        java version "1.8.0_261"
-        Java(TM) SE Runtime Environment (build 1.8.0_261-b12)
-        Java HotSpot(TM) 64-Bit Server VM (build 25.261-b12, mixed mode)
+        java version "1.8.0_271"
+        Java(TM) SE Runtime Environment (build 1.8.0_271-b09)
+        Java HotSpot(TM) 64-Bit Server VM (build 25.271-b09, mixed mode)
 

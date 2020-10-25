@@ -1,19 +1,19 @@
 package subutai.jebe.time
 
-object TestMain_01_TimeStepper extends App {
-  import org.joda.time.{ DateTime, Period }
-  import org.joda.time.format.{ DateTimeFormat, DateTimeFormatter, ISOPeriodFormat }
+import org.joda.time.{ DateTime, Period }
+import org.joda.time.format.{ DateTimeFormat, DateTimeFormatter, ISOPeriodFormat }
 
+object TestMain_01_TimeStepper extends App {
   val unixStart = DateTime.parse("1970-01-01T00:00:00Z")
   println("unixStart = " + unixStart + " | " + unixStart.getMillis)
 
   val now = DateTime.now
   println(f"now = ${now} | ${now.getMillis.toDouble / 1000d}%,f")
   val billionSec = 1e9.toInt
-  println(f"now MOD billionSec = ${now.getMillis / 1000 % billionSec}%,d")
+  println(f"now %% billionSec = ${now.getMillis / 1000 % billionSec}%,d")
 
   val period = s"PT${billionSec}S"
-  print(period + " = ")
+  print("billionSec = " + period + " = ")
   val periodJt = ISOPeriodFormat.standard.parsePeriod(period)
   print(periodJt.normalizedStandard + " = ")
   println(periodJt.toDurationFrom(now).getStandardDays / 365 + " years")
@@ -28,21 +28,16 @@ object TestMain_01_TimeStepper extends App {
   val end   = "2020_07_01_03"
   val ts    = TimeStepper(start, end)
   println("isStepping: " + ts.isStepping)
-
   while (ts.isStepping) println(ts.next)
 }
 
 // ISO8601: P[n]Y[n]M[n]DT[n]H[n]M[n]S or P1W, P1D, PT1H, PT1M
-// EXCLUSIVE: until
 case class TimeStepper(
     start: String,
     end: String,
     step: String = "PT1H",
     fmt: String  = "yyyy_MM_dd_HH"
 ) {
-  import org.joda.time.{ DateTime, Period }
-  import org.joda.time.format.{ DateTimeFormat, DateTimeFormatter, ISOPeriodFormat }
-
   private val fmtJt: DateTimeFormatter = DateTimeFormat.forPattern(fmt).withZoneUTC()
   private val startJt: DateTime        = DateTime.parse(start, fmtJt)
   private val endJt: DateTime          = DateTime.parse(end, fmtJt)
@@ -50,11 +45,10 @@ case class TimeStepper(
 
   private var jt          = startJt
   def startUnix: Double   = jt.getMillis.toDouble / 1000d
-  def isStepping: Boolean = jt.isBefore(endJt)
+  def isStepping: Boolean = jt.isBefore(endJt) // strictly before by millisecond
   def next: String = {
     val dt = fmtJt.print(jt)
     jt = jt.plus(stepJt)
     dt
   }
-
 }

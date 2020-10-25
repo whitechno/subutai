@@ -43,6 +43,7 @@ Versions of key dependencies
   - 2.10.7  - Nov  9, 2017
 - SBT  
   https://github.com/sbt/sbt/releases
+  - 1.4.1  - Oct 19, 2020
   - 1.4.0  - Oct 04, 2020
   - 1.3.13 - Jun 27, 2020
   - 1.3.12 - May 30, 2020
@@ -63,6 +64,8 @@ Versions of key dependencies
   - 3.1.0 - Nov 28, 2019
 - typesafe config
   https://github.com/lightbend/config/releases
+  https://github.com/lightbend/config/blob/master/NEWS.md
+  - 1.4.1 - Oct 22, 2020
   - 1.4.0 - Oct 14, 2019
   - 1.3.4 - Apr 18, 2019
   - 1.3.0 - May  8, 2015
@@ -71,6 +74,7 @@ Versions of key dependencies
 - Scalafmt  
   https://github.com/scalameta/scalafmt  
   https://github.com/scalameta/scalafmt/releases
+  - 2.7.5 - Oct 16, 2020
   - 2.7.4 - Oct 06, 2020
   - 2.7.3 - Sep 29, 2020
   - 2.7.2 - Sep 18, 2020
@@ -112,7 +116,9 @@ Versions of common dependencies
 
 - Joda-Time  
   https://github.com/JodaOrg/joda-time  
-  https://github.com/JodaOrg/joda-time/releases  
+  https://github.com/JodaOrg/joda-time/releases
+  - 2.10.8 - Oct 23, 2020
+  - 2.10.7 - Oct 21, 2020
   - 2.10.6 - Apr 24, 2020
   - 2.10.5 - Oct 24, 2019
   - 2.10.4 - Sep 20, 2019
@@ -122,6 +128,7 @@ Versions of common dependencies
   - 3.6.9  - Jun 15, 2020
   - 3.6.8  - May  5, 2020
   - 3.6.7  - Jun 26, 2020
+
 
 Important techniques
 --------------------
