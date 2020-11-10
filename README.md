@@ -43,6 +43,7 @@ Versions of key dependencies
   - 2.10.7  - Nov  9, 2017
 - SBT  
   https://github.com/sbt/sbt/releases
+  - 1.4.2  - Nov 01, 2020
   - 1.4.1  - Oct 19, 2020
   - 1.4.0  - Oct 04, 2020
   - 1.3.13 - Jun 27, 2020
@@ -55,6 +56,7 @@ Versions of key dependencies
 - ScalaTest  
   https://www.scalatest.org  
   https://github.com/scalatest/scalatest/releases
+  - 3.2.3 - Nov 09, 2020
   - 3.2.2 - Sep 04, 2020
   - 3.2.1 - Aug 11, 2020
   - 3.2.0 - Jun 20, 2020
