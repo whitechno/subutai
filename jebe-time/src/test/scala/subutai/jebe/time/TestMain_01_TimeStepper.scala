@@ -5,18 +5,21 @@ import org.joda.time.format.{ DateTimeFormat, DateTimeFormatter, ISOPeriodFormat
 
 object TestMain_01_TimeStepper extends App {
   val unixStart = DateTime.parse("1970-01-01T00:00:00Z")
-  println("unixStart = " + unixStart + " | " + unixStart.getMillis)
+  println(
+    s"|1> unixStart = ${unixStart} | unixStart.getMillis = ${unixStart.getMillis}"
+  )
 
   val now = DateTime.now
-  println(f"now = ${now} | ${now.getMillis.toDouble / 1000d}%,f")
+  println(f"|2> now = ${now} = ${now.getMillis.toDouble / 1000d}%,f")
   val billionSec = 1e9.toInt
-  println(f"now %% billionSec = ${now.getMillis / 1000 % billionSec}%,d")
+  println(f"|3> now %% billionSec = ${now.getMillis / 1000 % billionSec}%,d")
 
   val period = s"PT${billionSec}S"
-  print("billionSec = " + period + " = ")
+  print(s"|4> billionSec = ${period}")
   val periodJt = ISOPeriodFormat.standard.parsePeriod(period)
-  print(periodJt.normalizedStandard + " = ")
-  println(periodJt.toDurationFrom(now).getStandardDays / 365 + " years")
+  print(s" = ${periodJt.normalizedStandard}")
+  println(s" ~= ${periodJt.toDurationFrom(now).getStandardDays / 365} years")
+
   println("\n================================\n")
 
 //  var i = 0

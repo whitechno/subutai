@@ -13,7 +13,7 @@ ThisBuild / resolvers += Resolver.sbtPluginRepo("releases")
 // *** root project
 lazy val subutai = (project in file("."))
 // Set aggregate so that the command sent to hello is broadcast to helloCore too
-  .aggregate(helloCore, `scala-versions`)
+  .aggregate(helloCore, hocon, `jebe-time`, json4s, `scala-versions`)
   .dependsOn(helloCore)
   .enablePlugins(JavaAppPackaging) // sbt-native-packager
   .settings(
@@ -33,7 +33,6 @@ lazy val subutai = (project in file("."))
         .mkString("\n\t\t")
       println("baseDirectoryTask:\n\t" + baseDir + "\n\t\t" + projectDirs)
     },
-//    commonSettings,
     scalacOptions := { // silly experiments with SBT Tasks
       val out = streams.value // streams task happens-before scalacOptions
       val log = out.log
@@ -42,6 +41,7 @@ lazy val subutai = (project in file("."))
       log.info("456")
       ur.allConfigurations.take(3).map(_.toString)
     },
+    commonSettings,
     libraryDependencies ++= Seq(
       library.scalatest % Test
     )
@@ -62,19 +62,21 @@ lazy val helloCore = (project in file("core"))
 // *** hocon project
 lazy val hocon = project
   .settings(
-    scalaVersion := library.versions.scala212,
+    scalaVersion       := library.versions.scala212,
+    crossScalaVersions := library.supportedScalaVersions,
     commonSettings,
     libraryDependencies ++= Seq(
       library.typesafeConfig % "provided"
     ),
-    assemblyOption in assembly := (assemblyOption in assembly).value
-      .copy(includeScala = false)
+    assemblyOption in assembly :=
+      (assemblyOption in assembly).value.copy(includeScala = false)
   )
 
 // *** joda-time based project
 lazy val `jebe-time` = project
   .settings(
-    scalaVersion := library.versions.scala212,
+    scalaVersion       := library.versions.scala212,
+    crossScalaVersions := library.supportedScalaVersions,
     commonSettings,
     libraryDependencies ++= Seq(
       library.jodatime  % "provided",
@@ -87,7 +89,8 @@ lazy val `jebe-time` = project
 // json4s-jackson project
 lazy val json4s = project
   .settings(
-    scalaVersion := library.versions.scala212,
+    scalaVersion       := library.versions.scala212,
+    crossScalaVersions := library.supportedScalaVersions,
     commonSettings,
     libraryDependencies ++= Seq(
       library.json4sJackson % "provided"
@@ -125,7 +128,7 @@ lazy val library = new {
     val scala210       = "2.10.7"
     val scala211       = "2.11.12"
     val scala212       = "2.12.12"
-    val scala213       = "2.13.3"
+    val scala213       = "2.13.4"
     val scalatest      = "3.2.3"
     val typesafeConfig = "1.4.1"
     val jodatime       = "2.10.8"

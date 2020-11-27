@@ -33,6 +33,7 @@ Versions of key dependencies
 
 - Scala  
   https://github.com/scala/scala/releases
+  - 2.13.4  - Nov 19, 2020
   - 2.13.3  - Jun 25, 2020
   - 2.13.2  - Apr 22, 2020
   - 2.13.1  - Sep 18, 2019

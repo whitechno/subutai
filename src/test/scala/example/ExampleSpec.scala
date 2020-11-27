@@ -2,7 +2,6 @@ package example
 
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
-
 import scala.collection.mutable
 
 class ExampleSpec extends AnyFlatSpec with Matchers {
