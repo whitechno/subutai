@@ -13,7 +13,7 @@ ThisBuild / resolvers += Resolver.sbtPluginRepo("releases")
 // *** root project
 lazy val subutai = (project in file("."))
 // Set aggregate so that the command sent to hello is broadcast to helloCore too
-  .aggregate(helloCore, hocon, `jebe-time`, json4s, `scala-versions`)
+  .aggregate(helloCore, hocon, `jebe-time`, json4s, `scala-check`, `scala-versions`)
   .dependsOn(helloCore)
   .enablePlugins(JavaAppPackaging) // sbt-native-packager
   .settings(
@@ -99,7 +99,18 @@ lazy val json4s = project
       .copy(includeScala = false)
   )
 
-// *** scalaVersions project
+// *** scala-check project
+lazy val `scala-check` = project
+  .settings(
+    scalaVersion       := library.versions.scala213,
+    crossScalaVersions := library.supportedScalaVersions,
+    commonSettings,
+    libraryDependencies ++= Seq(
+      library.scalacheck % Test
+    )
+  )
+
+// *** scala-versions project
 lazy val `scala-versions` = project
   .settings(
     baseDirectoryTask := {
@@ -130,6 +141,7 @@ lazy val library = new {
     val scala212       = "2.12.12"
     val scala213       = "2.13.4"
     val scalatest      = "3.2.3"
+    val scalacheck     = "1.15.1"
     val typesafeConfig = "1.4.1"
     val jodatime       = "2.10.8"
     val json4s         = "3.6.10"
@@ -141,6 +153,7 @@ lazy val library = new {
     List(versions.scala211, versions.scala212, versions.scala213)
 
   val scalatest      = "org.scalatest"     %% "scalatest"        % versions.scalatest
+  val scalacheck     = "org.scalacheck"    %% "scalacheck"       % versions.scalacheck
   val typesafeConfig = "com.typesafe"       % "config"           % versions.typesafeConfig
   val jodatime       = "joda-time"          % "joda-time"        % versions.jodatime
   val json4sCore     = "org.json4s"        %% "json4s-core"      % versions.json4s

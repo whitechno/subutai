@@ -67,6 +67,14 @@ Versions of key dependencies
   - 3.1.2 - May 13, 2020
   - 3.1.1 - Feb 20, 2020
   - 3.1.0 - Nov 28, 2019
+- ScalaCheck  
+  https://github.com/typelevel/scalacheck/releases
+  - 1.15.1 - Nov 05, 2020
+  - 1.15.0 - Oct 31, 2020
+  - 1.14.3 - Dec 14, 2019
+  - 1.14.2 - Sep 25, 2019
+  - 1.14.1 - Sep 17, 2019
+  - 1.14.0 - Apr 22, 2018
 - typesafe config
   https://github.com/lightbend/config/releases
   https://github.com/lightbend/config/blob/master/NEWS.md
