@@ -13,7 +13,15 @@ ThisBuild / resolvers += Resolver.sbtPluginRepo("releases")
 // *** root project
 lazy val subutai = (project in file("."))
 // Set aggregate so that the command sent to hello is broadcast to helloCore too
-  .aggregate(helloCore, hocon, `jebe-time`, json4s, `scala-check`, `scala-versions`)
+  .aggregate(
+    helloCore,
+    hocon,
+    `jebe-time`,
+    json4s,
+    `scala-check`,
+    `scala-versions`,
+    trie
+  )
   .dependsOn(helloCore)
   .enablePlugins(JavaAppPackaging) // sbt-native-packager
   .settings(
@@ -125,7 +133,8 @@ lazy val `scala-versions` = project
 // *** trie project
 lazy val trie = project
   .settings(
-    scalaVersion := library.versions.scala212,
+    scalaVersion       := library.versions.scala213,
+    crossScalaVersions := library.supportedScalaVersions,
     commonSettings
   )
 
