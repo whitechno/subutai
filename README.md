@@ -44,6 +44,7 @@ Versions of key dependencies
   - 2.10.7  - Nov  9, 2017
 - SBT  
   https://github.com/sbt/sbt/releases
+  - 1.4.5  - Dec 13, 2020
   - 1.4.4  - Nov 22, 2020
   - 1.4.3  - Nov 15, 2020
   - 1.4.2  - Nov 01, 2020
@@ -69,7 +70,7 @@ Versions of key dependencies
   - 3.1.0 - Nov 28, 2019
 - ScalaCheck  
   https://github.com/typelevel/scalacheck/releases
-  - 1.15.1 - Nov 05, 2020
+  - 1.15.1 - Nov 06, 2020
   - 1.15.0 - Oct 31, 2020
   - 1.14.3 - Dec 14, 2019
   - 1.14.2 - Sep 25, 2019
@@ -85,7 +86,6 @@ Versions of key dependencies
   - 1.2.1 - May  2, 2014
   - 1.2.0 - Jan 15, 2014
 - Scalafmt  
-  https://github.com/scalameta/scalafmt  
   https://github.com/scalameta/scalafmt/releases
   - 2.7.5 - Oct 16, 2020
   - 2.7.4 - Oct 06, 2020
@@ -107,7 +107,6 @@ Versions of key dependencies
   - 2.5.0-RC1 - Apr 15, 2020
   - 2.4.2 - Feb 22, 2020
 - sbt-scalafmt (Scalafmt sbt plugin)  
-  https://github.com/scalameta/sbt-scalafmt  
   https://github.com/scalameta/sbt-scalafmt/releases  
   - 2.4.2 - Aug 01, 2020 
   - 2.4.0 - May 14, 2020
@@ -117,7 +116,6 @@ Versions of key dependencies
   - 2.3.1 - Jan 27, 2020
   - 2.3.0 - Dec  9, 2019
 - sbt-assembly  
-  https://github.com/sbt/sbt-assembly  
   https://github.com/sbt/sbt-assembly/releases
   - 0.15.0  - Jun 22, 2020
   - 0.14.10 - Jul 11, 2019
@@ -128,7 +126,6 @@ Versions of common dependencies
 -------------------------------
 
 - Joda-Time  
-  https://github.com/JodaOrg/joda-time  
   https://github.com/JodaOrg/joda-time/releases
   - 2.10.8 - Oct 23, 2020
   - 2.10.7 - Oct 21, 2020
