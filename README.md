@@ -44,6 +44,7 @@ Versions of key dependencies
   - 2.10.7  - Nov  9, 2017
 - SBT  
   https://github.com/sbt/sbt/releases
+  - 1.4.6  - Dec 24, 2020
   - 1.4.5  - Dec 13, 2020
   - 1.4.4  - Nov 22, 2020
   - 1.4.3  - Nov 15, 2020
@@ -70,6 +71,7 @@ Versions of key dependencies
   - 3.1.0 - Nov 28, 2019
 - ScalaCheck  
   https://github.com/typelevel/scalacheck/releases
+  - 1.15.2 - Dec 20, 2020
   - 1.15.1 - Nov 06, 2020
   - 1.15.0 - Oct 31, 2020
   - 1.14.3 - Dec 14, 2019

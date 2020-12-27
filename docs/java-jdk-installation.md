@@ -1,7 +1,9 @@
 This is a brief installation guide for Java SDK on Mac OS
 =========================================================
 
-See https://docs.oracle.com/javase/8/docs/technotes/guides/install/mac_jdk.html for more details.
+See 
+https://docs.oracle.com/javase/8/docs/technotes/guides/install/mac_jdk.html 
+for more details.
 
 
 Determining the Default Version of the JDK
@@ -17,7 +19,8 @@ Determining the Default Version of the JDK
         Java(TM) SE Runtime Environment (build 1.8.0_06-ea-b13)
         Java HotSpot(TM) 64-Bit Server VM (build 23.2-b04, mixed mode)
 
-    To run a different version of Java, either specify the full path, or use the java_home tool:
+    To run a different version of Java, either specify the full path, 
+    or use the java_home tool:
 
     % /usr/libexec/java_home -v 1.8.0_231 --exec java -version
         java version "1.8.0_231"
@@ -52,8 +55,8 @@ Installing the JDK
 Uninstalling the JDK
 --------------------
 
-    To uninstall the JDK, you must have Administrator privileges and execute the remove command
-    either as root or by using the sudo(8) tool.
+    To uninstall the JDK, you must have Administrator privileges and 
+    execute the remove command either as root or by using the sudo(8) tool.
 
     Navigate to
     /Library/Java/JavaVirtualMachines
@@ -88,7 +91,8 @@ Setting JAVA_HOME on macOS Mojave (10.14) to Lion (10.7)
         /Library/Java/JavaVirtualMachines/jdk1.8.0_271.jdk/Contents/Home
 
     % echo $PATH
-        /Library/Java/JavaVirtualMachines/jdk1.8.0_271.jdk/Contents/Home/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+        /Library/Java/JavaVirtualMachines/jdk1.8.0_271.jdk/Contents/Home/bin:
+        /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
     % which java
         /Library/Java/JavaVirtualMachines/jdk1.8.0_271.jdk/Contents/Home/bin/java
