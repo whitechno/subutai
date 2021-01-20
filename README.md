@@ -37,6 +37,7 @@ Versions of key dependencies
   - 2.13.3  - Jun 25, 2020
   - 2.13.2  - Apr 22, 2020
   - 2.13.1  - Sep 18, 2019
+  - 2.12.13 - Jan 12, 2021
   - 2.12.12 - Jul 12, 2020
   - 2.12.11 - Mar 16, 2020
   - 2.12.10 - Sep 10, 2019
@@ -129,6 +130,7 @@ Versions of common dependencies
 
 - Joda-Time  
   https://github.com/JodaOrg/joda-time/releases
+  - 2.10.9 - Dec 29, 2020
   - 2.10.8 - Oct 23, 2020
   - 2.10.7 - Oct 21, 2020
   - 2.10.6 - Apr 24, 2020
