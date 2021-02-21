@@ -45,6 +45,7 @@ Versions of key dependencies
   - 2.10.7  - Nov  9, 2017
 - SBT  
   https://github.com/sbt/sbt/releases
+  - 1.4.7  - Jan 30, 2021
   - 1.4.6  - Dec 24, 2020
   - 1.4.5  - Dec 13, 2020
   - 1.4.4  - Nov 22, 2020
@@ -62,6 +63,7 @@ Versions of key dependencies
 - ScalaTest  
   https://www.scalatest.org  
   https://github.com/scalatest/scalatest/releases
+  - 3.2.4 - Feb 18, 2021
   - 3.2.3 - Nov 09, 2020
   - 3.2.2 - Sep 04, 2020
   - 3.2.1 - Aug 11, 2020
@@ -72,6 +74,7 @@ Versions of key dependencies
   - 3.1.0 - Nov 28, 2019
 - ScalaCheck  
   https://github.com/typelevel/scalacheck/releases
+  - 1.15.3 - Feb 16, 2021
   - 1.15.2 - Dec 20, 2020
   - 1.15.1 - Nov 06, 2020
   - 1.15.0 - Oct 31, 2020
@@ -130,12 +133,13 @@ Versions of common dependencies
 
 - Joda-Time  
   https://github.com/JodaOrg/joda-time/releases
-  - 2.10.9 - Dec 29, 2020
-  - 2.10.8 - Oct 23, 2020
-  - 2.10.7 - Oct 21, 2020
-  - 2.10.6 - Apr 24, 2020
-  - 2.10.5 - Oct 24, 2019
-  - 2.10.4 - Sep 20, 2019
+  - 2.10.10 - Feb 05, 2021
+  - 2.10.9  - Dec 29, 2020
+  - 2.10.8  - Oct 23, 2020
+  - 2.10.7  - Oct 21, 2020
+  - 2.10.6  - Apr 24, 2020
+  - 2.10.5  - Oct 24, 2019
+  - 2.10.4  - Sep 20, 2019
 - json4s  
   https://github.com/json4s/json4s/releases
   - 3.6.10 - Sep 28, 2020
