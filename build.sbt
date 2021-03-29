@@ -153,7 +153,7 @@ lazy val library = new {
     val scalacheck     = "1.15.2"
     val typesafeConfig = "1.4.1"
     val jodatime       = "2.10.10"
-    val json4s         = "3.6.10"
+    val json4s         = "3.6.11"
     val gigahorse      = "0.5.0" // as seen on Mar 27, 2020
     val play           = "2.8.1" // as seen on Mar 27, 2020
   }

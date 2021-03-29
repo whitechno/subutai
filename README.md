@@ -82,8 +82,8 @@ Versions of key dependencies
   - 3.1.0 - Nov 28, 2019
 - ScalaCheck  
   https://github.com/typelevel/scalacheck/releases
-  - 1.15.3 - Mar 29, 2021
-  - 1.15.2 - Dec 20, 2020
+  - 1.15.3 - Mar 29, 2021 (drops Scala 2.11 on Jan 22, 2021)
+  - 1.15.2 - Dec 20, 2020 Last version still available for Scala 2.11
   - 1.15.1 - Nov 06, 2020
   - 1.15.0 - Oct 31, 2020
   - 1.14.3 - Dec 14, 2019
@@ -150,6 +150,7 @@ Versions of common dependencies
   - 2.10.4  - Sep 20, 2019
 - json4s  
   https://github.com/json4s/json4s/releases
+  - 3.6.11 - Mar 01, 2021
   - 3.6.10 - Sep 28, 2020
   - 3.6.9  - Jun 15, 2020
   - 3.6.8  - May  5, 2020
