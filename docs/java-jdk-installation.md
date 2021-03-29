@@ -1,8 +1,8 @@
 This is a brief installation guide for Java SDK on Mac OS
 =========================================================
 
-See 
-https://docs.oracle.com/javase/8/docs/technotes/guides/install/mac_jdk.html 
+See
+https://docs.oracle.com/javase/8/docs/technotes/guides/install/mac_jdk.html
 for more details.
 
 
@@ -29,7 +29,6 @@ Determining the Default Version of the JDK
 
     For more information, see the java_home(1) man page.
 
-
 Installing the JDK
 ------------------
 
@@ -50,7 +49,9 @@ Installing the JDK
     
     JDK 8u271 1.8.0_271-b09 October 20, 2020
     jdk-8u271-macosx-x64.dmg
-
+    
+    JDK 8u281 1.8.0_281-b09 January 19, 2021
+    jdk-8u281-macosx-x64.dmg
 
 Uninstalling the JDK
 --------------------
@@ -71,14 +72,13 @@ Uninstalling the JDK
     This directory is part of the system software and any changes will be reset
     by Apple the next time you perform an update of the OS.
 
-
 Setting JAVA_HOME on macOS Mojave (10.14) to Lion (10.7)
 --------------------------------------------------------
 
     % vim ~/.bash_profile
 
     Add the following two lines (or edit version):
-        export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_271`
+        export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_281`
         PATH=$JAVA_HOME/bin:$PATH
     Make sure you also have this line at the end:
         export PATH
@@ -88,17 +88,17 @@ Setting JAVA_HOME on macOS Mojave (10.14) to Lion (10.7)
     Test the result of change:
 
     % echo $JAVA_HOME
-        /Library/Java/JavaVirtualMachines/jdk1.8.0_271.jdk/Contents/Home
+        /Library/Java/JavaVirtualMachines/jdk1.8.0_281.jdk/Contents/Home
 
     % echo $PATH
-        /Library/Java/JavaVirtualMachines/jdk1.8.0_271.jdk/Contents/Home/bin:
+        /Library/Java/JavaVirtualMachines/jdk1.8.0_281.jdk/Contents/Home/bin:
         /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
     % which java
-        /Library/Java/JavaVirtualMachines/jdk1.8.0_271.jdk/Contents/Home/bin/java
+        /Library/Java/JavaVirtualMachines/jdk1.8.0_281.jdk/Contents/Home/bin/java
 
     % java -version
-        java version "1.8.0_271"
-        Java(TM) SE Runtime Environment (build 1.8.0_271-b09)
-        Java HotSpot(TM) 64-Bit Server VM (build 25.271-b09, mixed mode)
+        java version "1.8.0_281"
+        Java(TM) SE Runtime Environment (build 1.8.0_281-b09)
+        Java HotSpot(TM) 64-Bit Server VM (build 25.281-b09, mixed mode)
 
