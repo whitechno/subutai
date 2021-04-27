@@ -4,10 +4,10 @@ Experiments with SBT.
 
 Simplest SBT project setup (with new github repo)
 -------------------------------------------------
+
 1. Create repository (like `subutai`)
 2. In it `touch build.sbt`
-3. Set scala version(s) in build.sbt
-   Add this line to build.sbt:  
+3. Set scala version(s) in build.sbt Add this line to build.sbt:  
    `ThisBuild / scalaVersion := "2.13.2"`
 3. Create `project/build.properties` with the following content:  
    `sbt.version = 1.3.12`.  
@@ -22,9 +22,8 @@ Now you have a minimal setup to start using Scala with SBT.
 
 You can also switch scalaVersion temporarily:  
 `sbt:Hello>  ++2.12.11! -v`  
-`!` is to force version switch (without it, 
-the switch happens only in projects where this particular version is included 
-in `crossScalaVersions` of project `settings`)  
+`!` is to force version switch (without it, the switch happens only in projects where
+this particular version is included in `crossScalaVersions` of project `settings`)  
 `-v` is for verbose
 
 
@@ -33,133 +32,132 @@ Versions of key dependencies
 
 - Scala  
   https://github.com/scala/scala/releases
-  - 2.13
-    - 2.13.5  - Feb 22, 2021
-    - 2.13.4  - Nov 19, 2020
-    - 2.13.3  - Jun 25, 2020
-    - 2.13.2  - Apr 22, 2020
-    - 2.13.1  - Sep 18, 2019
-  - 2.12
-    - 2.12.13 - Jan 12, 2021
-    - 2.12.12 - Jul 12, 2020
-    - 2.12.11 - Mar 16, 2020
-    - 2.12.10 - Sep 10, 2019
-  - 2.11 & 2.10
-    - 2.11.12 - Nov  9, 2017
-    - 2.10.7  - Nov  9, 2017
+    - 2.13
+        - 2.13.5 - Feb 22, 2021
+        - 2.13.4 - Nov 19, 2020
+        - 2.13.3 - Jun 25, 2020
+        - 2.13.2 - Apr 22, 2020
+        - 2.13.1 - Sep 18, 2019
+    - 2.12
+        - 2.12.13 - Jan 12, 2021
+        - 2.12.12 - Jul 12, 2020
+        - 2.12.11 - Mar 16, 2020
+        - 2.12.10 - Sep 10, 2019
+    - 2.11 & 2.10
+        - 2.11.12 - Nov 9, 2017
+        - 2.10.7 - Nov 9, 2017
 - SBT  
   https://github.com/sbt/sbt/releases
-  - 1.5.1  - Apr 25, 2021
-  - 1.5.0  - Apr 04, 2021
-  - 1.4.9  - Mar 09, 2021 ***
-  - 1.4.8  - Mar 07, 2021
-  - 1.4.7  - Jan 30, 2021
-  - 1.4.6  - Dec 24, 2020
-  - 1.4.5  - Dec 13, 2020
-  - 1.4.4  - Nov 22, 2020
-  - 1.4.3  - Nov 15, 2020
-  - 1.4.2  - Nov 01, 2020
-  - 1.4.1  - Oct 19, 2020
-  - 1.4.0  - Oct 04, 2020
-  - 1.3.13 - Jun 27, 2020
-  - 1.3.12 - May 30, 2020
-  - 1.3.11 - May 29, 2020  
-    There was a regression in sbt 1.3.11. Please use sbt 1.3.12 instead.
-  - 1.3.10 - Apr 14, 2020
-  - 1.3.9  - Mar 31, 2020
-  - 1.3.8  - Feb  3, 2020
+    - 1.5.1 - Apr 25, 2021
+    - 1.5.0 - Apr 04, 2021
+    - 1.4.9 - Mar 09, 2021 ***
+    - 1.4.8 - Mar 07, 2021
+    - 1.4.7 - Jan 30, 2021
+    - 1.4.6 - Dec 24, 2020
+    - 1.4.5 - Dec 13, 2020
+    - 1.4.4 - Nov 22, 2020
+    - 1.4.3 - Nov 15, 2020
+    - 1.4.2 - Nov 01, 2020
+    - 1.4.1 - Oct 19, 2020
+    - 1.4.0 - Oct 04, 2020
+    - 1.3.13 - Jun 27, 2020
+    - 1.3.12 - May 30, 2020
+    - 1.3.11 - May 29, 2020  
+      There was a regression in sbt 1.3.11. Please use sbt 1.3.12 instead.
+    - 1.3.10 - Apr 14, 2020
+    - 1.3.9 - Mar 31, 2020
+    - 1.3.8 - Feb 3, 2020
 - ScalaTest  
   https://www.scalatest.org  
   https://github.com/scalatest/scalatest/releases
-  - 3.2.8 - Apr 21, 2021
-  - 3.2.7 - Apr 02, 2021
-  - 3.2.6 - Mar 08, 2021
-  - 3.2.5 - Feb 23, 2021
-  - 3.2.4 - Feb 18, 2021
-  - 3.2.3 - Nov 09, 2020
-  - 3.2.2 - Sep 04, 2020
-  - 3.2.1 - Aug 11, 2020
-  - 3.2.0 - Jun 20, 2020
-  - 3.1.4 - Sep 04, 2020
-  - 3.1.2 - May 13, 2020
-  - 3.1.1 - Feb 20, 2020
-  - 3.1.0 - Nov 28, 2019
+    - 3.2.8 - Apr 21, 2021
+    - 3.2.7 - Apr 02, 2021
+    - 3.2.6 - Mar 08, 2021
+    - 3.2.5 - Feb 23, 2021
+    - 3.2.4 - Feb 18, 2021
+    - 3.2.3 - Nov 09, 2020
+    - 3.2.2 - Sep 04, 2020
+    - 3.2.1 - Aug 11, 2020
+    - 3.2.0 - Jun 20, 2020
+    - 3.1.4 - Sep 04, 2020
+    - 3.1.2 - May 13, 2020
+    - 3.1.1 - Feb 20, 2020
+    - 3.1.0 - Nov 28, 2019
 - ScalaCheck  
   https://github.com/typelevel/scalacheck/releases
-  - 1.15.3 - Mar 29, 2021 (drops Scala 2.11 on Jan 22, 2021)
-  - 1.15.2 - Dec 20, 2020 Last version still available for Scala 2.11
-  - 1.15.1 - Nov 06, 2020
-  - 1.15.0 - Oct 31, 2020
-  - 1.14.3 - Dec 14, 2019
-  - 1.14.2 - Sep 25, 2019
-  - 1.14.1 - Sep 17, 2019
-  - 1.14.0 - Apr 22, 2018
+    - 1.15.3 - Mar 29, 2021 (drops Scala 2.11 on Jan 22, 2021)
+    - 1.15.2 - Dec 20, 2020 Last version still available for Scala 2.11
+    - 1.15.1 - Nov 06, 2020
+    - 1.15.0 - Oct 31, 2020
+    - 1.14.3 - Dec 14, 2019
+    - 1.14.2 - Sep 25, 2019
+    - 1.14.1 - Sep 17, 2019
+    - 1.14.0 - Apr 22, 2018
 - typesafe config
   https://github.com/lightbend/config/releases
   https://github.com/lightbend/config/blob/master/NEWS.md
-  - 1.4.1 - Oct 22, 2020
-  - 1.4.0 - Oct 14, 2019
-  - 1.3.4 - Apr 18, 2019
-  - 1.3.0 - May  8, 2015
-  - 1.2.1 - May  2, 2014
-  - 1.2.0 - Jan 15, 2014
+    - 1.4.1 - Oct 22, 2020
+    - 1.4.0 - Oct 14, 2019
+    - 1.3.4 - Apr 18, 2019
+    - 1.3.0 - May 8, 2015
+    - 1.2.1 - May 2, 2014
+    - 1.2.0 - Jan 15, 2014
 - Scalafmt  
   https://github.com/scalameta/scalafmt/releases
-  - 2.7.5 - Oct 16, 2020
-  - 2.7.4 - Oct 06, 2020
-  - 2.7.3 - Sep 29, 2020
-  - 2.7.2 - Sep 18, 2020
-  - 2.7.1 - Sep 14, 2020
-  - 2.7.0 - Sep 08, 2020
-  - 2.6.4 - Jul 20, 2020
-  - 2.6.3 - Jul 14, 2020
-  - 2.6.2 - Jul  5, 2020
-  - 2.6.1 - Jun 19, 2020
-  - 2.6.0 - Jun 16, 2020
-  - 2.5.3 - May 25, 2020
-  - 2.5.2 - May  9, 2020
-  - 2.5.1 - May  3, 2020
-  - 2.5.0 - Apr 30, 2020
-  - 2.5.0-RC3 - Apr 28, 2020
-  - 2.5.0-RC2 - Apr 25, 2020
-  - 2.5.0-RC1 - Apr 15, 2020
-  - 2.4.2 - Feb 22, 2020
+    - 3.0.0-RC1 - Apr 15, 2021
+    - 2.7.5 - Oct 16, 2020
+    - 2.7.4 - Oct 06, 2020
+    - 2.7.3 - Sep 29, 2020
+    - 2.7.2 - Sep 18, 2020
+    - 2.7.1 - Sep 14, 2020
+    - 2.7.0 - Sep 08, 2020
+    - 2.6.4 - Jul 20, 2020
+    - 2.6.3 - Jul 14, 2020
+    - 2.6.2 - Jul 5, 2020
+    - 2.6.1 - Jun 19, 2020
+    - 2.6.0 - Jun 16, 2020
+    - 2.5.3 - May 25, 2020
+    - 2.5.2 - May 9, 2020
+    - 2.5.1 - May 3, 2020
+    - 2.5.0 - Apr 30, 2020
+    - 2.5.0-RC3 - Apr 28, 2020
+    - 2.5.0-RC2 - Apr 25, 2020
+    - 2.5.0-RC1 - Apr 15, 2020
+    - 2.4.2 - Feb 22, 2020
 - sbt-scalafmt (Scalafmt sbt plugin)  
-  https://github.com/scalameta/sbt-scalafmt/releases  
-  - 2.4.2 - Aug 01, 2020 
-  - 2.4.0 - May 14, 2020
-  - 2.3.4 - Apr 10, 2020
-  - 2.3.3 - Apr 10, 2020
-  - 2.3.2 - Mar  5, 2020
-  - 2.3.1 - Jan 27, 2020
-  - 2.3.0 - Dec  9, 2019
+  https://github.com/scalameta/sbt-scalafmt/releases
+    - 2.4.2 - Aug 01, 2020
+    - 2.4.0 - May 14, 2020
+    - 2.3.4 - Apr 10, 2020
+    - 2.3.3 - Apr 10, 2020
+    - 2.3.2 - Mar 5, 2020
+    - 2.3.1 - Jan 27, 2020
+    - 2.3.0 - Dec 9, 2019
 - sbt-assembly  
   https://github.com/sbt/sbt-assembly/releases
-  - 0.15.0  - Jun 22, 2020
-  - 0.14.10 - Jul 11, 2019
-  - 0.14.9  - Oct 28, 2018
-
+    - 0.15.0 - Jun 22, 2020
+    - 0.14.10 - Jul 11, 2019
+    - 0.14.9 - Oct 28, 2018
 
 Versions of common dependencies
 -------------------------------
 
 - Joda-Time  
   https://github.com/JodaOrg/joda-time/releases
-  - 2.10.10 - Feb 05, 2021
-  - 2.10.9  - Dec 29, 2020
-  - 2.10.8  - Oct 23, 2020
-  - 2.10.7  - Oct 21, 2020
-  - 2.10.6  - Apr 24, 2020
-  - 2.10.5  - Oct 24, 2019
-  - 2.10.4  - Sep 20, 2019
+    - 2.10.10 - Feb 05, 2021
+    - 2.10.9 - Dec 29, 2020
+    - 2.10.8 - Oct 23, 2020
+    - 2.10.7 - Oct 21, 2020
+    - 2.10.6 - Apr 24, 2020
+    - 2.10.5 - Oct 24, 2019
+    - 2.10.4 - Sep 20, 2019
 - json4s  
   https://github.com/json4s/json4s/releases
-  - 3.6.11 - Mar 01, 2021
-  - 3.6.10 - Sep 28, 2020
-  - 3.6.9  - Jun 15, 2020
-  - 3.6.8  - May  5, 2020
-  - 3.6.7  - Jun 26, 2020
-
+    - 3.6.11 - Mar 01, 2021
+    - 3.6.10 - Sep 28, 2020
+    - 3.6.9 - Jun 15, 2020
+    - 3.6.8 - May 5, 2020
+    - 3.6.7 - Jun 26, 2020
 
 Important techniques
 --------------------
@@ -169,7 +167,7 @@ Important techniques
 SBT:  
 `> sbt about`  
 `> sbt -v`  
-`> sbt sbtVersion`  
+`> sbt sbtVersion`
 
 Scala:  
 `> sbt scalaVersion`
@@ -178,20 +176,24 @@ To see which version of Java does SBT use:
 `> sbt "eval System.getProperty(\"java.version\")" "eval System.getProperty(\"java.home\")"`  
 or in sbt shell:  
 `sbt:subutai> eval System.getProperty("java.version")`   
-`sbt:subutai> eval System.getProperty("java.home")`  
+`sbt:subutai> eval System.getProperty("java.home")`
 
 ### scalafmt Task keys
 
- - `myproject/scalafmt`: Format main sources of myproject project
- - `myproject/test`:scalafmt: Format test sources of myproject project
- - `scalafmtCheck`: Check if the scala sources under the project has been formatted.
- - `scalafmtSbt`: Format *.sbt and project/*.scala files.
- - `scalafmtSbtCheck`: Check if the files has been formatted by scalafmtSbt.
- - `scalafmtOnly`: Format a single given file.
- - `scalafmtAll`: Execute the scalafmt task for all configurations in which it is enabled.  
-   (By default this means the Compile and Test configurations.) (available as of v2.0.0-RC5)
- - `scalafmtCheckAll`: Execute the scalafmtCheck task for all configurations in which it is enabled.  
-   (By default this means the Compile and Test configurations.) (available as of v2.0.0-RC5)
+- `myproject/scalafmt`: Format main sources of myproject project
+- `myproject/test`:scalafmt: Format test sources of myproject project
+- `scalafmtCheck`: Check if the scala sources under the project has been formatted.
+- `scalafmtSbt`: Format *.sbt and project/*.scala files.
+- `scalafmtSbtCheck`: Check if the files has been formatted by scalafmtSbt.
+- `scalafmtOnly`: Format a single given file.
+- `scalafmtAll`: Execute the scalafmt task for all configurations in which it is
+  enabled.  
+  (By default this means the Compile and Test configurations.) (available as of
+  v2.0.0-RC5)
+- `scalafmtCheckAll`: Execute the scalafmtCheck task for all configurations in which
+  it is enabled.  
+  (By default this means the Compile and Test configurations.) (available as of
+  v2.0.0-RC5)
 
 ### clean;compile;test;run
 
@@ -209,9 +211,10 @@ Run one particular test class (of "scalatest" kind):
 
 ### Package
 
-`sbt:hocon> package` to generate JAR in 
+`sbt:hocon> package` to generate JAR in
 `target/scala-2.12/hocon_2.12-0.1.0.jar`  
 You can list its contents with the usual jar tvf command:
+
 ```text
 $ jar tvf target/scala-2.12/hocon_2.12-0.1.0.jar
    271 Wed Apr 29 19:15:58 PDT 2020 META-INF/MANIFEST.MF
@@ -222,14 +225,14 @@ $ jar tvf target/scala-2.12/hocon_2.12-0.1.0.jar
    130 Wed Apr 29 19:15:58 PDT 2020 lightbend.conf
 ```
 
-To build against all versions listed in `crossScalaVersions`, 
-prefix the action to run with `+`. For example:  
+To build against all versions listed in `crossScalaVersions`, prefix the action to
+run with `+`. For example:  
 `> + package`
 
 Assembly
 --------
 
-- https://github.com/sbt/sbt-assembly 
+- https://github.com/sbt/sbt-assembly
 
 Add  
 `addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.10")`  
@@ -238,16 +241,17 @@ to `project/plugins.sbt`
 `sbt:hocon> assembly` to generate assembly JAR in  
 `target/scala-2.12/hocon-assembly-0.1.0.jar`  
 You can list its contents with the usual jar tvf command:
+
 ```text
 $ jar tvf target/scala-2.12/hocon-assembly-0.1.0.jar
 ```
 
 Add `test in assembly := {}` to project settings to skip the test during assembly.
 
-To exclude Scala library 
-(JARs that start with `scala-` and are included in the binary 
-Scala distribution) 
+To exclude Scala library
+(JARs that start with `scala-` and are included in the binary Scala distribution)
 to run with `scala` command:
+
 ```text
 assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false)
 ```
@@ -255,6 +259,7 @@ assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeSca
 To make a JAR file containing only the external dependencies, type  
 `> assemblyPackageDependency`  
 This is intended to be used with a JAR that only contains your project:
+
 ```text
 assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false, includeDependency = false)
 
@@ -270,94 +275,94 @@ https://coderwall.com/p/6gr84q/sbt-assembly-spark-and-you
 Publishing
 ----------
 
-The `publishLocal` task will publish to the “local” Ivy repository. 
-By default, this is at `$HOME/.ivy2/local/`. 
-Other builds on the same machine can then list the project as a dependency. 
+The `publishLocal` task will publish to the “local” Ivy repository. By default, this
+is at `$HOME/.ivy2/local/`. Other builds on the same machine can then list the
+project as a dependency.
 
-The `publish` action is used to publish your project to a remote repository. 
-To use publishing, you need to specify the repository to publish to and the credentials to use.
+The `publish` action is used to publish your project to a remote repository. To use
+publishing, you need to specify the repository to publish to and the credentials to
+use.
 
 - scala-sbt's [SBT Publishing](https://www.scala-sbt.org/1.x/docs/Publishing.html)
 
 ### Sonatype OSSRH (OSS Repository Hosting)
 
 - sonatype's [Producers Guide to Publishing to Central Maven Repository](
-https://central.sonatype.org/pages/producers.html
-)
+  https://central.sonatype.org/pages/producers.html
+  )
 
 - sonatype's [OSSRH Guide](https://central.sonatype.org/pages/ossrh-guide.html)
 
 - github's [Nexus Repository Publisher for GitHub Actions](
-https://github.com/marketplace/actions/nexus-repository-publisher-for-github-actions
-)
+  https://github.com/marketplace/actions/nexus-repository-publisher-for-github-actions
+  )
 
 - jenkov's [Publish JAR To Central Maven Repository with maven](
-http://tutorials.jenkov.com/maven/publish-to-central-maven-repository.html
-) Jan 25, 2020
+  http://tutorials.jenkov.com/maven/publish-to-central-maven-repository.html
+  ) Jan 25, 2020
 
 - Leonard Ehrenfried's [An in depth guide to deploying to Maven Central with sbt](
-https://leonard.io/blog/2017/01/an-in-depth-guide-to-deploying-to-maven-central/
-) Jan 15, 2017
+  https://leonard.io/blog/2017/01/an-in-depth-guide-to-deploying-to-maven-central/
+  ) Jan 15, 2017
 
 - dzone's [How to Publish Your Artifacts to Maven Central](
-https://dzone.com/articles/publish-your-artifacts-to-maven-central
-) Sep 20, 2016
+  https://dzone.com/articles/publish-your-artifacts-to-maven-central
+  ) Sep 20, 2016
 
 - lightbend/config [example of publishing to sonatype with sbt](
-https://github.com/lightbend/config/blob/master/build.sbt
-)
+  https://github.com/lightbend/config/blob/master/build.sbt
+  )
 
 - circe/circe-config [example of publishing to sonatype with sbt](
-https://github.com/circe/circe-config/blob/master/build.sbt
-)
+  https://github.com/circe/circe-config/blob/master/build.sbt
+  )
 
 Step-by-step
+
 - Created Sonatype JIRA account and filed JIRA issue to claim my namespace  
   https://issues.sonatype.org/browse/OSSRH-58349
 - Created a public repo called  
   https://github.com/whitechno/OSSRH-58349  
   to verify github account ownership.
 - com.github.whitechno has been prepared, now user(s) whitechno can:
-  - Deploy snapshot artifacts into repository  
-    https://oss.sonatype.org/content/repositories/snapshots
-  - Deploy release artifacts into the staging repository  
-    https://oss.sonatype.org/service/local/staging/deploy/maven2
-  - Release staged artifacts into repository 'Releases'  
-  Please comment on this ticket when you promoted your first release, thanks
-
+    - Deploy snapshot artifacts into repository  
+      https://oss.sonatype.org/content/repositories/snapshots
+    - Deploy release artifacts into the staging repository  
+      https://oss.sonatype.org/service/local/staging/deploy/maven2
+    - Release staged artifacts into repository 'Releases'  
+      Please comment on this ticket when you promoted your first release, thanks
 
 Cross-building
 --------------
 
 https://www.scala-sbt.org/release/docs/Cross-Build.html
 
-The underlying mechanism used to indicate which version of Scala a library 
-was compiled against is to append `_<scala-binary-version>` to the library’s name. 
-For example, the artifact name `dispatch-core_2.12` is used 
-when compiled against Scala 2.12.0, 2.12.1 or any 2.12.x version. 
-This fairly simple approach allows interoperability with users of 
-Maven, Ant and other build tools.
+The underlying mechanism used to indicate which version of Scala a library was
+compiled against is to append `_<scala-binary-version>` to the library’s name. For
+example, the artifact name `dispatch-core_2.12` is used when compiled against Scala
+2.12.0, 2.12.1 or any 2.12.x version. This fairly simple approach allows
+interoperability with users of Maven, Ant and other build tools.
 
-Define the versions of Scala to build against in the `crossScalaVersions` setting. 
+Define the versions of Scala to build against in the `crossScalaVersions` setting.
 Versions of Scala 2.10.2 or later are allowed.
 
-*Note:* `crossScalaVersions` must be set to Nil on the root project 
+*Note:* `crossScalaVersions` must be set to Nil on the root project
 (or all aggregating projects) to avoid double publishing.
 
-To build against all versions listed in `crossScalaVersions`, 
-prefix the action to run with `+`. For example:  
+To build against all versions listed in `crossScalaVersions`, prefix the action to
+run with `+`. For example:  
 `> + test`
 
-You can use `++ <version> [command]` to temporarily switch the Scala version 
-currently being used to build the subprojects given that `<version>` is listed 
-in their `crossScalaVersions`.
+You can use `++ <version> [command]` to temporarily switch the Scala version
+currently being used to build the subprojects given that `<version>` is listed in
+their `crossScalaVersions`.
 
-When a `[command]` is passed in to `++`, it will execute the command on the 
+When a `[command]` is passed in to `++`, it will execute the command on the
 subprojects that supports the given `<version>`.
 
-Sometimes you might want to force the Scala version switch regardless of the 
-`crossScalaVersions` values. 
-You can use `++ <version>!` with exclamation mark for that. For example:  
+Sometimes you might want to force the Scala version switch regardless of the
+`crossScalaVersions` values. You can use `++ <version>!` with exclamation mark for
+that. For example:  
 `> ++ 2.13.0-M5! -v`
 
 
@@ -373,30 +378,30 @@ See stackoverflow's [How to read files from resources folder in Scala?](
 https://stackoverflow.com/questions/27360977/how-to-read-files-from-resources-folder-in-scala
 )
 
-The idea is to use `getClass.getResourceAsStream` because it works fine 
-when the resources are part of a jar.
+The idea is to use `getClass.getResourceAsStream` because it works fine when the
+resources are part of a jar.
+
 ```scala
 val stream: java.io.InputStream = getClass.getResourceAsStream("/readme.txt")
-val lines: Iterator[String] = scala.io.Source.fromInputStream( stream ).getLines
+val lines: Iterator[String] = scala.io.Source.fromInputStream(stream).getLines
 
 ```
-
 
 Scala Worksheets in IntelliJ
 ----------------------------
 
 "Use compile server for Scala" tick box is in  
 `Preferences > Build, Execution, Deployment > Compiler > Scala Compiler > Scala Compile Server`  
-you can also get to this view from the speedometer-like icon 
-in the bottom right of IntelliJ, 
-which can be used to Stop/Run Scala Compile Server.
+you can also get to this view from the speedometer-like icon in the bottom right of
+IntelliJ, which can be used to Stop/Run Scala Compile Server.
 
 "Run worksheet in the compiler process" tick box is in  
 `Preferences > Languages & Frameworks > Scala > Worksheet (tab)`  
-A typical way to use this feature is to do development on a single Scala version 
+A typical way to use this feature is to do development on a single Scala version
 (no `+` prefix) and then cross-build (using `+`) occasionally and when releasing.
 
 #### Experiments
+
 All experiments below are with
 "Make project before run": On
 
@@ -435,6 +440,7 @@ Run type: Plain
 Result: always picks the change (feels a tiny bit slower)
 
 #### Final recommendations.
+
 For dev/test/debug cycle:  
 "Make project before run": On  
 Run type: Plain  
@@ -451,15 +457,14 @@ Run type: REPL
 Slow start because of "Getting the hostname ... was slow"
 ---------------------------------------------------------
 
-Sometimes the startup time for test and run might be pretty long and you might see 
+Sometimes the startup time for test and run might be pretty long and you might see
 the following command:  
-`[warn] Getting the hostname Olegs-MacBook-Pro was slow (18020.887197 ms). 
-This is likely because the computer's hostname is not set. 
-You can set the hostname with the command: scutil --set HostName $(scutil --get LocalHostName).`
+`[warn] Getting the hostname Olegs-MacBook-Pro was slow (18020.887197 ms). This is likely because the computer's hostname is not set. You can set the hostname with the command: scutil --set HostName $(scutil --get LocalHostName).`
 
 I found the following solution.
 
 I used to have:
+
 ```
 $ scutil --get HostName
 Olegs-MacBook-Pro
@@ -472,18 +477,20 @@ $ time python -c 'import socket; socket.getfqdn()'
 ```
 
 Then I changed:
+
 ```text
 $ sudo scutil --set HostName Olegs-MacBook-Pro.local
     real    0m0.047s
     user    0m0.030s
     sys     0m0.012s
 ```
+
 and then added into `/etc/hosts`
+
 ```text
 127.0.0.1   localhost Olegs-MacBook-Pro.local
 ::1         localhost Olegs-MacBook-Pro.local
 ```
-
 
 SBT by example
 --------------
@@ -496,6 +503,7 @@ In SBT shell:
 `sbt:Hello> clean;compile;test;run`
 
 ### Use Scala REPL
+
 ```
 sbt:Hello> console
 [info] Starting scala interpreter...
@@ -558,35 +566,46 @@ scala> :q // to quit
 ```
 
 ### Use sbt-native-packager to create .zip distribution
+
 In `project/plugins.sbt` add:  
 `addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.3.4")`  
 In `build.sbt` add:  
 `.enablePlugins(JavaAppPackaging)`
 In SBT shell:
+
 ```
 sbt:Hello> reload
 sbt:Hello> dist
 ```
+
 In terminal shell:
+
 ```
 > unzip -o -d /tmp/someother /tmp/foo-build/target/universal/hello-0.1.0-SNAPSHOT.zip
 > /tmp/someother/hello-0.1.0-SNAPSHOT/bin/hello
 ```
 
 ### run 'evicted'
+
 ```
 [warn] There may be incompatibilities among your library dependencies; 
 run 'evicted' to see detailed eviction warnings.
 ```
-With some plugins (like `sbt-native-packager`), sbt might show eviction warning on sbt shell start,
-however `> evicted` command shows nothing.
 
-Remember that [SBT is recursive](https://www.scala-sbt.org/1.x/docs/Organizing-Build.html#sbt+is+recursive) - 
-that means, SBT uses SBT to build the SBT used to build your project.
+With some plugins (like `sbt-native-packager`), sbt might show eviction warning on
+sbt shell start, however `> evicted` command shows nothing.
 
-The eviction warning you are seeing is not for your main project, but for the meta-project!
-You can check that by running the evicted command in the meta project using the `reload plugins` command.
-To return to the main project execute the `reload return` command
+Remember
+that [SBT is recursive](https://www.scala-sbt.org/1.x/docs/Organizing-Build.html#sbt+is+recursive)
+
+- that means, SBT uses SBT to build the SBT used to build your project.
+
+The eviction warning you are seeing is not for your main project, but for the
+meta-project!
+You can check that by running the evicted command in the meta project using
+the `reload plugins` command. To return to the main project execute
+the `reload return` command
+
 ```
 $ sbt
 [warn] There may be incompatibilities among your library dependencies; 
@@ -613,18 +632,19 @@ sbt:Hello> evicted
 ```
 
 ### Is it wise to fix eviction warnings of library dependencies?
-Is it a good idea to fix SBT eviction warning messages using `dependencyOverrides` in build.sbt 
-as per [SBT Documentation Eviction warning](
+
+Is it a good idea to fix SBT eviction warning messages using `dependencyOverrides` in
+build.sbt as per [SBT Documentation Eviction warning](
 https://www.scala-sbt.org/1.x/docs/Library-Management.html#Eviction+warning
 )?
 
-If these warnings are for dependencies you use directly in your code, 
-you should definitely add the upgraded version to your libraryDependencies.
+If these warnings are for dependencies you use directly in your code, you should
+definitely add the upgraded version to your libraryDependencies.
 
-For evicted transitive dependencies (those dependencies only used directly by your own dependencies), 
-it's likely best to simply leave the warnings in place. This provides documentation to you about 
-possible incompatibilities in your dependencies, and could help you debug runtime problems that 
-arise due to such incompatibilities.
+For evicted transitive dependencies (those dependencies only used directly by your
+own dependencies), it's likely best to simply leave the warnings in place. This
+provides documentation to you about possible incompatibilities in your dependencies,
+and could help you debug runtime problems that arise due to such incompatibilities.
 
-Remember, setting dependencyOverrides merely hides the warning, 
-it doesn't guarantee compatibility between your libraries and the version you set.
+Remember, setting dependencyOverrides merely hides the warning, it doesn't guarantee
+compatibility between your libraries and the version you set.
