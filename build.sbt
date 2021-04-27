@@ -2,6 +2,8 @@ ThisBuild / version      := "0.1.0-SNAPSHOT"
 ThisBuild / organization := "com.github.whitechno.subutai"
 ThisBuild / scalaVersion := library.versions.scala213
 
+// You can use -Dsbt.launcher.coursier=false to opt out of using Coursier
+// and used Apache Ivy instead.
 ThisBuild / useCoursier := false
 ThisBuild / resolvers += Resolver.mavenCentral
 ThisBuild / resolvers += Resolver.sbtPluginRepo("releases")
@@ -149,7 +151,7 @@ lazy val library = new {
     val scala211       = "2.11.12"
     val scala212       = "2.12.13"
     val scala213       = "2.13.5"
-    val scalatest      = "3.2.6"
+    val scalatest      = "3.2.8"
     val scalacheck     = "1.15.2"
     val typesafeConfig = "1.4.1"
     val jodatime       = "2.10.10"
