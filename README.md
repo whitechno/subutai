@@ -90,6 +90,7 @@ Versions of key dependencies
     - 3.1.0 - Nov 28, 2019
 - ScalaCheck  
   https://github.com/typelevel/scalacheck/releases
+    - 1.15.4 - May 03, 2021
     - 1.15.3 - Mar 29, 2021 (drops Scala 2.11 on Jan 22, 2021)
     - 1.15.2 - Dec 20, 2020 Last version still available for Scala 2.11
     - 1.15.1 - Nov 06, 2020
