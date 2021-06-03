@@ -48,6 +48,8 @@ Versions of key dependencies
         - 2.10.7 - Nov 9, 2017
 - SBT  
   https://github.com/sbt/sbt/releases
+    - 1.5.3 - May 31, 2021
+    - 1.5.2 - May 09, 2021
     - 1.5.1 - Apr 25, 2021
     - 1.5.0 - Apr 04, 2021
     - 1.4.9 - Mar 09, 2021 ***

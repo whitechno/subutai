@@ -4,7 +4,7 @@ ThisBuild / scalaVersion := library.versions.scala213
 
 // You can use -Dsbt.launcher.coursier=false to opt out of using Coursier
 // and used Apache Ivy instead.
-ThisBuild / useCoursier := false
+//ThisBuild / useCoursier := false
 ThisBuild / resolvers += Resolver.mavenCentral
 ThisBuild / resolvers += Resolver.sbtPluginRepo("releases")
 
