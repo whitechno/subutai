@@ -78,8 +78,8 @@ lazy val hocon = project
     libraryDependencies ++= Seq(
       library.typesafeConfig % "provided"
     ),
-    assemblyOption in assembly :=
-      (assemblyOption in assembly).value.copy(includeScala = false)
+    assembly / assemblyOption :=
+      (assembly / assemblyOption).value.copy(includeScala = false)
   )
 
 // *** joda-time based project
@@ -92,7 +92,7 @@ lazy val `jebe-time` = project
       library.jodatime  % "provided",
       library.scalatest % Test
     ),
-    assemblyOption in assembly := (assemblyOption in assembly).value
+    assembly / assemblyOption := (assembly / assemblyOption).value
       .copy(includeScala = false)
   )
 
@@ -105,7 +105,7 @@ lazy val json4s = project
     libraryDependencies ++= Seq(
       library.json4sJackson % "provided"
     ),
-    assemblyOption in assembly := (assemblyOption in assembly).value
+    assembly / assemblyOption := (assembly / assemblyOption).value
       .copy(includeScala = false)
   )
 
@@ -149,8 +149,8 @@ lazy val library = new {
   val versions = new {
     val scala210       = "2.10.7"
     val scala211       = "2.11.12"
-    val scala212       = "2.12.13"
-    val scala213       = "2.13.5"
+    val scala212       = "2.12.14"
+    val scala213       = "2.13.6"
     val scalatest      = "3.2.8"
     val scalacheck     = "1.15.2"
     val typesafeConfig = "1.4.1"
@@ -181,7 +181,7 @@ lazy val commonSettings = List(
     "-unchecked",
     "-feature" // [warn] there were 21 feature warnings; re-run with -feature for details
   ),
-  test in assembly := {}
+  assembly / test := {}
 )
 
 // Defining tasks and settings
