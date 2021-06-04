@@ -89,11 +89,9 @@ lazy val `jebe-time` = project
     crossScalaVersions := library.supportedScalaVersions,
     commonSettings,
     libraryDependencies ++= Seq(
-      library.jodatime  % "provided",
+      library.jodatime  % Test,
       library.scalatest % Test
-    ),
-    assembly / assemblyOption :=
-      (assembly / assemblyOption).value.copy(includeScala = false)
+    )
   )
 
 // json4s-jackson project
@@ -103,10 +101,9 @@ lazy val json4s = project
     crossScalaVersions := library.supportedScalaVersions,
     commonSettings,
     libraryDependencies ++= Seq(
-      library.json4sJackson % "provided"
-    ),
-    assembly / assemblyOption :=
-      (assembly / assemblyOption).value.copy(includeScala = false)
+      library.json4sJackson % Test,
+      library.scalatest     % Test
+    )
   )
 
 // *** scala-check project
@@ -154,7 +151,7 @@ lazy val library = new {
     val scalatest      = "3.2.9"
     val typesafeConfig = "1.4.1"
     val jodatime       = "2.10.10"
-    val json4s         = "3.6.11"
+    val json4s         = "4.0.0"
     val gigahorse      = "0.5.0" // as seen on Mar 27, 2020
     val play           = "2.8.1" // as seen on Mar 27, 2020
 

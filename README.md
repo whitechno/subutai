@@ -159,6 +159,8 @@ Versions of common dependencies
     - 2.10.4 - Sep 20, 2019
 - json4s  
   https://github.com/json4s/json4s/releases
+    - 4.0.0 - May 25, 2021
+    - 3.7.0-RC1 - May 15, 2021
     - 3.6.11 - Mar 01, 2021
     - 3.6.10 - Sep 28, 2020
     - 3.6.9 - Jun 15, 2020
