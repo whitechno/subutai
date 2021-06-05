@@ -161,7 +161,7 @@ Versions of common dependencies
   https://github.com/json4s/json4s/releases
     - 4.0.0 - May 25, 2021
     - 3.7.0-RC1 - May 15, 2021
-    - 3.6.11 - Mar 01, 2021
+    - 3.6.11 - Mar 01, 2021 Last version still available for Scala 2.10
     - 3.6.10 - Sep 28, 2020
     - 3.6.9 - Jun 15, 2020
     - 3.6.8 - May 5, 2020
