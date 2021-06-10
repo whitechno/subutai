@@ -110,6 +110,7 @@ Versions of key dependencies
     - 1.2.0 - Jan 15, 2014
 - Scalafmt  
   https://github.com/scalameta/scalafmt/releases
+    - 3.0.0-RC5 - Jun 08, 2021
     - 3.0.0-RC1 - Apr 15, 2021
     - 2.7.5 - Oct 16, 2020
     - 2.7.4 - Oct 06, 2020
@@ -141,6 +142,7 @@ Versions of key dependencies
     - 2.3.0 - Dec 9, 2019
 - sbt-assembly  
   https://github.com/sbt/sbt-assembly/releases
+    - 1.0.0 - Jun 06, 2021
     - 0.15.0 - Jun 22, 2020
     - 0.14.10 - Jul 11, 2019
     - 0.14.9 - Oct 28, 2018
@@ -243,7 +245,7 @@ Assembly
 - https://github.com/sbt/sbt-assembly
 
 Add  
-`addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.10")`  
+`addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "1.0.0")`  
 to `project/plugins.sbt`
 
 `sbt:hocon> assembly` to generate assembly JAR in  
@@ -256,15 +258,26 @@ $ jar tvf target/scala-2.12/hocon-assembly-0.1.0.jar
 
 Add `test in assembly := {}` to project settings to skip the test during assembly.
 
-To exclude Scala library
+### To exclude Scala library
+
 (JARs that start with `scala-` and are included in the binary Scala distribution)
 to run with `scala` command:
 
+for version 1.0.0 and after:
+
 ```text
-assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false)
+assembly / assemblyOption ~= { _.withIncludeScala(includeScala = false) }
 ```
 
-To make a JAR file containing only the external dependencies, type  
+for version 0.15.0 and before:
+
+```text
+assemblyOption in assembly := 
+    (assemblyOption in assembly).value.copy(includeScala = false)
+```
+
+### To make a JAR file containing only the external dependencies, type
+
 `> assemblyPackageDependency`  
 This is intended to be used with a JAR that only contains your project:
 

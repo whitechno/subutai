@@ -70,6 +70,9 @@ lazy val helloCore = (project in file("core"))
   )
 
 // *** hocon project
+// sbt> +hocon/assembly
+// $ jar tvf hocon/target/scala-2.12/hocon-assembly_2.12-0.1.0-SNAPSHOT.jar
+// 5,434,345 B with Scala, and 5,331 B without Scala
 lazy val hocon = project
   .settings(
     scalaVersion       := library.versions.scala212,
@@ -78,8 +81,9 @@ lazy val hocon = project
     libraryDependencies ++= Seq(
       library.typesafeConfig % "provided"
     ),
-    assembly / assemblyOption :=
-      (assembly / assemblyOption).value.copy(includeScala = false)
+    assembly / assemblyOption ~= { _.withIncludeScala(includeScala = false) },
+    assemblyJarName :=
+      s"${name.value}-assembly_${scalaBinaryVersion.value}-${version.value}.jar"
   )
 
 // *** joda-time based project
@@ -180,12 +184,7 @@ lazy val library = new {
 }
 
 lazy val commonSettings = List(
-  scalacOptions ++= Seq(
-    "-deprecation",
-    "-unchecked",
-    "-feature" // [warn] there were 21 feature warnings; re-run with -feature for details
-  ),
-  assembly / test := {}
+  scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature")
 )
 
 // Defining tasks and settings
