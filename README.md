@@ -207,17 +207,38 @@ or in sbt shell:
 
 ### clean;compile;test;run
 
+```text
+sbt> reload;+update
+sbt> clean;+test:compile;+test
+```
+
 Run one particular main class:  
-`sbt:subutai> runMain example.Hello`
+`sbt> runMain example.Hello`
 
 For code in `test` folder:  
-`sbt:subutai> test:compile`
+`sbt> test:compile`
 
 Run one particular main class in `test` folder of `scalaVersions` project:  
-`sbt:subutai> scalaVersions / test:runMain example.scalaVersions.TestScalaVersionsMain`
+`sbt> scalaVersions / test:runMain example.scalaVersions.TestScalaVersionsMain`
 
-Run one particular test class (of "scalatest" kind):  
-`sbt:subutai> testOnly example.HelloSpec`
+Run one particular test class (of "scalatest" kind):
+
+- `sbt> testOnly example.HelloSpec`
+- or `sbt> testOnly *HelloSpec`
+
+to run only the tests whose name includes the substring "hello":
+
+- `sbt> testOnly *HelloSpec -- -z "hello"`
+
+See more in [scalatest-in-sbt-is-there-a-way-to-run-a-single-test](
+https://stackoverflow.com/questions/11159953/scalatest-in-sbt-is-there-a-way-to-run-a-single-test-without-tags
+) and in [using_the_runner](
+https://www.scalatest.org/user_guide/using_the_runner
+)
+
+[tagging_your_tests](
+https://www.scalatest.org/user_guide/tagging_your_tests
+)
 
 ### Package
 
