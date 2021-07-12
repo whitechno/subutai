@@ -162,6 +162,7 @@ Versions of common dependencies
     - 2.10.4 - Sep 20, 2019
 - json4s  
   https://github.com/json4s/json4s/releases
+    - 4.0.1 - Jun 28, 2021
     - 4.0.0 - May 25, 2021
     - 3.7.0-RC1 - May 15, 2021
     - 3.6.11 - Mar 01, 2021 Last version still available for Scala 2.10
@@ -169,6 +170,11 @@ Versions of common dependencies
     - 3.6.9 - Jun 15, 2020
     - 3.6.8 - May 5, 2020
     - 3.6.7 - Jun 26, 2020
+- breeze  
+  https://github.com/scalanlp/breeze/releases
+    - 1.2 - Apr 15, 2021
+    - 1.1 - Aug 03, 2020
+    - 1.0 - Jul 27, 2019 Last version still available for Scala 2.11
 
 Important techniques
 --------------------

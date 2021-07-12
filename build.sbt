@@ -17,6 +17,7 @@ lazy val subutai = (project in file("."))
 // Set aggregate so that the command sent to hello is broadcast to helloCore too
   .aggregate(
     helloCore,
+    breeze,
     hocon,
     `jebe-time`,
     json4s,
@@ -66,6 +67,19 @@ lazy val helloCore = (project in file("core"))
       library.playJson,
       library.gigahorse,
       library.scalatest % Test
+    )
+  )
+
+// *** scalanlp breeze project
+lazy val breeze = project
+  .settings(
+    scalaVersion       := library.versions.scala213,
+    crossScalaVersions := library.supportedScalaVersions,
+    commonSettings,
+    libraryDependencies ++= Seq(
+      library.breeze(scalaBinaryVersion.value),
+      library.scalatest                            % Test,
+      library.scalacheck(scalaBinaryVersion.value) % Test
     )
   )
 
@@ -155,7 +169,7 @@ lazy val library = new {
     val scalatest      = "3.2.9"
     val typesafeConfig = "1.4.1"
     val jodatime       = "2.10.10"
-    val json4s         = "4.0.0"
+    val json4s         = "4.0.1"
     val gigahorse      = "0.5.0" // as seen on Mar 27, 2020
     val play           = "2.8.1" // as seen on Mar 27, 2020
 
@@ -163,6 +177,12 @@ lazy val library = new {
       scalaBinaryVersionString match {
         case "2.11" => "1.15.2" // Last version still available for Scala 2.11
         case _      => "1.15.4"
+      }
+
+    def breeze(scalaBinaryVersionString: String): String =
+      scalaBinaryVersionString match {
+        case "2.11" => "1.0" // Last version still available for Scala 2.11
+        case _      => "1.2"
       }
   }
 
@@ -180,6 +200,9 @@ lazy val library = new {
 
   def scalacheck(scalaBinaryVersionString: String): ModuleID =
     "org.scalacheck" %% "scalacheck" % versions.scalacheck(scalaBinaryVersionString)
+
+  def breeze(scalaBinaryVersionString: String): ModuleID =
+    "org.scalanlp" %% "breeze" % versions.breeze(scalaBinaryVersionString)
 
 }
 
