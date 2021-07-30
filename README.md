@@ -30,24 +30,6 @@ this particular version is included in `crossScalaVersions` of project `settings
 Versions of key dependencies
 ----------------------------
 
-- Scala  
-  https://github.com/scala/scala/releases
-    - 2.13
-        - 2.13.6 - May 17, 2021
-        - 2.13.5 - Feb 22, 2021
-        - 2.13.4 - Nov 19, 2020
-        - 2.13.3 - Jun 25, 2020
-        - 2.13.2 - Apr 22, 2020
-        - 2.13.1 - Sep 18, 2019
-    - 2.12
-        - 2.12.14 - May 27, 2021
-        - 2.12.13 - Jan 12, 2021
-        - 2.12.12 - Jul 12, 2020
-        - 2.12.11 - Mar 16, 2020
-        - 2.12.10 - Sep 10, 2019
-    - 2.11 & 2.10
-        - 2.11.12 - Nov 9, 2017
-        - 2.10.7 - Nov 9, 2017
 - SBT  
   https://github.com/sbt/sbt/releases
     - 1.5.5 - Jul 12, 2021
@@ -73,6 +55,24 @@ Versions of key dependencies
     - 1.3.10 - Apr 14, 2020
     - 1.3.9 - Mar 31, 2020
     - 1.3.8 - Feb 3, 2020
+- Scala  
+  https://github.com/scala/scala/releases
+    - 2.13
+        - 2.13.6 - May 17, 2021
+        - 2.13.5 - Feb 22, 2021
+        - 2.13.4 - Nov 19, 2020
+        - 2.13.3 - Jun 25, 2020
+        - 2.13.2 - Apr 22, 2020
+        - 2.13.1 - Sep 18, 2019
+    - 2.12
+        - 2.12.14 - May 27, 2021
+        - 2.12.13 - Jan 12, 2021
+        - 2.12.12 - Jul 12, 2020
+        - 2.12.11 - Mar 16, 2020
+        - 2.12.10 - Sep 10, 2019
+    - 2.11 & 2.10
+        - 2.11.12 - Nov 9, 2017
+        - 2.10.7 - Nov 9, 2017
 - ScalaTest  
   https://www.scalatest.org  
   https://github.com/scalatest/scalatest/releases
