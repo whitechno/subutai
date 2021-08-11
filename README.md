@@ -291,6 +291,8 @@ $ jar tvf target/scala-2.12/hocon-assembly-0.1.0.jar
 
 Add `test in assembly := {}` to project settings to skip the test during assembly.
 
+for version 1.0.0 and after, assembly no longer runs test by default.
+
 ### To exclude Scala library
 
 (JARs that start with `scala-` and are included in the binary Scala distribution)
