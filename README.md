@@ -77,6 +77,7 @@ Versions of key dependencies
 - ScalaTest  
   https://www.scalatest.org  
   https://github.com/scalatest/scalatest/releases
+    - 3.2.10 - Sep 20, 2021
     - 3.2.9 - May 17, 2021
     - 3.2.8 - Apr 21, 2021
     - 3.2.7 - Apr 02, 2021
@@ -113,6 +114,13 @@ Versions of key dependencies
     - 1.2.0 - Jan 15, 2014
 - Scalafmt  
   https://github.com/scalameta/scalafmt/releases
+    - 3.0.6 - Oct 02, 2021
+    - 3.0.5 - Sep 25, 2021
+    - 3.0.4 - Sep 17, 2021
+    - 3.0.3 - Sep 10, 2021
+    - 3.0.2 - Sep 03, 2021
+    - 3.0.1 - Aug 27, 2021
+    - 3.0.0 - Aug 18, 2021
     - 3.0.0-RC6 - Jul 13, 2021
     - 3.0.0-RC5 - Jun 08, 2021
     - 3.0.0-RC1 - Apr 15, 2021

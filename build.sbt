@@ -167,7 +167,7 @@ lazy val library = new {
     val scala211       = "2.11.12"
     val scala212       = "2.12.15"
     val scala213       = "2.13.6"
-    val scalatest      = "3.2.9"
+    val scalatest      = "3.2.10"
     val typesafeConfig = "1.4.1"
     val jodatime       = "2.10.10"
     val json4s         = "4.0.3"
@@ -190,14 +190,14 @@ lazy val library = new {
   val supportedScalaVersions =
     List(versions.scala211, versions.scala212, versions.scala213)
 
-  val scalatest      = "org.scalatest"     %% "scalatest"        % versions.scalatest
-  val typesafeConfig = "com.typesafe"       % "config"           % versions.typesafeConfig
-  val jodatime       = "joda-time"          % "joda-time"        % versions.jodatime
-  val json4sCore     = "org.json4s"        %% "json4s-core"      % versions.json4s
-  val json4sJackson  = "org.json4s"        %% "json4s-jackson"   % versions.json4s
-  val json4sNative   = "org.json4s"        %% "json4s-native"    % versions.json4s
-  val gigahorse      = "com.eed3si9n"      %% "gigahorse-okhttp" % versions.gigahorse
-  val playJson       = "com.typesafe.play" %% "play-json"        % versions.play
+  val scalatest      = "org.scalatest" %% "scalatest"      % versions.scalatest
+  val typesafeConfig = "com.typesafe"   % "config"         % versions.typesafeConfig
+  val jodatime       = "joda-time"      % "joda-time"      % versions.jodatime
+  val json4sCore     = "org.json4s"    %% "json4s-core"    % versions.json4s
+  val json4sJackson  = "org.json4s"    %% "json4s-jackson" % versions.json4s
+  val json4sNative   = "org.json4s"    %% "json4s-native"  % versions.json4s
+  val gigahorse = "com.eed3si9n"      %% "gigahorse-okhttp" % versions.gigahorse
+  val playJson  = "com.typesafe.play" %% "play-json"        % versions.play
 
   def scalacheck(scalaBinaryVersionString: String): ModuleID =
     "org.scalacheck" %% "scalacheck" % versions.scalacheck(scalaBinaryVersionString)
