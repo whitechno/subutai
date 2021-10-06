@@ -151,6 +151,7 @@ class TestSpec_10_breeze_Quickstart extends AnyFlatSpec with Matchers {
 
   "breeze.stats.distributions" should "provide Poisson probability distribution" in {
     import breeze.stats.distributions.{ Poisson, Rand }
+    import breeze.stats.distributions.Rand.FixedSeed._
     val mean     = 3d
     val variance = mean
     val n        = 10000
@@ -184,6 +185,7 @@ class TestSpec_10_breeze_Quickstart extends AnyFlatSpec with Matchers {
     For versions 1.1 and after, Breeze parameterizes the distribution with
     the rate, while the mean equals to inverse rate (as it should be). */
     import breeze.stats.distributions.Exponential
+    import breeze.stats.distributions.Rand.FixedSeed._
     val rate = 0.5
     val expo = new Exponential(rate = rate)
     expo.rate shouldBe rate

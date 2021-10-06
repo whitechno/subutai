@@ -2,6 +2,10 @@ package subutai.breeze.zzz
 
 import scala.util.Random
 import breeze.stats.distributions.Uniform
+// As of Breeze 2, import this if you want consistent behavior with
+// the same random numbers from execution to execution
+// (modulo threading or other sources of non-deterministic behavior)
+import breeze.stats.distributions.Rand.FixedSeed._
 
 object RandomBreeze {
 

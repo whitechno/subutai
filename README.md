@@ -189,6 +189,8 @@ Versions of common dependencies
     - 3.6.7 - Jun 26, 2020
 - breeze  
   https://github.com/scalanlp/breeze/releases
+    - 2.0 - Oct 04, 2021
+    - 1.3 - Aug 14, 2021
     - 1.2 - Apr 15, 2021
     - 1.1 - Aug 03, 2020
     - 1.0 - Jul 27, 2019 Last version still available for Scala 2.11

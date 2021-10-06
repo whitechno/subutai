@@ -74,8 +74,10 @@ lazy val helloCore = (project in file("core"))
 // *** scalanlp breeze project
 lazy val breeze = project
   .settings(
-    scalaVersion       := library.versions.scala213,
-    crossScalaVersions := library.supportedScalaVersions,
+    scalaVersion := library.versions.scala213,
+    // breeze version 2.0 changed many APIs and is no longer compatible
+    // with version 1.0 - the last version still available for Scala 2.11
+    crossScalaVersions := List(library.versions.scala212, library.versions.scala213),
     commonSettings,
     libraryDependencies ++= Seq(
       library.breeze(scalaBinaryVersion.value),
@@ -183,7 +185,7 @@ lazy val library = new {
     def breeze(scalaBinaryVersionString: String): String =
       scalaBinaryVersionString match {
         case "2.11" => "1.0" // Last version still available for Scala 2.11
-        case _      => "1.2"
+        case _      => "2.0"
       }
   }
 
