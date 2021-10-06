@@ -155,6 +155,7 @@ Versions of key dependencies
     - 2.3.0 - Dec 9, 2019
 - sbt-assembly  
   https://github.com/sbt/sbt-assembly/releases
+    - 1.1.0 - Aug 31, 2021
     - 1.0.0 - Jun 06, 2021
     - 0.15.0 - Jun 22, 2020
     - 0.14.10 - Jul 11, 2019
