@@ -32,6 +32,7 @@ Versions of key dependencies
 
 - SBT  
   https://github.com/sbt/sbt/releases
+    - 1.5.6 - Dec 09, 2021
     - 1.5.5 - Jul 12, 2021
     - 1.5.4 - Jun 13, 2021
     - 1.5.3 - May 31, 2021
@@ -58,6 +59,7 @@ Versions of key dependencies
 - Scala  
   https://github.com/scala/scala/releases
     - 2.13
+        - 2.13.7 - Nov 01, 2021
         - 2.13.6 - May 17, 2021
         - 2.13.5 - Feb 22, 2021
         - 2.13.4 - Nov 19, 2020
@@ -114,6 +116,13 @@ Versions of key dependencies
     - 1.2.0 - Jan 15, 2014
 - Scalafmt  
   https://github.com/scalameta/scalafmt/releases
+    - 3.2.1 - Dec 02, 2021
+    - 3.2.0 - Nov 29, 2021
+    - 3.1.2 - Nov 21, 2021
+    - 3.1.1 - Nov 12, 2021
+    - 3.1.0 - Nov 09, 2021
+    - 3.0.8 - Oct 29, 2021
+    - 3.0.7 - Oct 20, 2021
     - 3.0.6 - Oct 02, 2021
     - 3.0.5 - Sep 25, 2021
     - 3.0.4 - Sep 17, 2021
@@ -145,6 +154,8 @@ Versions of key dependencies
     - 2.4.2 - Feb 22, 2020
 - sbt-scalafmt (Scalafmt sbt plugin)  
   https://github.com/scalameta/sbt-scalafmt/releases
+    - 2.4.5 - Dec 04, 2021
+    - 2.4.4 - Nov 18, 2021
     - 2.4.3 - Jul 08, 2021
     - 2.4.2 - Aug 01, 2020
     - 2.4.0 - May 14, 2020
@@ -166,6 +177,7 @@ Versions of common dependencies
 
 - Joda-Time  
   https://github.com/JodaOrg/joda-time/releases
+    - 2.10.13 - Oct 26, 2021
     - 2.10.12 - Sep 29, 2021
     - 2.10.11 - Sep 22, 2021
     - 2.10.10 - Feb 05, 2021
@@ -176,13 +188,15 @@ Versions of common dependencies
     - 2.10.5 - Oct 24, 2019
     - 2.10.4 - Sep 20, 2019
 - json4s  
-  https://github.com/json4s/json4s/releases
+  https://github.com/json4s/json4s/releases  
+  https://search.maven.org/search?q=org.json4s
     - 4.0.3 - Jul 26, 2021
     - 4.0.2 - Jul 25, 2021
     - 4.0.1 - Jun 28, 2021
     - 4.0.0 - May 25, 2021
     - 3.7.0-RC1 - May 15, 2021
-    - 3.6.11 - Mar 01, 2021 Last version still available for Scala 2.10
+    - 3.6.12 - Nov 04, 2021 Last version still available for Scala 2.10
+    - 3.6.11 - Mar 01, 2021
     - 3.6.10 - Sep 28, 2020
     - 3.6.9 - Jun 15, 2020
     - 3.6.8 - May 5, 2020

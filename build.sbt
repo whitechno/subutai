@@ -168,10 +168,10 @@ lazy val library = new {
     val scala210       = "2.10.7"
     val scala211       = "2.11.12"
     val scala212       = "2.12.15"
-    val scala213       = "2.13.6"
+    val scala213       = "2.13.7"
     val scalatest      = "3.2.10"
     val typesafeConfig = "1.4.1"
-    val jodatime       = "2.10.12"
+    val jodatime       = "2.10.13"
     val json4s         = "4.0.3"
     val gigahorse      = "0.5.0" // as seen on Mar 27, 2020
     val play           = "2.8.1" // as seen on Mar 27, 2020
@@ -226,11 +226,11 @@ printTask := {
     DefaultMavenRepository,
     Resolver.mavenCentral,
     JavaNet2Repository,
-    Resolver.sonatypeRepo("public"), //(or “snapshots”, “staging”, “releases”)
-    Resolver.sonatypeRepo("snapshots"), //(or “snapshots”, “staging”, “releases”)
-    Resolver.typesafeRepo("releases"), //(or “snapshots”)
-    Resolver.typesafeIvyRepo("releases"), //(or “snapshots”)
-    Resolver.sbtPluginRepo("releases"), //(or “snapshots”)
+    Resolver.sonatypeRepo("public"), // (or “snapshots”, “staging”, “releases”)
+    Resolver.sonatypeRepo("snapshots"), // (or “snapshots”, “staging”, “releases”)
+    Resolver.typesafeRepo("releases"), // (or “snapshots”)
+    Resolver.typesafeIvyRepo("releases"), // (or “snapshots”)
+    Resolver.sbtPluginRepo("releases"), // (or “snapshots”)
     Resolver.bintrayRepo("owner", "repo"),
     Resolver.jcenterRepo,
     Resolver.ivyStylePatterns,
