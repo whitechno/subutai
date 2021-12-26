@@ -10,7 +10,7 @@ class TestSpec_01_RandomBreeze_randomLongList extends AnyFlatSpec {
     val (start, end, size) = (1, 3, 5)
 
     val sample = RandomBreeze.randomLongList(low = start, high = end, size = size)
-    //println(sample) // something like Vector(2, 1, 1, 2, 1)
+    // println(sample) // something like Vector(2, 1, 1, 2, 1)
     assert(sample.size == size && sample.min >= start && sample.max <= end)
   }
 
