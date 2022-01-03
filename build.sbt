@@ -6,8 +6,8 @@ ThisBuild / scalaVersion := library.versions.scala213
 // and used Apache Ivy instead.
 //ThisBuild / useCoursier := false
 // rm ~/.sbt/.credentials; rm ~/.sbt/repositories
-ThisBuild / resolvers += Resolver.mavenCentral
-ThisBuild / resolvers += Resolver.sbtPluginRepo("releases")
+//ThisBuild / resolvers += Resolver.mavenCentral
+//ThisBuild / resolvers += Resolver.sbtPluginRepo("releases")
 
 //
 // *** projects
