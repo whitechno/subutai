@@ -210,7 +210,8 @@ Versions of common dependencies
     - 3.6.8 - May 5, 2020
     - 3.6.7 - Jun 26, 2020
 - breeze  
-  https://github.com/scalanlp/breeze/releases
+  https://github.com/scalanlp/breeze/tags
+    - 2.0.1-RC2 - Dec 16, 2021
     - 2.0 - Oct 04, 2021
     - 1.3 - Aug 14, 2021
     - 1.2 - Apr 15, 2021

@@ -185,7 +185,7 @@ lazy val library = new {
     def breeze(scalaBinaryVersionString: String): String =
       scalaBinaryVersionString match {
         case "2.11" => "1.0" // Last version still available for Scala 2.11
-        case _      => "2.0"
+        case _      => "2.0.1-RC2"
       }
   }
 
