@@ -19,6 +19,7 @@ lazy val subutai = (project in file("."))
   .aggregate(
     helloCore,
     breeze,
+    graphz,
     hocon,
     `jebe-time`,
     json4s,
@@ -83,6 +84,15 @@ lazy val breeze = project
       library.breeze(scalaBinaryVersion.value),
       library.scalatest                            % Test,
       library.scalacheck(scalaBinaryVersion.value) % Test
+    )
+  )
+
+lazy val graphz = project
+  .settings(
+    scalaVersion := library.versions.scala213,
+    commonSettings,
+    libraryDependencies ++= Seq(
+      library.scalatest % Test
     )
   )
 
