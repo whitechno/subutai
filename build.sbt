@@ -18,6 +18,7 @@ lazy val subutai = (project in file("."))
 // Set aggregate so that the command sent to hello is broadcast to helloCore too
   .aggregate(
     helloCore,
+    algs4j,
     breeze,
     graphz,
     hocon,
@@ -71,6 +72,8 @@ lazy val helloCore = (project in file("core"))
       library.scalatest % Test
     )
   )
+
+lazy val algs4j = project
 
 // *** scalanlp breeze project
 lazy val breeze = project
