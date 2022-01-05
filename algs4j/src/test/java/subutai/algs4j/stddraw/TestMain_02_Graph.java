@@ -38,7 +38,7 @@ public class TestMain_02_Graph {
                 // middle of the link
                 double x = (xs[i] + xs[j]) / 2;
                 double y = (ys[i] + ys[j]) / 2;
-                double w = ws[ej];
+                double w = ws[ej]; // link weight
                 StdDraw.setFont(linkFont);
                 StdDraw.text(x, y, String.valueOf(w));
             }

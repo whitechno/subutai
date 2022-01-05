@@ -19,7 +19,7 @@ The companion web site,
 [algs4.cs.princeton.edu](https://algs4.cs.princeton.edu/home/), contains
 
 - An online synopsis
-- Full Java implementations
+- Full Java [implementations](https://algs4.cs.princeton.edu/code/)
 - Test data
 - Exercises and answers
 - Dynamic visualizations
@@ -58,8 +58,6 @@ interests include the design, analysis, and implementation of algorithms, especi
 for graphs and discrete optimization. With Robert Sedgewick, he is the coauthor of
 the highly acclaimed textbook, Introduction to Programming in Java: An
 Interdisciplinary Approach (Addison-Wesley, 2008).
-
-
 
 - [Algorithms 4th Edition.pdf](
   http://index-of.es/Varios-2/Algorithms%204th%20Edition.pdf
