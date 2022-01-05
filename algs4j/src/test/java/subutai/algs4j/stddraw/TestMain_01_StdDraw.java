@@ -2,7 +2,7 @@ package subutai.algs4j.stddraw;
 
 import edu.princeton.cs.algs4.StdDraw;
 
-public class TestStdDraw_01 {
+public class TestMain_01_StdDraw {
     public static void main(String[] args) {
         StdDraw.setCanvasSize(800, 800);
         StdDraw.setPenRadius(0.05);
