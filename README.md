@@ -63,6 +63,7 @@ Versions of key dependencies
 - Scala  
   https://github.com/scala/scala/releases
     - 2.13
+        - 2.13.8 - Jan 12, 2022
         - 2.13.7 - Nov 01, 2021
         - 2.13.6 - May 17, 2021
         - 2.13.5 - Feb 22, 2021
@@ -120,6 +121,8 @@ Versions of key dependencies
     - 1.2.0 - Jan 15, 2014
 - Scalafmt  
   https://github.com/scalameta/scalafmt/releases
+    - 3.3.3 - Jan 22, 2022
+    - 3.3.2 - Jan 19, 2022
     - 3.3.1 - Jan 01, 2022
     - 3.3.0 - Dec 24, 2021
     - 3.2.2 - Dec 23, 2021
@@ -198,6 +201,7 @@ Versions of common dependencies
 - json4s  
   https://github.com/json4s/json4s/releases  
   https://search.maven.org/search?q=org.json4s
+    - 4.0.4 - Jan 22, 2022
     - 4.0.3 - Jul 26, 2021
     - 4.0.2 - Jul 25, 2021
     - 4.0.1 - Jun 28, 2021

@@ -59,6 +59,8 @@ for graphs and discrete optimization. With Robert Sedgewick, he is the coauthor 
 the highly acclaimed textbook, Introduction to Programming in Java: An
 Interdisciplinary Approach (Addison-Wesley, 2008).
 
+- [Source code in a Git repository](https://github.com/kevin-wayne/algs4)
+
 - [Algorithms 4th Edition.pdf](
   http://index-of.es/Varios-2/Algorithms%204th%20Edition.pdf
   )
