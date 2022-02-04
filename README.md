@@ -85,6 +85,7 @@ Versions of key dependencies
 - ScalaTest  
   https://www.scalatest.org  
   https://github.com/scalatest/scalatest/releases
+    - 3.2.11 - Jan 25, 2022
     - 3.2.10 - Sep 20, 2021
     - 3.2.9 - May 17, 2021
     - 3.2.8 - Apr 21, 2021
@@ -107,7 +108,7 @@ Versions of key dependencies
     - 1.15.2 - Dec 20, 2020 Last version still available for Scala 2.11
     - 1.15.1 - Nov 06, 2020
     - 1.15.0 - Oct 31, 2020
-    - 1.14.3 - Dec 14, 2019
+    - 1.14.3 - Dec 14, 2019 Last version still available for Scala 2.10
     - 1.14.2 - Sep 25, 2019
     - 1.14.1 - Sep 17, 2019
     - 1.14.0 - Apr 22, 2018
@@ -120,8 +121,22 @@ Versions of key dependencies
     - 1.3.0 - May 8, 2015
     - 1.2.1 - May 2, 2014
     - 1.2.0 - Jan 15, 2014
+- sbt-scalafmt (Scalafmt sbt plugin)  
+  https://github.com/scalameta/sbt-scalafmt/releases
+    - 2.4.6 - Dec 24, 2021
+    - 2.4.5 - Dec 04, 2021
+    - 2.4.4 - Nov 18, 2021
+    - 2.4.3 - Jul 08, 2021
+    - 2.4.2 - Aug 01, 2020
+    - 2.4.0 - May 14, 2020
+    - 2.3.4 - Apr 10, 2020
+    - 2.3.3 - Apr 10, 2020
+    - 2.3.2 - Mar 5, 2020
+    - 2.3.1 - Jan 27, 2020
+    - 2.3.0 - Dec 9, 2019
 - Scalafmt  
   https://github.com/scalameta/scalafmt/releases
+    - 3.4.0 - Jan 28, 2022
     - 3.3.3 - Jan 22, 2022
     - 3.3.2 - Jan 19, 2022
     - 3.3.1 - Jan 01, 2022
@@ -163,19 +178,6 @@ Versions of key dependencies
     - 2.5.0-RC2 - Apr 25, 2020
     - 2.5.0-RC1 - Apr 15, 2020
     - 2.4.2 - Feb 22, 2020
-- sbt-scalafmt (Scalafmt sbt plugin)  
-  https://github.com/scalameta/sbt-scalafmt/releases
-    - 2.4.6 - Dec 24, 2021
-    - 2.4.5 - Dec 04, 2021
-    - 2.4.4 - Nov 18, 2021
-    - 2.4.3 - Jul 08, 2021
-    - 2.4.2 - Aug 01, 2020
-    - 2.4.0 - May 14, 2020
-    - 2.3.4 - Apr 10, 2020
-    - 2.3.3 - Apr 10, 2020
-    - 2.3.2 - Mar 5, 2020
-    - 2.3.1 - Jan 27, 2020
-    - 2.3.0 - Dec 9, 2019
 - sbt-assembly  
   https://github.com/sbt/sbt-assembly/releases
     - 1.1.0 - Aug 31, 2021
