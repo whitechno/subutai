@@ -32,6 +32,7 @@ Versions of key dependencies
 
 - SBT  
   https://github.com/sbt/sbt/releases
+    - 1.6.2 - Jan 31, 2022
     - 1.6.1 - Dec 28, 2021
     - 1.6.0 - Dec 26, 2021
     - 1.5.8 - Dec 20, 2021
@@ -244,7 +245,7 @@ or in sbt shell:
 ### scalafmt Task keys
 
 - `myproject/scalafmt`: Format main sources of myproject project
-- `myproject/test`:scalafmt: Format test sources of myproject project
+- `myproject/test:scalafmt`: Format test sources of myproject project
 - `scalafmtCheck`: Check if the scala sources under the project has been formatted.
 - `scalafmtSbt`: Format *.sbt and project/*.scala files.
 - `scalafmtSbtCheck`: Check if the files has been formatted by scalafmtSbt.
