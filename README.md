@@ -136,6 +136,9 @@ Versions of key dependencies
     - 2.3.0 - Dec 9, 2019
 - Scalafmt  
   https://github.com/scalameta/scalafmt/releases
+    - 3.4.3 - Feb 11, 2022
+    - 3.4.2 - Feb 05, 2022
+    - 3.4.1 - Feb 05, 2022
     - 3.4.0 - Jan 28, 2022
     - 3.3.3 - Jan 22, 2022
     - 3.3.2 - Jan 19, 2022
@@ -180,6 +183,7 @@ Versions of key dependencies
     - 2.4.2 - Feb 22, 2020
 - sbt-assembly  
   https://github.com/sbt/sbt-assembly/releases
+    - 1.2.0 - Feb 12, 2022
     - 1.1.0 - Aug 31, 2021
     - 1.0.0 - Jun 06, 2021
     - 0.15.0 - Jun 22, 2020
