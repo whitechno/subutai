@@ -1,6 +1,7 @@
+import Dependencies.{ Library => L, Versions => V }
 ThisBuild / version      := "0.1.0-SNAPSHOT"
 ThisBuild / organization := "com.github.whitechno.subutai"
-ThisBuild / scalaVersion := library.versions.scala213
+ThisBuild / scalaVersion := V.scala213
 
 // You can use -Dsbt.launcher.coursier=false to opt out of using Coursier
 // and used Apache Ivy instead.
@@ -57,7 +58,7 @@ lazy val subutai = (project in file("."))
     },
     commonSettings,
     libraryDependencies ++= Seq(
-      library.scalatest % Test
+      L.scalatest % Test
     )
   )
 
@@ -67,9 +68,9 @@ lazy val helloCore = (project in file("core"))
     name := "Hello Core",
     commonSettings,
     libraryDependencies ++= Seq(
-      library.playJson,
-      library.gigahorse,
-      library.scalatest % Test
+      L.typesafePlayJson,
+      L.gigahorse,
+      L.scalatest % Test
     )
   )
 
@@ -78,24 +79,24 @@ lazy val algs4j = project
 // *** scalanlp breeze project
 lazy val breeze = project
   .settings(
-    scalaVersion := library.versions.scala213,
+    scalaVersion := V.scala213,
     // breeze version 2.0 changed many APIs and is no longer compatible
     // with version 1.0 - the last version still available for Scala 2.11
-    crossScalaVersions := List(library.versions.scala212, library.versions.scala213),
+    crossScalaVersions := List(V.scala212, V.scala213),
     commonSettings,
     libraryDependencies ++= Seq(
-      library.breeze(scalaBinaryVersion.value),
-      library.scalatest                            % Test,
-      library.scalacheck(scalaBinaryVersion.value) % Test
+      L.breeze(scalaBinaryVersion.value),
+      L.scalatest                            % Test,
+      L.scalacheck(scalaBinaryVersion.value) % Test
     )
   )
 
 lazy val graphz = project
   .settings(
-    scalaVersion := library.versions.scala213,
+    scalaVersion := V.scala213,
     commonSettings,
     libraryDependencies ++= Seq(
-      library.scalatest % Test
+      L.scalatest % Test
     )
   )
 
@@ -105,11 +106,11 @@ lazy val graphz = project
 // 5,434,345 B with Scala, and 5,331 B without Scala
 lazy val hocon = project
   .settings(
-    scalaVersion       := library.versions.scala212,
-    crossScalaVersions := library.supportedScalaVersions,
+    scalaVersion       := V.scala212,
+    crossScalaVersions := V.supportedScalaVersions,
     commonSettings,
     libraryDependencies ++= Seq(
-      library.typesafeConfig % "provided"
+      L.typesafeConfig % "provided"
     ),
     assembly / assemblyOption ~= { _.withIncludeScala(includeScala = false) },
     assemblyJarName :=
@@ -119,35 +120,35 @@ lazy val hocon = project
 // *** joda-time based project
 lazy val `jebe-time` = project
   .settings(
-    scalaVersion       := library.versions.scala212,
-    crossScalaVersions := library.supportedScalaVersions,
+    scalaVersion       := V.scala212,
+    crossScalaVersions := V.supportedScalaVersions,
     commonSettings,
     libraryDependencies ++= Seq(
-      library.jodatime  % Test,
-      library.scalatest % Test
+      L.jodatime  % Test,
+      L.scalatest % Test
     )
   )
 
 // json4s-jackson project
 lazy val json4s = project
   .settings(
-    scalaVersion       := library.versions.scala212,
-    crossScalaVersions := library.supportedScalaVersions,
+    scalaVersion       := V.scala212,
+    crossScalaVersions := V.supportedScalaVersions,
     commonSettings,
     libraryDependencies ++= Seq(
-      library.json4sJackson % Test,
-      library.scalatest     % Test
+      L.json4sJackson % Test,
+      L.scalatest     % Test
     )
   )
 
 // *** scala-check project
 lazy val `scala-check` = project
   .settings(
-    scalaVersion       := library.versions.scala213,
-    crossScalaVersions := library.supportedScalaVersions,
+    scalaVersion       := V.scala213,
+    crossScalaVersions := V.supportedScalaVersions,
     commonSettings,
     libraryDependencies ++= Seq(
-      library.scalacheck(scalaBinaryVersion.value) % Test
+      L.scalacheck(scalaBinaryVersion.value) % Test
     )
   )
 
@@ -158,69 +159,22 @@ lazy val `scala-versions` = project
       val baseDir = baseDirectory.value.toString
       println("baseDirectoryTask:\n\t" + baseDir)
     },
-    scalaVersion       := library.versions.scala212,
-    crossScalaVersions := library.supportedScalaVersions,
+    scalaVersion       := V.scala212,
+    crossScalaVersions := V.supportedScalaVersions,
     commonSettings
   )
 
 // *** trie project
 lazy val trie = project
   .settings(
-    scalaVersion       := library.versions.scala213,
-    crossScalaVersions := library.supportedScalaVersions,
+    scalaVersion       := V.scala213,
+    crossScalaVersions := V.supportedScalaVersions,
     commonSettings
   )
 
 //
-// versions and settings
+// Settings and Tasks
 //
-
-lazy val library = new {
-
-  val versions = new {
-    val scala210       = "2.10.7"
-    val scala211       = "2.11.12"
-    val scala212       = "2.12.15"
-    val scala213       = "2.13.8"
-    val scalatest      = "3.2.11"
-    val typesafeConfig = "1.4.1"
-    val jodatime       = "2.10.13"
-    val json4s         = "4.0.4"
-    val gigahorse      = "0.5.0" // as seen on Mar 27, 2020
-    val play           = "2.8.1" // as seen on Mar 27, 2020
-
-    def scalacheck(scalaBinaryVersionString: String): String =
-      scalaBinaryVersionString match {
-        case "2.11" => "1.15.2" // Last version still available for Scala 2.11
-        case _      => "1.15.4"
-      }
-
-    def breeze(scalaBinaryVersionString: String): String =
-      scalaBinaryVersionString match {
-        case "2.11" => "1.0" // Last version still available for Scala 2.11
-        case _      => "2.0.1-RC2"
-      }
-  }
-
-  val supportedScalaVersions =
-    List(versions.scala211, versions.scala212, versions.scala213)
-
-  val scalatest      = "org.scalatest" %% "scalatest"      % versions.scalatest
-  val typesafeConfig = "com.typesafe"   % "config"         % versions.typesafeConfig
-  val jodatime       = "joda-time"      % "joda-time"      % versions.jodatime
-  val json4sCore     = "org.json4s"    %% "json4s-core"    % versions.json4s
-  val json4sJackson  = "org.json4s"    %% "json4s-jackson" % versions.json4s
-  val json4sNative   = "org.json4s"    %% "json4s-native"  % versions.json4s
-  val gigahorse = "com.eed3si9n"      %% "gigahorse-okhttp" % versions.gigahorse
-  val playJson  = "com.typesafe.play" %% "play-json"        % versions.play
-
-  def scalacheck(scalaBinaryVersionString: String): ModuleID =
-    "org.scalacheck" %% "scalacheck" % versions.scalacheck(scalaBinaryVersionString)
-
-  def breeze(scalaBinaryVersionString: String): ModuleID =
-    "org.scalanlp" %% "breeze" % versions.breeze(scalaBinaryVersionString)
-
-}
 
 lazy val commonSettings = List(
   scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature")

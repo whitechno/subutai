@@ -113,8 +113,8 @@ Versions of key dependencies
     - 1.14.1 - Sep 17, 2019
     - 1.14.0 - Apr 22, 2018
 - typesafe config
-  https://github.com/lightbend/config/releases
-  https://github.com/lightbend/config/blob/master/NEWS.md
+  https://github.com/lightbend/config/tags
+    - 1.4.2 - Feb 01, 2022
     - 1.4.1 - Oct 22, 2020
     - 1.4.0 - Oct 14, 2019
     - 1.3.4 - Apr 18, 2019
