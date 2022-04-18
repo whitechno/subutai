@@ -103,6 +103,7 @@ Versions of key dependencies
     - 3.1.0 - Nov 28, 2019
 - ScalaCheck  
   https://github.com/typelevel/scalacheck/releases
+    - 1.16.0 - Apr 07, 2022
     - 1.15.4 - May 03, 2021
     - 1.15.3 - Mar 29, 2021 (drops Scala 2.11 on Jan 22, 2021)
     - 1.15.2 - Dec 20, 2020 Last version still available for Scala 2.11
@@ -136,6 +137,9 @@ Versions of key dependencies
     - 2.3.0 - Dec 9, 2019
 - Scalafmt  
   https://github.com/scalameta/scalafmt/releases
+    - 3.5.2 - Apr 18, 2022
+    - 3.5.1 - Apr 06, 2022
+    - 3.5.0 - Apr 01, 2022
     - 3.4.3 - Feb 11, 2022
     - 3.4.2 - Feb 05, 2022
     - 3.4.1 - Feb 05, 2022
@@ -195,6 +199,7 @@ Versions of common dependencies
 
 - Joda-Time  
   https://github.com/JodaOrg/joda-time/releases
+    - 2.10.14 - Mar 20, 2022
     - 2.10.13 - Oct 26, 2021
     - 2.10.12 - Sep 29, 2021
     - 2.10.11 - Sep 22, 2021
@@ -208,6 +213,7 @@ Versions of common dependencies
 - json4s  
   https://github.com/json4s/json4s/releases  
   https://search.maven.org/search?q=org.json4s
+    - 4.0.5 - Apr 05, 2022
     - 4.0.4 - Jan 22, 2022
     - 4.0.3 - Jul 26, 2021
     - 4.0.2 - Jul 25, 2021
