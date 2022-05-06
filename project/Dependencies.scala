@@ -6,7 +6,7 @@ object Dependencies {
     val scala212               = "2.12.15"
     val scala213               = "2.13.8"
     val supportedScalaVersions = List(scala211, scala212, scala213)
-    val scalatest              = "3.2.11"
+    val scalatest              = "3.2.12"
     val typesafeConfig         = "1.4.2"
     val jodatime               = "2.10.14"
     val json4s                 = "4.0.5"

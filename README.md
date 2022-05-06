@@ -85,6 +85,7 @@ Versions of key dependencies
 - ScalaTest  
   https://www.scalatest.org  
   https://github.com/scalatest/scalatest/releases
+    - 3.2.12 - May 05, 2022
     - 3.2.11 - Jan 25, 2022
     - 3.2.10 - Sep 20, 2021
     - 3.2.9 - May 17, 2021
@@ -235,8 +236,8 @@ Versions of common dependencies
     - 1.1 - Aug 03, 2020
     - 1.0 - Jul 27, 2019 Last version still available for Scala 2.11
 
-Important techniques
---------------------
+Various useful techniques
+-------------------------
 
 ### Checking SBT, Scala, Java version
 
