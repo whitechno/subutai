@@ -5,13 +5,36 @@ function error_exit() {
   exit 1
 }
 
-THIS_DIR="${0%/*}"
-echo "Script directory: $THIS_DIR"
+usage() {
+  cat <<EndOfMessage
+This is line 1.
+  This is line 2.
+ Line 3.
+EndOfMessage
+}
+usage
+
+# shellcheck disable=SC2016
+echo '
+Pretty-print JSON (to sort, add the `--sort-keys` flag to the end):'
+echo '{"foo": "lorem", "bar": "ipsum"}' | python -m json.tool --sort-keys
+# or use `jq`:
+jq <<< '{ "foo": "lorem", "bar": "ipsum" }'
+
+SCRIPT_DIR="${0%/*}"
+echo "
+Script directory:
+$SCRIPT_DIR
+"
+
+TODAY=$(date '+%Y%m%d')
+echo "$TODAY"
+date -j -f '%m-%d-%Y' "09-01-2017" +'%A' # day of week
+cal | head -1 | grep -oE "[A-Za-z]+"
+cal | head -1 | grep -oE "[[:alpha:]]+" # same as above
 
 TMP_DIR=/tmp
 TMP_EXTRACT=${TMP_DIR}/da_download
-TODAY=$(date '+%Y%m%d')
-echo "$TODAY"
 
 if [ ! -d ${TMP_EXTRACT} ]; then
   mkdir ${TMP_EXTRACT} ||
