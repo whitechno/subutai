@@ -28,11 +28,72 @@ command. `printf`, on the other hand, has much less variation.
 
 Pretty-print JSON
 -----------------
-With Python (to sort, add the `--sort-keys` flag to the end):
+From [here](
+https://stackoverflow.com/questions/352098/how-can-i-pretty-print-json-in-a-shell-script
+)
+
+### With Python
+
+(to sort, add the `--sort-keys` flag to the end):
 `echo '{"foo": "lorem", "bar": "ipsum"}' | python -m json.tool --sort-keys`
 
-or use `jq` (You can find their tutorials [here](
+For even more convenience with a bit more typing to get it ready:
+
+```shell
+# if the JSON is a string
+prettyjson_s() {
+  echo "$1" | python -m json.tool
+}
+
+# if the JSON is in a file
+prettyjson_f() {
+  python -m json.tool "$1"
+}
+
+# if the JSON is from an internet source such as an API
+prettyjson_w() {
+  curl "$1" | python -m json.tool
+}
+```
+
+You can put this in .bashrc and it will be available every time in shell.
+Invoke it like `prettyjson_s '{"foo": "lorem", "bar": "ipsum"}'`.
+
+Another way:
+
+```shell
+echo '{"test":1,"test2":2}' | \
+python -c 'import sys,json;data=json.loads(sys.stdin.read());print(data["test"])'
+```
+
+If you want to do it all in one go with curl on the command line using an
+authentication token:
+
+```shell
+curl -X GET -H "Authorization: Token wef4fwef54te4t5teerdfgghrtgdg53" \
+http://testsite/api/ | python -mjson.tool
+```
+
+### With jq
+
+(You can find their tutorials [here](
 http://stedolan.github.io/jq/tutorial/).):
 `jq <<< '{ "foo": "lorem", "bar": "ipsum" }'`
+
+Usage examples:
+
+```shell
+$ jq --color-output . file1.json file1.json | less -R
+
+$ command_with_json_output | jq .
+
+$ jq # stdin/"interactive" mode, just enter some JSON
+
+$ jq <<< '{ "foo": "lorem", "bar": "ipsum" }'
+{
+  "foo": "lorem",
+  "bar": "ipsum"
+}
+```
 
 

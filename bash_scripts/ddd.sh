@@ -19,7 +19,7 @@ echo '
 Pretty-print JSON (to sort, add the `--sort-keys` flag to the end):'
 echo '{"foo": "lorem", "bar": "ipsum"}' | python -m json.tool --sort-keys
 # or use `jq`:
-jq <<< '{ "foo": "lorem", "bar": "ipsum" }'
+jq --sort-keys <<< '{ "foo": "lorem", "bar": "ipsum" }'
 
 SCRIPT_DIR="${0%/*}"
 echo "
@@ -34,7 +34,7 @@ cal | head -1 | grep -oE "[A-Za-z]+"
 cal | head -1 | grep -oE "[[:alpha:]]+" # same as above
 
 TMP_DIR=/tmp
-TMP_EXTRACT=${TMP_DIR}/da_download
+TMP_EXTRACT=${TMP_DIR}/ddd_test
 
 if [ ! -d ${TMP_EXTRACT} ]; then
   mkdir ${TMP_EXTRACT} ||
