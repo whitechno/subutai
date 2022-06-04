@@ -18,6 +18,7 @@ usage
 echo '
 Pretty-print JSON (to sort, add the `--sort-keys` flag to the end):'
 echo '{"foo": "lorem", "bar": "ipsum"}' | python -m json.tool --sort-keys
+echo '{ "Düsseldorf": "lorem", "bar": "ipsum" }' | python -m json.tool
 # or use `jq`:
 jq --sort-keys <<< '{ "foo": "lorem", "bar": "ipsum" }'
 
