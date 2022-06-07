@@ -5,7 +5,7 @@ import org.scalatest.matchers.should.Matchers
 import org.joda.time.{ DateTime, Period }
 import org.joda.time.format.{ DateTimeFormat, DateTimeFormatter, ISOPeriodFormat }
 
-class TestSpec_TimeStepper extends AnyFlatSpec with Matchers {
+class TestSpec_01_TimeStepper extends AnyFlatSpec with Matchers {
 
   it should "correctly implement TimeStepper" in {
     val unixStart = DateTime.parse("1970-01-01T00:00:00Z")

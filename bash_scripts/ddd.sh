@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# for multi-line comments, use : ' '
+# shellcheck disable=SC2016
+: 'To suppress this warning in IntelliJ editor:
+  > Expressions don'\''t expand in single quotes, use double quotes for that.
+  > See SC2016.
+add
+# shellcheck disable=SC2016
+'
+
 function error_exit() {
   echo "$1" 1>&2
   exit 1
@@ -14,13 +23,12 @@ EndOfMessage
 }
 usage
 
-# shellcheck disable=SC2016
 echo '
 Pretty-print JSON (to sort, add the `--sort-keys` flag to the end):'
 echo '{"foo": "lorem", "bar": "ipsum"}' | python -m json.tool --sort-keys
 echo '{ "Düsseldorf": "lorem", "bar": "ipsum" }' | python -m json.tool
 # or use `jq`:
-jq --sort-keys <<< '{ "foo": "lorem", "bar": "ipsum" }'
+jq --sort-keys <<<'{ "foo": "lorem", "bar": "ipsum" }'
 
 SCRIPT_DIR="${0%/*}"
 echo "
@@ -30,9 +38,7 @@ $SCRIPT_DIR
 
 TODAY=$(date '+%Y%m%d')
 echo "$TODAY"
-date -j -f '%m-%d-%Y' "09-01-2017" +'%A' # day of week
-cal | head -1 | grep -oE "[A-Za-z]+"
-cal | head -1 | grep -oE "[[:alpha:]]+" # same as above
+date -j -f '%Y%m%d' "$TODAY" +'%A' # day of week
 
 TMP_DIR=/tmp
 TMP_EXTRACT=${TMP_DIR}/ddd_test
@@ -45,7 +51,6 @@ touch "${TMP_EXTRACT}/${TODAY}"
 
 echo "Cleaning up..."
 
-# shellcheck disable=SC2016
 : '
 OUT=$(ls -A ${TMP_EXTRACT} 2>/dev/null) # check if dir is non-empty
 echo "$?" # prints exit status of the last command

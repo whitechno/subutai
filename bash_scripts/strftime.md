@@ -1,188 +1,204 @@
 strftime – format date and time
 ===============================
 
-Bash `date` uses `strftime` from Standard C Library. The format string consists of
-zero or more conversion specifications and ordinary characters. All ordinary
-characters are copied directly into the buffer. A conversion specification consists
-of a percent sign “‘%’” and one other character.
+### strftime
+
+Bash `date` uses `strftime` from Standard C Library for the output format.
+See `$ man strftime`. (Note that parsing is done using strptime(3).)
+The format string consists of zero or more conversion specifications and ordinary
+characters.
+All ordinary characters are copied directly into the buffer. A conversion
+specification consists of a percent sign “‘%’” and one other character.
 
 ```text
-
+Examples are for 'Sun Jan  3 04:05:06 UTC 2021'
      %A    is replaced by national representation of the full weekday name.
+           'Sunday'
 
      %a    is replaced by national representation of the abbreviated weekday name.
+           'Sun'
 
      %B    is replaced by national representation of the full month name.
+           'January'
 
      %b    is replaced by national representation of the abbreviated month name.
+           'Jan'
 
-     %C    is replaced by (year / 100) as decimal number; single digits are preceded by a
-           zero.
+     %C    is replaced by century (year/100) as decimal number; 
+           single digits are preceded by a zero.
+           '20'
 
      %c    is replaced by national representation of time and date.
+           "%a %b %e %T %Y"
+           'Sun Jan  3 04:05:06 2021'
 
      %D    is equivalent to “%m/%d/%y”.
+           '01/03/21'
 
-     %d    is replaced by the day of the month as a decimal number (01-31).
+     %d    is replaced by the day of the month as a decimal number (01-31). [%e]
+           [ISO 8601 date %Y-%m-%d]
+           '03'
 
      %E* %O*
-           POSIX locale extensions.  The sequences %Ec %EC %Ex %EX %Ey %EY %Od %Oe %OH %OI
-           %Om %OM %OS %Ou %OU %OV %Ow %OW %Oy are supposed to provide alternate
-           representations.
+           POSIX locale extensions. The sequences 
+           %Ec %EC %Ex %EX %Ey %EY 
+           %Od %Oe %OH %OI %Om %OM %OS %Ou %OU %OV %Ow %OW %Oy 
+           are supposed to provide alternate representations.
 
            Additionally %OB implemented to represent alternative months names (used
            standalone, without day mentioned).
 
-     %e    is replaced by the day of the month as a decimal number (1-31); single digits are
-           preceded by a blank.
+     %e    is replaced by the day of the month as a decimal number (1-31); 
+           single digits are preceded by a blank. [%d]
+           ' 3'
 
      %F    is equivalent to “%Y-%m-%d”.
+           [ISO 8601 date %F]
+           '2021-01-03'
 
-     %G    is replaced by a year as a decimal number with century.  This year is the one that
-           contains the greater part of the week (Monday as the first day of the week).
+     %G    is replaced by a week year as a decimal number with century. 
+           This year is the one that contains the greater part of the week 
+           (Monday as the first day of the week).
+           [ISO 8601 week date %G-W%V-%u]
+           '2020'
 
-     %g    is replaced by the same year as in “%G”, but as a decimal number without century
-           (00-99).
+     %g    is replaced by the same year as in “%G”, but as a decimal number without 
+           century (00-99).
+           '20'
 
-     %H    is replaced by the hour (24-hour clock) as a decimal number (00-23).
+     %H    is replaced by the hour (24-hour clock) as a decimal number (00-23). [%k]
+           [ISO 8601 time T%H:%M:%S]
+           '04'
 
      %h    the same as %b.
+           'Jan'
 
-     %I    is replaced by the hour (12-hour clock) as a decimal number (01-12).
+     %I    is replaced by the hour (12-hour clock) as a decimal number (01-12). [%l]
+           '04'
 
      %j    is replaced by the day of the year as a decimal number (001-366).
+           [ISO 8601 ordinal date %Y-%j]
+           '003'
 
-     %k    is replaced by the hour (24-hour clock) as a decimal number (0-23); single digits
-           are preceded by a blank.
+     %k    is replaced by the hour (24-hour clock) as a decimal number (0-23); 
+           single digits are preceded by a blank. [%H]
+           ' 4'
 
-     %l    is replaced by the hour (12-hour clock) as a decimal number (1-12); single digits
-           are preceded by a blank.
+     %l    is replaced by the hour (12-hour clock) as a decimal number (1-12); 
+           single digits are preceded by a blank. [%I]
+           ' 4'
 
      %M    is replaced by the minute as a decimal number (00-59).
+           [ISO 8601 time T%H:%M:%S]
+           '05'
 
      %m    is replaced by the month as a decimal number (01-12).
+           [ISO 8601 date %Y-%m-%d]
+           '01'
 
      %n    is replaced by a newline.
 
      %O*   the same as %E*.
 
-     %p    is replaced by national representation of either "ante meridiem" (a.m.)  or "post
-           meridiem" (p.m.)  as appropriate.
+     %p    is replaced by national representation of either "ante meridiem" (a.m.) 
+           or "post meridiem" (p.m.) as appropriate.
+           'AM'
 
      %R    is equivalent to “%H:%M”.
+           [ISO 8601 time T%R]
+           '04:05'
 
      %r    is equivalent to “%I:%M:%S %p”.
+           '04:05:06 AM' 
 
      %S    is replaced by the second as a decimal number (00-60).
+           [ISO 8601 time T%H:%M:%S]
+           '06'
 
-     %s    is replaced by the number of seconds since the Epoch, UTC (see mktime(3)).
+     %s    is replaced by the number of seconds since the Epoch
+           (00:00:00 UTC, January 1, 1970; see mktime(3)).
+           '1609646706'
 
-     %T    is equivalent to “%H:%M:%S”.
+     %T    is equivalent to “%H:%M:%S”. 
+           [ISO 8601 time T%T]
+           '04:05:06'
 
      %t    is replaced by a tab.
 
-     %U    is replaced by the week number of the year (Sunday as the first day of the week)
-           as a decimal number (00-53).
+     %U    is replaced by the week number of the year as a decimal number (00-53).
+           (Sunday as the first day of the week) All days in a new year preceding 
+           the first Sunday are considered to be in week 00.
+           '01'
 
-     %u    is replaced by the weekday (Monday as the first day of the week) as a decimal
-           number (1-7).
+     %u    is replaced by the weekday as a decimal number (1-7).
+           (Monday as the first day of the week)
+           [ISO 8601 week date %G-W%V-%u]
+           '7'
 
-     %V    is replaced by the week number of the year (Monday as the first day of the week)
-           as a decimal number (01-53).  If the week containing January 1 has four or more
-           days in the new year, then it is week 1; otherwise it is the last week of the
-           previous year, and the next week is week 1.
+     %V    is replaced by the week number of the year as a decimal number (01-53).
+           (Monday as the first day of the week)
+           If the week containing January 1 has four or more days in the new year, 
+           then it is week 01; otherwise it is the last week of the previous year, 
+           and the next week is week 01.
+           [ISO 8601 week date %G-W%V-%u]
+           '53'
 
      %v    is equivalent to “%e-%b-%Y”.
+           ' 3-Jan-2021'
 
-     %W    is replaced by the week number of the year (Monday as the first day of the week)
-           as a decimal number (00-53).
+     %W    is replaced by the week number of the year as a decimal number (00-53).
+           (Monday as the first day of the week) All days in a new year preceding 
+           the first Monday are considered to be in week 00.
+           '00'
 
-     %w    is replaced by the weekday (Sunday as the first day of the week) as a decimal
-           number (0-6).
+     %w    is replaced by the weekday as a decimal number (0-6).
+           (Sunday as the first day of the week)
+           '0'
 
      %X    is replaced by national representation of the time.
+           '04:05:06'
 
      %x    is replaced by national representation of the date.
+           '01/03/21'
 
-     %Y    is replaced by the year with century as a decimal number.
+     %Y    is replaced by the year with century as a decimal number. 
+           [ISO 8601 date %Y-%m-%d]
+           '2021'
 
      %y    is replaced by the year without century as a decimal number (00-99).
+           '21'
 
      %Z    is replaced by the time zone name.
+           'UTC'
 
-     %z    is replaced by the time zone offset from UTC; a leading plus sign stands for east
-           of UTC, a minus sign for west of UTC, hours and minutes follow with two digits
-           each and no delimiter between them (common form for RFC 822 date headers).
+     %z    is replaced by the time zone offset from UTC; 
+           a leading plus sign stands for east of UTC, a minus sign for west of UTC, 
+           hours and minutes follow with two digits each and no delimiter between 
+           them (common form for RFC 822 date headers). 
+           [ISO 8601 <time>±hhmm]
+           '+0000'
 
-     %+    is replaced by national representation of the date and time (the format is similar
-           to that produced by date(1)).
+     %+    is replaced by national representation of the date and time 
+           (the format is similar to that produced by date(1)).
+           "%a %b %e %T %Z %Y"
+           'Sun Jan  3 04:05:06 UTC 2021'
 
-     %-*   GNU libc extension.  Do not do any padding when performing numerical outputs.
+     %-*   GNU libc extension. Do not do any padding when performing numerical outputs.
 
-     %_*   GNU libc extension.  Explicitly specify space for padding.
+     %_*   GNU libc extension. Explicitly specify space for padding.
 
-     %0*   GNU libc extension.  Explicitly specify zero for padding.
+     %0*   GNU libc extension. Explicitly specify zero for padding.
 
      %%    is replaced by ‘%’.
 
 ```
 
-```text
-strftime: bash
-joda-time: joda
-java.text.SimpleDateFormat: simp
+### python
 
-bash            joda  simp
-----            ----  ----
-%A              EEEE  EEEE
-%a              E     E
-%B              MMMM  MMMM
-%b              MMM   MMM
-%C              C
-%c
-%D=%m/%d/%y
-%d              dd    dd
-%E* %O*
-[ ]%e           d     d
-%F=%Y-%m-%d
-%G              xxxx  YYYY
-%g              xx    YY
-%H              HH    HH
-%h=%b
-%I              hh    hh
-%j              DDD   DDD
-[ ]%k           H     H
-[ ]%l           h     h
-%M              mm    mm
-%m              MM    MM
-%n=\n
-%p              a     a
-%R=%H:%M
-%r=%I:%M:%S %p
-%S              ss    ss
-%s=EpochTime
-%T=%H:%M:%S
-%t=\t
-%U
-%u              e    u
-%V    
-%v=%e-%b-%Y
-%W              ww   ww
-%w
-%X
-%x
-%Y              yyyy yyyy
-%y              yy   yy
-%Z              z    z
-%z              Z    Z
-%+
-%-*
-%_*
-%0*
-%%=%
-```
+[python datetime.strftime](
+https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior)
 
-### joda-time DateTimeFormat
+### joda-time org.joda.time.format.DateTimeFormat
 
 [joda-time DateTimeFormat](
 https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html
