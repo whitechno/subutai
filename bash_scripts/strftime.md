@@ -234,38 +234,67 @@ or more outputs the zone id.
 Zone names: Time zone names ('z') cannot be parsed.
 
 ```text
+Examples are for "2021-01-03T00:05:06 America/Los_Angeles"
 
  Symbol  Meaning                      Presentation  Examples
  ------  -------                      ------------  -------
  G       era                          text          AD
+ GGGG                                               AD
  C       century of era (>=0)         number        20
- Y       year of era (>=0)            year          1996
+ Y       year of era (>=0)            year          2021
+ YY                                                 21
+ YYYY                                               2021
+ 
+ x       weekyear                     year          2020
+ xx                                                 20
+ xxxx                                               2020
+ w       week of weekyear             number        53
+ ww                                                 53
+ e       day of week 1=Monday,7=Sunday number       7 
+ E       day of week                  text          Sun
+ EEEE                                               Sunday
+ 
+ y       year                         year          2021
+ yy                                                 21
+ yyyy                                               2021
+ D       day of year                  number        3
+ DDD                                                003
+ M       month of year                month         1
+ MM                                                 01
+ MMM                                                Jan
+ MMMM                                               January
+ d       day of month                 number        3
+ dd                                                 03
 
- x       weekyear                     year          1996
- w       week of weekyear             number        27
- e       day of week                  number        2 (1 = Monday, ..., 7 = Sunday)
- E       day of week                  text          Tuesday; Tue
-
- y       year                         year          1996
- D       day of year                  number        189
- M       month of year                month         July; Jul; 07
- d       day of month                 number        10
-
- a       halfday of day               text          PM
+ a       halfday of day               text          AM
+ aaaa                                               AM
  K       hour of halfday (0~11)       number        0
+ KK                                                 00
  h       clockhour of halfday (1~12)  number        12
+ hh                                                 12
 
  H       hour of day (0~23)           number        0
+ HH                                                 00
  k       clockhour of day (1~24)      number        24
- m       minute of hour               number        30
- s       second of minute             number        55
+ kk                                                 24
+ m       minute of hour               number        5
+ mm                                                 05
+ s       second of minute             number        6
+ ss                                                 06
  S       fraction of second           millis        978
 
- z       time zone name               text          Pacific Standard Time; PST
- Z       time zone offset/id          zone          -0800; -08:00; America/Los_Angeles
+ z       time zone name               text          PST
+ zzzz                                               Pacific Standard Time
+ Z       time zone offset/id          zone          -0800
+ ZZ                                                 -08:00
+ ZZZ                                                America/Los_Angeles
 
  '       escape for text              delimiter
  ''      single quote                 literal       '
+ 
+yyyy-MM-dd'T'HH:mm:ss                 iso date-time 2021-01-03T00:05:06 
+xxxx-'W'ww-e                          iso week-date 2020-W53-7
+yyyy-DDD                              iso ord-date  2021-003
 ```
 
 ### java.text.SimpleDateFormat
