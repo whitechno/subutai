@@ -82,7 +82,7 @@ date -j -f "$INPUT_FMT" "$DATE1" "+%c"                # Sun Jan  3 00:00:00 2021
 date -j -f "%a %b %d %T %Z %Y" "Sun Jan  3 00:00:00 PST 2021" "+%s" # 1609660800
 
 # RFC 2822 output format with -R option
-date -jR -f "$INPUT_FMT" "$DATE1"                      # Sun, 03 Jan 2021 00:00:00 -0800
+date -jR -f "$INPUT_FMT" "$DATE1" # Sun, 03 Jan 2021 00:00:00 -0800
 date -j -f "$INPUT_FMT" "$DATE1" "+%a, %d %b %Y %T %z" # same as above
 # parse RFC 2822 format
 date -j -f "%a, %d %b %Y %T %z" "Sun, 03 Jan 2021 00:00:00 -0800" "+%s" # 1609660800

@@ -6,8 +6,7 @@ strftime – format date and time
 Bash `date` uses `strftime` from Standard C Library for the output format.
 See `$ man strftime`. (Note that parsing is done using strptime(3).)
 The format string consists of zero or more conversion specifications and ordinary
-characters.
-All ordinary characters are copied directly into the buffer. A conversion
+characters. All ordinary characters are copied directly into the buffer. A conversion
 specification consists of a percent sign “‘%’” and one other character.
 
 ```text
