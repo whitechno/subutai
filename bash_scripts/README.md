@@ -56,8 +56,8 @@ prettyjson_w() {
 }
 ```
 
-You can put this in .bashrc and it will be available every time in shell.
-Invoke it like `prettyjson_s '{"foo": "lorem", "bar": "ipsum"}'`.
+You can put this in .bashrc and it will be available every time in shell. Invoke it
+like `prettyjson_s '{"foo": "lorem", "bar": "ipsum"}'`.
 
 Another way:
 
@@ -71,7 +71,7 @@ authentication token:
 
 ```shell
 curl -X GET -H "Authorization: Token wef4fwef54te4t5teerdfgghrtgdg53" \
-http://testsite/api/ | python -mjson.tool
+http://testsite/api/ | python -m json.tool
 ```
 
 ### With jq
@@ -96,4 +96,9 @@ $ jq <<< '{ "foo": "lorem", "bar": "ipsum" }'
 }
 ```
 
+Other Python
+------------
+
+Nice example of using github-actions with Python:
+[nickzxcv / gipv6minmax](https://github.com/nickzxcv/gipv6minmax)
 
