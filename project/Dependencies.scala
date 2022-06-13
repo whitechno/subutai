@@ -10,6 +10,7 @@ object Dependencies {
     val typesafeConfig         = "1.4.2"
     val jodatime               = "2.10.14"
     val json4s                 = "4.0.5"
+    val requests               = "0.7.1"
     val gigahorse              = "0.6.0"
     val typesafePlay           = "2.9.2"
     def scalacheck(scalaBinaryVer: String): String =
@@ -27,6 +28,7 @@ object Dependencies {
     val json4sCore     = "org.json4s"    %% "json4s-core"      % V.json4s
     val json4sJackson  = "org.json4s"    %% "json4s-jackson"   % V.json4s
     val json4sNative   = "org.json4s"    %% "json4s-native"    % V.json4s
+    val requests       = "com.lihaoyi"   %% "requests"         % V.requests
     val gigahorse      = "com.eed3si9n"  %% "gigahorse-okhttp" % V.gigahorse
     val typesafePlayJson = "com.typesafe.play" %% "play-json" % V.typesafePlay
     def scalacheck(scalaBinaryVer: String): ModuleID =

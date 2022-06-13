@@ -25,6 +25,7 @@ lazy val subutai = (project in file("."))
     hocon,
     `jebe-time`,
     json4s,
+    `requests-scala`,
     `scala-check`,
     `scala-versions`,
     trie
@@ -138,6 +139,17 @@ lazy val json4s = project
     libraryDependencies ++= Seq(
       L.json4sJackson % Test,
       L.scalatest     % Test
+    )
+  )
+
+lazy val `requests-scala` = project
+  .settings(
+    scalaVersion       := V.scala212,
+    crossScalaVersions := V.supportedScalaVersions,
+    commonSettings,
+    libraryDependencies ++= Seq(
+      L.requests  % Test,
+      L.scalatest % Test
     )
   )
 
