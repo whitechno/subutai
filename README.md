@@ -313,6 +313,13 @@ https://www.scalatest.org/user_guide/using_the_runner
 https://www.scalatest.org/user_guide/tagging_your_tests
 )
 
+Set the SBT logging level in your build.sbt file with this setting:
+`logLevel := Level.Debug`
+Or, if you’re working interactively from the SBT command line and don’t want to add
+this to your build.sbt file, use this syntax:
+`> set logLevel := Level.Debug`. All of the SBT log levels are: Debug, Info, Warning,
+Error.
+
 ### Package
 
 `sbt:hocon> package` to generate JAR in
