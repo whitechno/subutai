@@ -1,18 +1,19 @@
 import sbt._
 object Dependencies {
+  val supportedScalaVersions: Seq[String] =
+    List(Versions.scala211, Versions.scala212, Versions.scala213)
   object Versions {
-    val scala210               = "2.10.7"
-    val scala211               = "2.11.12"
-    val scala212               = "2.12.16"
-    val scala213               = "2.13.8"
-    val supportedScalaVersions = List(scala211, scala212, scala213)
-    val scalatest              = "3.2.12"
-    val typesafeConfig         = "1.4.2"
-    val jodatime               = "2.10.14"
-    val json4s                 = "4.0.5"
-    val requests               = "0.7.1"
-    val gigahorse              = "0.6.0"
-    val typesafePlay           = "2.9.2"
+    val scala210       = "2.10.7"
+    val scala211       = "2.11.12"
+    val scala212       = "2.12.16"
+    val scala213       = "2.13.8"
+    val scalatest      = "3.2.12"
+    val typesafeConfig = "1.4.2"
+    val jodatime       = "2.10.14"
+    val json4s         = "4.0.5"
+    val requests       = "0.7.1"
+    val gigahorse      = "0.6.0"
+    val typesafePlay   = "2.9.2"
     def scalacheck(scalaBinaryVer: String): String =
       if (scalaBinaryVer == "2.11") "1.15.2" // Last version available for Scala 2.11
       else "1.16.0"

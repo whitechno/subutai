@@ -1,20 +1,12 @@
-import Dependencies.{ Library => L, Versions => V }
+import Dependencies.{ supportedScalaVersions, Library => L, Versions => V }
 ThisBuild / version      := "0.1.0-SNAPSHOT"
 ThisBuild / organization := "com.github.whitechno.subutai"
 ThisBuild / scalaVersion := V.scala213
 
-// You can use -Dsbt.launcher.coursier=false to opt out of using Coursier
-// and used Apache Ivy instead.
-//ThisBuild / useCoursier := false
-// rm ~/.sbt/.credentials; rm ~/.sbt/repositories
-//ThisBuild / resolvers += Resolver.mavenCentral
-//ThisBuild / resolvers += Resolver.sbtPluginRepo("releases")
-
 //
-// *** projects
+// projects
 //
 
-// *** root project
 lazy val subutai = (project in file("."))
 // Set aggregate so that the command sent to hello is broadcast to helloCore too
   .aggregate(
@@ -63,7 +55,6 @@ lazy val subutai = (project in file("."))
     )
   )
 
-// *** helloCore project
 lazy val helloCore = (project in file("core"))
   .settings(
     name := "Hello Core",
@@ -77,7 +68,6 @@ lazy val helloCore = (project in file("core"))
 
 lazy val algs4j = project
 
-// *** scalanlp breeze project
 lazy val breeze = project
   .settings(
     scalaVersion := V.scala213,
@@ -101,14 +91,14 @@ lazy val graphz = project
     )
   )
 
-// *** hocon project
+// hocon and assembly project
 // sbt> +hocon/assembly
 // $ jar tvf hocon/target/scala-2.12/hocon-assembly_2.12-0.1.0-SNAPSHOT.jar
 // 5,434,345 B with Scala, and 5,331 B without Scala
 lazy val hocon = project
   .settings(
     scalaVersion       := V.scala212,
-    crossScalaVersions := V.supportedScalaVersions,
+    crossScalaVersions := supportedScalaVersions,
     commonSettings,
     libraryDependencies ++= Seq(
       L.typesafeConfig % "provided"
@@ -118,11 +108,10 @@ lazy val hocon = project
       s"${name.value}-assembly_${scalaBinaryVersion.value}-${version.value}.jar"
   )
 
-// *** joda-time based project
 lazy val `jebe-time` = project
   .settings(
     scalaVersion       := V.scala212,
-    crossScalaVersions := V.supportedScalaVersions,
+    crossScalaVersions := supportedScalaVersions,
     commonSettings,
     libraryDependencies ++= Seq(
       L.jodatime  % Test,
@@ -130,11 +119,10 @@ lazy val `jebe-time` = project
     )
   )
 
-// json4s-jackson project
 lazy val json4s = project
   .settings(
     scalaVersion       := V.scala212,
-    crossScalaVersions := V.supportedScalaVersions,
+    crossScalaVersions := supportedScalaVersions,
     commonSettings,
     libraryDependencies ++= Seq(
       L.json4sJackson % Test,
@@ -145,7 +133,7 @@ lazy val json4s = project
 lazy val `requests-scala` = project
   .settings(
     scalaVersion       := V.scala212,
-    crossScalaVersions := V.supportedScalaVersions,
+    crossScalaVersions := supportedScalaVersions,
     commonSettings,
     libraryDependencies ++= Seq(
       L.requests  % Test,
@@ -153,18 +141,16 @@ lazy val `requests-scala` = project
     )
   )
 
-// *** scala-check project
 lazy val `scala-check` = project
   .settings(
     scalaVersion       := V.scala213,
-    crossScalaVersions := V.supportedScalaVersions,
+    crossScalaVersions := supportedScalaVersions,
     commonSettings,
     libraryDependencies ++= Seq(
       L.scalacheck(scalaBinaryVersion.value) % Test
     )
   )
 
-// *** scala-versions project
 lazy val `scala-versions` = project
   .settings(
     baseDirectoryTask := {
@@ -172,15 +158,14 @@ lazy val `scala-versions` = project
       println("baseDirectoryTask:\n\t" + baseDir)
     },
     scalaVersion       := V.scala212,
-    crossScalaVersions := V.supportedScalaVersions,
+    crossScalaVersions := supportedScalaVersions,
     commonSettings
   )
 
-// *** trie project
 lazy val trie = project
   .settings(
     scalaVersion       := V.scala213,
-    crossScalaVersions := V.supportedScalaVersions,
+    crossScalaVersions := supportedScalaVersions,
     commonSettings
   )
 
@@ -205,8 +190,8 @@ printTask := {
     DefaultMavenRepository,
     Resolver.mavenCentral,
     JavaNet2Repository,
-    Resolver.sonatypeRepo("public"), // (or “snapshots”, “staging”, “releases”)
-    Resolver.sonatypeRepo("snapshots"), // (or “snapshots”, “staging”, “releases”)
+    Resolver.sonatypeOssRepos("public"), // (or “snapshots”, “staging”, “releases”)
+    Resolver.sonatypeOssRepos("snapshots"),
     Resolver.typesafeRepo("releases"), // (or “snapshots”)
     Resolver.typesafeIvyRepo("releases"), // (or “snapshots”)
     Resolver.sbtPluginRepo("releases"), // (or “snapshots”)
@@ -231,3 +216,10 @@ printTask := {
     println("\t" + s)
   }
 }
+
+// You can use -Dsbt.launcher.coursier=false to opt out of using Coursier
+// and used Apache Ivy instead.
+//ThisBuild / useCoursier := false
+// rm ~/.sbt/.credentials; rm ~/.sbt/repositories
+//ThisBuild / resolvers += Resolver.mavenCentral
+//ThisBuild / resolvers += Resolver.sbtPluginRepo("releases")
