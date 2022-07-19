@@ -223,6 +223,7 @@ Versions of common dependencies
 - json4s  
   https://github.com/json4s/json4s/releases  
   https://search.maven.org/search?q=org.json4s
+    - 4.1.0-M1 - Jan 06, 2022
     - 4.0.5 - Apr 05, 2022
     - 4.0.4 - Jan 22, 2022
     - 4.0.3 - Jul 26, 2021
