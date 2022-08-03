@@ -7,7 +7,7 @@ object Dependencies {
     val scala211       = "2.11.12"
     val scala212       = "2.12.16"
     val scala213       = "2.13.8"
-    val scalatest      = "3.2.12"
+    val scalatest      = "3.2.13"
     val typesafeConfig = "1.4.2"
     val jodatime       = "2.10.14"
     val json4s         = "4.0.5"
