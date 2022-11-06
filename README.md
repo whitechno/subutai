@@ -215,8 +215,10 @@ Versions of key dependencies
     - 2.5.0-RC2 - Apr 25, 2020
     - 2.5.0-RC1 - Apr 15, 2020
     - 2.4.2 - Feb 22, 2020
+
 - sbt-assembly  
   https://github.com/sbt/sbt-assembly/releases
+    - 2.0.0 - Oct 17, 2022
     - 2.0.0-RC1 - May 01, 2022
     - 1.2.0 - Feb 12, 2022
     - 1.1.0 - Aug 31, 2021
@@ -229,7 +231,13 @@ Versions of common dependencies
 -------------------------------
 
 - Joda-Time  
-  https://github.com/JodaOrg/joda-time/releases
+  https://github.com/JodaOrg/joda-time/releases  
+  https://www.joda.org/joda-time/changes-report.html
+    - 2.12.1 - Oct 29, 2022
+    - 2.12.0 - Oct 13, 2022
+    - 2.11.2 - Sep 25, 2022
+    - 2.11.1 - Aug 25, 2022
+    - 2.11.0 - Aug 12, 2022
     - 2.10.14 - Mar 20, 2022
     - 2.10.13 - Oct 26, 2021
     - 2.10.12 - Sep 29, 2021

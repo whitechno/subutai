@@ -104,6 +104,7 @@ lazy val hocon = project
       L.typesafeConfig % "provided"
     ),
     assembly / assemblyOption ~= { _.withIncludeScala(includeScala = false) },
+    assemblyRepeatableBuild := false, // 2.0.0
     assemblyJarName :=
       s"${name.value}-assembly_${scalaBinaryVersion.value}-${version.value}.jar"
   )
