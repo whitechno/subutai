@@ -30,7 +30,8 @@ this particular version is included in `crossScalaVersions` of project `settings
 Versions of key dependencies
 ----------------------------
 
-- SBT  
+- SBT
+
   https://github.com/sbt/sbt/releases
     - 1.7.3 - Oct 30, 2022
     - 1.7.2 - Oct 02, 2022
@@ -60,14 +61,22 @@ Versions of key dependencies
     - 1.4.0 - Oct 04, 2020
     - 1.3.13 - Jun 27, 2020
     - 1.3.12 - May 30, 2020
-    - 1.3.11 - May 29, 2020  
-      There was a regression in sbt 1.3.11. Please use sbt 1.3.12 instead.
+    - 1.3.11 - May 29, 2020
+        - There was a regression in sbt 1.3.11. Please use sbt 1.3.12 instead.
     - 1.3.10 - Apr 14, 2020
     - 1.3.9 - Mar 31, 2020
     - 1.3.8 - Feb 3, 2020
-- Scala  
+
+- Scala
+
   https://github.com/scala/scala/releases
     - 2.13
+        - 2.13.10 - Oct 13, 2022
+        - 2.13.9 - Sep 21, 2022
+            - Library maintainers should avoid publishing libraries using Scala
+              2.13.9. Please use 2.13.10 instead. 2.13.9 has a regression where
+              binary-incompatible bytecode is emitted for case classes which are also
+              value classes (case class ... extends AnyVal).
         - 2.13.8 - Jan 12, 2022
         - 2.13.7 - Nov 01, 2021
         - 2.13.6 - May 17, 2021
@@ -77,7 +86,8 @@ Versions of key dependencies
         - 2.13.2 - Apr 22, 2020
         - 2.13.1 - Sep 18, 2019
     - 2.12
-        - 2.12.16 - Jun 10, 2021
+        - 2.12.17 - Sep 16, 2022
+        - 2.12.16 - Jun 10, 2022
         - 2.12.15 - Sep 14, 2021
         - 2.12.14 - May 27, 2021
         - 2.12.13 - Jan 12, 2021
@@ -280,8 +290,8 @@ or in sbt shell:
   enabled.  
   (By default this means the Compile and Test configurations.) (available as of
   v2.0.0-RC5)
-- `scalafmtCheckAll`: Execute the `scalafmtCheck` task for all configurations in which
-  it is enabled.  
+- `scalafmtCheckAll`: Execute the `scalafmtCheck` task for all configurations in
+  which it is enabled.  
   (By default this means the Compile and Test configurations.) (available as of
   v2.0.0-RC5)
 
