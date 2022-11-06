@@ -30,8 +30,7 @@ this particular version is included in `crossScalaVersions` of project `settings
 Versions of key dependencies
 ----------------------------
 
-- SBT
-
+- SBT  
   https://github.com/sbt/sbt/releases
     - 1.7.3 - Oct 30, 2022
     - 1.7.2 - Oct 02, 2022
@@ -67,8 +66,7 @@ Versions of key dependencies
     - 1.3.9 - Mar 31, 2020
     - 1.3.8 - Feb 3, 2020
 
-- Scala
-
+- Scala  
   https://github.com/scala/scala/releases
     - 2.13
         - 2.13.10 - Oct 13, 2022
@@ -134,6 +132,7 @@ Versions of key dependencies
     - 1.14.2 - Sep 25, 2019
     - 1.14.1 - Sep 17, 2019
     - 1.14.0 - Apr 22, 2018
+
 - typesafe config
   https://github.com/lightbend/config/tags
     - 1.4.2 - Feb 01, 2022
@@ -143,6 +142,7 @@ Versions of key dependencies
     - 1.3.0 - May 8, 2015
     - 1.2.1 - May 2, 2014
     - 1.2.0 - Jan 15, 2014
+
 - sbt-scalafmt (Scalafmt sbt plugin)  
   https://github.com/scalameta/sbt-scalafmt/releases
     - 2.4.6 - Dec 24, 2021
@@ -156,8 +156,12 @@ Versions of key dependencies
     - 2.3.2 - Mar 5, 2020
     - 2.3.1 - Jan 27, 2020
     - 2.3.0 - Dec 9, 2019
+
 - Scalafmt  
   https://github.com/scalameta/scalafmt/releases
+    - 3.6.1 - Oct 31, 2022
+    - 3.6.0 - Oct 17, 2022
+    - 3.5.9 - Aug 11, 2022
     - 3.5.8 - Jun 01, 2022
     - 3.5.7 - May 25, 2022
     - 3.5.5 - May 24, 2022
