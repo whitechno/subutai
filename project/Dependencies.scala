@@ -16,7 +16,7 @@ object Dependencies {
     val typesafePlay   = "2.9.2"
     def scalacheck(scalaBinaryVer: String): String =
       if (scalaBinaryVer == "2.11") "1.15.2" // Last version available for Scala 2.11
-      else "1.16.0"
+      else "1.17.0"
     def breeze(scalaBinaryVer: String): String =
       if (scalaBinaryVer == "2.11") "1.0" // Last version available for Scala 2.11
       else "2.0.1-RC2"
