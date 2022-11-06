@@ -10,7 +10,7 @@ object Dependencies {
     val scalatest      = "3.2.14"
     val typesafeConfig = "1.4.2"
     val jodatime       = "2.12.1"
-    val json4s         = "4.0.5"
+    val json4s         = "4.0.6"
     val requests       = "0.7.1"
     val gigahorse      = "0.6.0"
     val typesafePlay   = "2.9.2"

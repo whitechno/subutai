@@ -249,10 +249,13 @@ Versions of common dependencies
     - 2.10.6 - Apr 24, 2020
     - 2.10.5 - Oct 24, 2019
     - 2.10.4 - Sep 20, 2019
+
 - json4s  
   https://github.com/json4s/json4s/releases  
   https://search.maven.org/search?q=org.json4s
+    - 4.1.0-M2 - Oct 14, 2022
     - 4.1.0-M1 - Jan 06, 2022
+    - 4.0.6 - Sep 28, 2022
     - 4.0.5 - Apr 05, 2022
     - 4.0.4 - Jan 22, 2022
     - 4.0.3 - Jul 26, 2021
