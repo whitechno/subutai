@@ -278,7 +278,7 @@ or in sbt shell:
   enabled.  
   (By default this means the Compile and Test configurations.) (available as of
   v2.0.0-RC5)
-- `scalafmtCheckAll`: Execute the scalafmtCheck task for all configurations in which
+- `scalafmtCheckAll`: Execute the `scalafmtCheck` task for all configurations in which
   it is enabled.  
   (By default this means the Compile and Test configurations.) (available as of
   v2.0.0-RC5)
