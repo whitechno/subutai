@@ -280,6 +280,12 @@ Versions of common dependencies
     - 1.1 - Aug 03, 2020
     - 1.0 - Jul 27, 2019 Last version still available for Scala 2.11
 
+- requests-scala  
+  https://github.com/com-lihaoyi/requests-scala/releases
+    - 0.7.1 - Jun 10, 2022
+    - 0.7.0 - Dec 11, 2021
+    - 0.6.9 - May 14, 2021
+
 Various useful techniques
 -------------------------
 
