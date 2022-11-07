@@ -251,7 +251,7 @@ Versions of common dependencies
     - 2.10.4 - Sep 20, 2019
 
 - json4s  
-  https://github.com/json4s/json4s/releases  
+  https://github.com/json4s/json4s/tags  
   https://search.maven.org/search?q=org.json4s
     - 4.1.0-M2 - Oct 14, 2022
     - 4.1.0-M1 - Jan 06, 2022
@@ -269,8 +269,10 @@ Versions of common dependencies
     - 3.6.9 - Jun 15, 2020
     - 3.6.8 - May 5, 2020
     - 3.6.7 - Jun 26, 2020
+
 - breeze  
   https://github.com/scalanlp/breeze/tags
+    - 2.1.0 - Aug 21, 2022 (fails)
     - 2.0.1-RC2 - Dec 16, 2021
     - 2.0 - Oct 04, 2021
     - 1.3 - Aug 14, 2021
