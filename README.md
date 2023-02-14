@@ -243,6 +243,7 @@ Versions of common dependencies
 - Joda-Time  
   https://github.com/JodaOrg/joda-time/releases  
   https://www.joda.org/joda-time/changes-report.html
+  - 2.12.2 - Dec 17, 2022
   - 2.12.1 - Oct 29, 2022
   - 2.12.0 - Oct 13, 2022
   - 2.11.2 - Sep 25, 2022
@@ -292,6 +293,7 @@ Versions of common dependencies
 
 - requests-scala  
   https://github.com/com-lihaoyi/requests-scala/releases
+  - 0.8.0 - Dec 25, 2022
   - 0.7.1 - Jun 10, 2022
   - 0.7.0 - Dec 11, 2021
   - 0.6.9 - May 14, 2021

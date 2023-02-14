@@ -9,9 +9,9 @@ object Dependencies {
     val scala213       = "2.13.10"
     val scalatest      = "3.2.15"
     val typesafeConfig = "1.4.2"
-    val jodatime       = "2.12.1"
+    val jodatime       = "2.12.2"
     val json4s         = "4.0.6"
-    val requests       = "0.7.1"
+    val requests       = "0.8.0"
     val gigahorse      = "0.6.0"
     val typesafePlay   = "2.9.2"
     def scalacheck(scalaBinaryVer: String): String =
