@@ -22,8 +22,9 @@ Now you have a minimal setup to start using Scala with SBT.
 
 You can also switch scalaVersion temporarily:  
 `sbt:Hello>  ++2.12.11! -v`  
-`!` is to force version switch (without it, the switch happens only in projects where
-this particular version is included in `crossScalaVersions` of project `settings`)  
+`!` is to force version switch (without it, the switch happens only in projects
+where this particular version is included in `crossScalaVersions` of
+project `settings`)  
 `-v` is for verbose
 
 
@@ -32,200 +33,203 @@ Versions of key dependencies
 
 - SBT  
   https://github.com/sbt/sbt/releases
-    - 1.7.3 - Oct 30, 2022
-    - 1.7.2 - Oct 02, 2022
-    - 1.7.1 - Jul 11, 2022
-    - 1.7.0 - Jul 10, 2022
-    - 1.6.2 - Jan 31, 2022
-    - 1.6.1 - Dec 28, 2021
-    - 1.6.0 - Dec 26, 2021
-    - 1.5.8 - Dec 20, 2021
-    - 1.5.7 - Dec 14, 2021
-    - 1.5.6 - Dec 09, 2021
-    - 1.5.5 - Jul 12, 2021
-    - 1.5.4 - Jun 13, 2021
-    - 1.5.3 - May 31, 2021
-    - 1.5.2 - May 09, 2021
-    - 1.5.1 - Apr 25, 2021
-    - 1.5.0 - Apr 04, 2021
-    - 1.4.9 - Mar 09, 2021
-    - 1.4.8 - Mar 07, 2021
-    - 1.4.7 - Jan 30, 2021
-    - 1.4.6 - Dec 24, 2020
-    - 1.4.5 - Dec 13, 2020
-    - 1.4.4 - Nov 22, 2020
-    - 1.4.3 - Nov 15, 2020
-    - 1.4.2 - Nov 01, 2020
-    - 1.4.1 - Oct 19, 2020
-    - 1.4.0 - Oct 04, 2020
-    - 1.3.13 - Jun 27, 2020
-    - 1.3.12 - May 30, 2020
-    - 1.3.11 - May 29, 2020
-        - There was a regression in sbt 1.3.11. Please use sbt 1.3.12 instead.
-    - 1.3.10 - Apr 14, 2020
-    - 1.3.9 - Mar 31, 2020
-    - 1.3.8 - Feb 3, 2020
+  - 1.8.2 - Jan 04, 2023
+  - 1.8.1 - Jan 03, 2023
+  - 1.8.0 - Nov 10, 2022
+  - 1.7.3 - Oct 30, 2022
+  - 1.7.2 - Oct 02, 2022
+  - 1.7.1 - Jul 11, 2022
+  - 1.7.0 - Jul 10, 2022
+  - 1.6.2 - Jan 31, 2022
+  - 1.6.1 - Dec 28, 2021
+  - 1.6.0 - Dec 26, 2021
+  - 1.5.8 - Dec 20, 2021
+  - 1.5.7 - Dec 14, 2021
+  - 1.5.6 - Dec 09, 2021
+  - 1.5.5 - Jul 12, 2021
+  - 1.5.4 - Jun 13, 2021
+  - 1.5.3 - May 31, 2021
+  - 1.5.2 - May 09, 2021
+  - 1.5.1 - Apr 25, 2021
+  - 1.5.0 - Apr 04, 2021
+  - 1.4.9 - Mar 09, 2021
+  - 1.4.8 - Mar 07, 2021
+  - 1.4.7 - Jan 30, 2021
+  - 1.4.6 - Dec 24, 2020
+  - 1.4.5 - Dec 13, 2020
+  - 1.4.4 - Nov 22, 2020
+  - 1.4.3 - Nov 15, 2020
+  - 1.4.2 - Nov 01, 2020
+  - 1.4.1 - Oct 19, 2020
+  - 1.4.0 - Oct 04, 2020
+  - 1.3.13 - Jun 27, 2020
+  - 1.3.12 - May 30, 2020
+  - 1.3.11 - May 29, 2020
+    - There was a regression in sbt 1.3.11. Please use sbt 1.3.12 instead.
+  - 1.3.10 - Apr 14, 2020
+  - 1.3.9 - Mar 31, 2020
+  - 1.3.8 - Feb 3, 2020
 
 - Scala  
   https://github.com/scala/scala/releases
-    - 2.13
-        - 2.13.10 - Oct 13, 2022
-        - 2.13.9 - Sep 21, 2022
-            - Library maintainers should avoid publishing libraries using Scala
-              2.13.9. Please use 2.13.10 instead. 2.13.9 has a regression where
-              binary-incompatible bytecode is emitted for case classes which are also
-              value classes (case class ... extends AnyVal).
-        - 2.13.8 - Jan 12, 2022
-        - 2.13.7 - Nov 01, 2021
-        - 2.13.6 - May 17, 2021
-        - 2.13.5 - Feb 22, 2021
-        - 2.13.4 - Nov 19, 2020
-        - 2.13.3 - Jun 25, 2020
-        - 2.13.2 - Apr 22, 2020
-        - 2.13.1 - Sep 18, 2019
-    - 2.12
-        - 2.12.17 - Sep 16, 2022
-        - 2.12.16 - Jun 10, 2022
-        - 2.12.15 - Sep 14, 2021
-        - 2.12.14 - May 27, 2021
-        - 2.12.13 - Jan 12, 2021
-        - 2.12.12 - Jul 12, 2020
-        - 2.12.11 - Mar 16, 2020
-        - 2.12.10 - Sep 10, 2019
-    - 2.11 & 2.10
-        - 2.11.12 - Nov 9, 2017
-        - 2.10.7 - Nov 9, 2017
+  - 2.13
+    - 2.13.10 - Oct 13, 2022
+    - 2.13.9 - Sep 21, 2022
+      - Library maintainers should avoid publishing libraries using Scala
+        2.13.9. Please use 2.13.10 instead. 2.13.9 has a regression where
+        binary-incompatible bytecode is emitted for case classes which are also
+        value classes (case class ... extends AnyVal).
+    - 2.13.8 - Jan 12, 2022
+    - 2.13.7 - Nov 01, 2021
+    - 2.13.6 - May 17, 2021
+    - 2.13.5 - Feb 22, 2021
+    - 2.13.4 - Nov 19, 2020
+    - 2.13.3 - Jun 25, 2020
+    - 2.13.2 - Apr 22, 2020
+    - 2.13.1 - Sep 18, 2019
+  - 2.12
+    - 2.12.17 - Sep 16, 2022
+    - 2.12.16 - Jun 10, 2022
+    - 2.12.15 - Sep 14, 2021
+    - 2.12.14 - May 27, 2021
+    - 2.12.13 - Jan 12, 2021
+    - 2.12.12 - Jul 12, 2020
+    - 2.12.11 - Mar 16, 2020
+    - 2.12.10 - Sep 10, 2019
+  - 2.11 & 2.10
+    - 2.11.12 - Nov 9, 2017
+    - 2.10.7 - Nov 9, 2017
 
 - ScalaTest  
   https://www.scalatest.org  
   https://github.com/scalatest/scalatest/releases
-    - 3.2.14 - Sep 29, 2022
-    - 3.2.13 - Jul 30, 2022
-    - 3.2.12 - May 05, 2022
-    - 3.2.11 - Jan 25, 2022
-    - 3.2.10 - Sep 20, 2021
-    - 3.2.9 - May 17, 2021
-    - 3.2.8 - Apr 21, 2021
-    - 3.2.7 - Apr 02, 2021
-    - 3.2.6 - Mar 08, 2021
-    - 3.2.5 - Feb 23, 2021
-    - 3.2.4 - Feb 18, 2021
-    - 3.2.3 - Nov 09, 2020
-    - 3.2.2 - Sep 04, 2020
-    - 3.2.1 - Aug 11, 2020
-    - 3.2.0 - Jun 20, 2020
-    - 3.1.4 - Sep 04, 2020
-    - 3.1.2 - May 13, 2020
-    - 3.1.1 - Feb 20, 2020
-    - 3.1.0 - Nov 28, 2019
+  - 3.2.14 - Sep 29, 2022
+  - 3.2.13 - Jul 30, 2022
+  - 3.2.12 - May 05, 2022
+  - 3.2.11 - Jan 25, 2022
+  - 3.2.10 - Sep 20, 2021
+  - 3.2.9 - May 17, 2021
+  - 3.2.8 - Apr 21, 2021
+  - 3.2.7 - Apr 02, 2021
+  - 3.2.6 - Mar 08, 2021
+  - 3.2.5 - Feb 23, 2021
+  - 3.2.4 - Feb 18, 2021
+  - 3.2.3 - Nov 09, 2020
+  - 3.2.2 - Sep 04, 2020
+  - 3.2.1 - Aug 11, 2020
+  - 3.2.0 - Jun 20, 2020
+  - 3.1.4 - Sep 04, 2020
+  - 3.1.2 - May 13, 2020
+  - 3.1.1 - Feb 20, 2020
+  - 3.1.0 - Nov 28, 2019
 
 - ScalaCheck  
   https://github.com/typelevel/scalacheck/releases
-    - 1.17.0 - Sep 15, 2022
-    - 1.16.0 - Apr 07, 2022
-    - 1.15.4 - May 03, 2021
-    - 1.15.3 - Mar 29, 2021 (drops Scala 2.11 on Jan 22, 2021)
-    - 1.15.2 - Dec 20, 2020 Last version still available for Scala 2.11
-    - 1.15.1 - Nov 06, 2020
-    - 1.15.0 - Oct 31, 2020
-    - 1.14.3 - Dec 14, 2019 Last version still available for Scala 2.10
-    - 1.14.2 - Sep 25, 2019
-    - 1.14.1 - Sep 17, 2019
-    - 1.14.0 - Apr 22, 2018
+  - 1.17.0 - Sep 15, 2022
+  - 1.16.0 - Apr 07, 2022
+  - 1.15.4 - May 03, 2021
+  - 1.15.3 - Mar 29, 2021 (drops Scala 2.11 on Jan 22, 2021)
+  - 1.15.2 - Dec 20, 2020 Last version still available for Scala 2.11
+  - 1.15.1 - Nov 06, 2020
+  - 1.15.0 - Oct 31, 2020
+  - 1.14.3 - Dec 14, 2019 Last version still available for Scala 2.10
+  - 1.14.2 - Sep 25, 2019
+  - 1.14.1 - Sep 17, 2019
+  - 1.14.0 - Apr 22, 2018
 
 - typesafe config
   https://github.com/lightbend/config/tags
-    - 1.4.2 - Feb 01, 2022
-    - 1.4.1 - Oct 22, 2020
-    - 1.4.0 - Oct 14, 2019
-    - 1.3.4 - Apr 18, 2019
-    - 1.3.0 - May 8, 2015
-    - 1.2.1 - May 2, 2014
-    - 1.2.0 - Jan 15, 2014
+  - 1.4.2 - Feb 01, 2022
+  - 1.4.1 - Oct 22, 2020
+  - 1.4.0 - Oct 14, 2019
+  - 1.3.4 - Apr 18, 2019
+  - 1.3.0 - May 8, 2015
+  - 1.2.1 - May 2, 2014
+  - 1.2.0 - Jan 15, 2014
 
 - sbt-scalafmt (Scalafmt sbt plugin)  
   https://github.com/scalameta/sbt-scalafmt/releases
-    - 2.4.6 - Dec 24, 2021
-    - 2.4.5 - Dec 04, 2021
-    - 2.4.4 - Nov 18, 2021
-    - 2.4.3 - Jul 08, 2021
-    - 2.4.2 - Aug 01, 2020
-    - 2.4.0 - May 14, 2020
-    - 2.3.4 - Apr 10, 2020
-    - 2.3.3 - Apr 10, 2020
-    - 2.3.2 - Mar 5, 2020
-    - 2.3.1 - Jan 27, 2020
-    - 2.3.0 - Dec 9, 2019
+  - 2.4.6 - Dec 24, 2021
+  - 2.4.5 - Dec 04, 2021
+  - 2.4.4 - Nov 18, 2021
+  - 2.4.3 - Jul 08, 2021
+  - 2.4.2 - Aug 01, 2020
+  - 2.4.0 - May 14, 2020
+  - 2.3.4 - Apr 10, 2020
+  - 2.3.3 - Apr 10, 2020
+  - 2.3.2 - Mar 5, 2020
+  - 2.3.1 - Jan 27, 2020
+  - 2.3.0 - Dec 9, 2019
 
 - Scalafmt  
   https://github.com/scalameta/scalafmt/releases
-    - 3.6.1 - Oct 31, 2022
-    - 3.6.0 - Oct 17, 2022
-    - 3.5.9 - Aug 11, 2022
-    - 3.5.8 - Jun 01, 2022
-    - 3.5.7 - May 25, 2022
-    - 3.5.5 - May 24, 2022
-    - 3.5.4 - May 18, 2022
-    - 3.5.3 - May 13, 2022
-    - 3.5.2 - Apr 18, 2022
-    - 3.5.1 - Apr 06, 2022
-    - 3.5.0 - Apr 01, 2022
-    - 3.4.3 - Feb 11, 2022
-    - 3.4.2 - Feb 05, 2022
-    - 3.4.1 - Feb 05, 2022
-    - 3.4.0 - Jan 28, 2022
-    - 3.3.3 - Jan 22, 2022
-    - 3.3.2 - Jan 19, 2022
-    - 3.3.1 - Jan 01, 2022
-    - 3.3.0 - Dec 24, 2021
-    - 3.2.2 - Dec 23, 2021
-    - 3.2.1 - Dec 02, 2021
-    - 3.2.0 - Nov 29, 2021
-    - 3.1.2 - Nov 21, 2021
-    - 3.1.1 - Nov 12, 2021
-    - 3.1.0 - Nov 09, 2021
-    - 3.0.8 - Oct 29, 2021
-    - 3.0.7 - Oct 20, 2021
-    - 3.0.6 - Oct 02, 2021
-    - 3.0.5 - Sep 25, 2021
-    - 3.0.4 - Sep 17, 2021
-    - 3.0.3 - Sep 10, 2021
-    - 3.0.2 - Sep 03, 2021
-    - 3.0.1 - Aug 27, 2021
-    - 3.0.0 - Aug 18, 2021
-    - 3.0.0-RC6 - Jul 13, 2021
-    - 3.0.0-RC5 - Jun 08, 2021
-    - 3.0.0-RC1 - Apr 15, 2021
-    - 2.7.5 - Oct 16, 2020
-    - 2.7.4 - Oct 06, 2020
-    - 2.7.3 - Sep 29, 2020
-    - 2.7.2 - Sep 18, 2020
-    - 2.7.1 - Sep 14, 2020
-    - 2.7.0 - Sep 08, 2020
-    - 2.6.4 - Jul 20, 2020
-    - 2.6.3 - Jul 14, 2020
-    - 2.6.2 - Jul 5, 2020
-    - 2.6.1 - Jun 19, 2020
-    - 2.6.0 - Jun 16, 2020
-    - 2.5.3 - May 25, 2020
-    - 2.5.2 - May 9, 2020
-    - 2.5.1 - May 3, 2020
-    - 2.5.0 - Apr 30, 2020
-    - 2.5.0-RC3 - Apr 28, 2020
-    - 2.5.0-RC2 - Apr 25, 2020
-    - 2.5.0-RC1 - Apr 15, 2020
-    - 2.4.2 - Feb 22, 2020
+  - 3.6.1 - Oct 31, 2022
+  - 3.6.0 - Oct 17, 2022
+  - 3.5.9 - Aug 11, 2022
+  - 3.5.8 - Jun 01, 2022
+  - 3.5.7 - May 25, 2022
+  - 3.5.5 - May 24, 2022
+  - 3.5.4 - May 18, 2022
+  - 3.5.3 - May 13, 2022
+  - 3.5.2 - Apr 18, 2022
+  - 3.5.1 - Apr 06, 2022
+  - 3.5.0 - Apr 01, 2022
+  - 3.4.3 - Feb 11, 2022
+  - 3.4.2 - Feb 05, 2022
+  - 3.4.1 - Feb 05, 2022
+  - 3.4.0 - Jan 28, 2022
+  - 3.3.3 - Jan 22, 2022
+  - 3.3.2 - Jan 19, 2022
+  - 3.3.1 - Jan 01, 2022
+  - 3.3.0 - Dec 24, 2021
+  - 3.2.2 - Dec 23, 2021
+  - 3.2.1 - Dec 02, 2021
+  - 3.2.0 - Nov 29, 2021
+  - 3.1.2 - Nov 21, 2021
+  - 3.1.1 - Nov 12, 2021
+  - 3.1.0 - Nov 09, 2021
+  - 3.0.8 - Oct 29, 2021
+  - 3.0.7 - Oct 20, 2021
+  - 3.0.6 - Oct 02, 2021
+  - 3.0.5 - Sep 25, 2021
+  - 3.0.4 - Sep 17, 2021
+  - 3.0.3 - Sep 10, 2021
+  - 3.0.2 - Sep 03, 2021
+  - 3.0.1 - Aug 27, 2021
+  - 3.0.0 - Aug 18, 2021
+  - 3.0.0-RC6 - Jul 13, 2021
+  - 3.0.0-RC5 - Jun 08, 2021
+  - 3.0.0-RC1 - Apr 15, 2021
+  - 2.7.5 - Oct 16, 2020
+  - 2.7.4 - Oct 06, 2020
+  - 2.7.3 - Sep 29, 2020
+  - 2.7.2 - Sep 18, 2020
+  - 2.7.1 - Sep 14, 2020
+  - 2.7.0 - Sep 08, 2020
+  - 2.6.4 - Jul 20, 2020
+  - 2.6.3 - Jul 14, 2020
+  - 2.6.2 - Jul 5, 2020
+  - 2.6.1 - Jun 19, 2020
+  - 2.6.0 - Jun 16, 2020
+  - 2.5.3 - May 25, 2020
+  - 2.5.2 - May 9, 2020
+  - 2.5.1 - May 3, 2020
+  - 2.5.0 - Apr 30, 2020
+  - 2.5.0-RC3 - Apr 28, 2020
+  - 2.5.0-RC2 - Apr 25, 2020
+  - 2.5.0-RC1 - Apr 15, 2020
+  - 2.4.2 - Feb 22, 2020
 
 - sbt-assembly  
   https://github.com/sbt/sbt-assembly/releases
-    - 2.0.0 - Oct 17, 2022
-    - 2.0.0-RC1 - May 01, 2022
-    - 1.2.0 - Feb 12, 2022
-    - 1.1.0 - Aug 31, 2021
-    - 1.0.0 - Jun 06, 2021
-    - 0.15.0 - Jun 22, 2020
-    - 0.14.10 - Jul 11, 2019
-    - 0.14.9 - Oct 28, 2018
+  - 2.0.0 - Oct 17, 2022
+  - 2.0.0-RC1 - May 01, 2022
+  - 1.2.0 - Feb 12, 2022
+  - 1.1.0 - Aug 31, 2021
+  - 1.0.0 - Jun 06, 2021
+  - 0.15.0 - Jun 22, 2020
+  - 0.14.10 - Jul 11, 2019
+  - 0.14.9 - Oct 28, 2018
 
 Versions of common dependencies
 -------------------------------
@@ -233,58 +237,58 @@ Versions of common dependencies
 - Joda-Time  
   https://github.com/JodaOrg/joda-time/releases  
   https://www.joda.org/joda-time/changes-report.html
-    - 2.12.1 - Oct 29, 2022
-    - 2.12.0 - Oct 13, 2022
-    - 2.11.2 - Sep 25, 2022
-    - 2.11.1 - Aug 25, 2022
-    - 2.11.0 - Aug 12, 2022
-    - 2.10.14 - Mar 20, 2022
-    - 2.10.13 - Oct 26, 2021
-    - 2.10.12 - Sep 29, 2021
-    - 2.10.11 - Sep 22, 2021
-    - 2.10.10 - Feb 05, 2021
-    - 2.10.9 - Dec 29, 2020
-    - 2.10.8 - Oct 23, 2020
-    - 2.10.7 - Oct 21, 2020
-    - 2.10.6 - Apr 24, 2020
-    - 2.10.5 - Oct 24, 2019
-    - 2.10.4 - Sep 20, 2019
+  - 2.12.1 - Oct 29, 2022
+  - 2.12.0 - Oct 13, 2022
+  - 2.11.2 - Sep 25, 2022
+  - 2.11.1 - Aug 25, 2022
+  - 2.11.0 - Aug 12, 2022
+  - 2.10.14 - Mar 20, 2022
+  - 2.10.13 - Oct 26, 2021
+  - 2.10.12 - Sep 29, 2021
+  - 2.10.11 - Sep 22, 2021
+  - 2.10.10 - Feb 05, 2021
+  - 2.10.9 - Dec 29, 2020
+  - 2.10.8 - Oct 23, 2020
+  - 2.10.7 - Oct 21, 2020
+  - 2.10.6 - Apr 24, 2020
+  - 2.10.5 - Oct 24, 2019
+  - 2.10.4 - Sep 20, 2019
 
 - json4s  
   https://github.com/json4s/json4s/tags  
   https://search.maven.org/search?q=org.json4s
-    - 4.1.0-M2 - Oct 14, 2022
-    - 4.1.0-M1 - Jan 06, 2022
-    - 4.0.6 - Sep 28, 2022
-    - 4.0.5 - Apr 05, 2022
-    - 4.0.4 - Jan 22, 2022
-    - 4.0.3 - Jul 26, 2021
-    - 4.0.2 - Jul 25, 2021
-    - 4.0.1 - Jun 28, 2021
-    - 4.0.0 - May 25, 2021
-    - 3.7.0-RC1 - May 15, 2021
-    - 3.6.12 - Nov 04, 2021 Last version still available for Scala 2.10
-    - 3.6.11 - Mar 01, 2021
-    - 3.6.10 - Sep 28, 2020
-    - 3.6.9 - Jun 15, 2020
-    - 3.6.8 - May 5, 2020
-    - 3.6.7 - Jun 26, 2020
+  - 4.1.0-M2 - Oct 14, 2022
+  - 4.1.0-M1 - Jan 06, 2022
+  - 4.0.6 - Sep 28, 2022
+  - 4.0.5 - Apr 05, 2022
+  - 4.0.4 - Jan 22, 2022
+  - 4.0.3 - Jul 26, 2021
+  - 4.0.2 - Jul 25, 2021
+  - 4.0.1 - Jun 28, 2021
+  - 4.0.0 - May 25, 2021
+  - 3.7.0-RC1 - May 15, 2021
+  - 3.6.12 - Nov 04, 2021 Last version still available for Scala 2.10
+  - 3.6.11 - Mar 01, 2021
+  - 3.6.10 - Sep 28, 2020
+  - 3.6.9 - Jun 15, 2020
+  - 3.6.8 - May 5, 2020
+  - 3.6.7 - Jun 26, 2020
 
 - breeze  
   https://github.com/scalanlp/breeze/tags
-    - 2.1.0 - Aug 21, 2022 (fails)
-    - 2.0.1-RC2 - Dec 16, 2021
-    - 2.0 - Oct 04, 2021
-    - 1.3 - Aug 14, 2021
-    - 1.2 - Apr 15, 2021
-    - 1.1 - Aug 03, 2020
-    - 1.0 - Jul 27, 2019 Last version still available for Scala 2.11
+  - 2.1.0 - Aug 21, 2022 (fails)
+  - 2.0.1-RC2 - Dec 16, 2021
+  - 2.0 - Oct 04, 2021
+  - 1.3 - Aug 14, 2021
+  - 1.2 - Apr 15, 2021
+  - 1.1 - Aug 03, 2020
+  - 1.0 - Jul 27, 2019 Last version still available for Scala 2.11
 
 - requests-scala  
   https://github.com/com-lihaoyi/requests-scala/releases
-    - 0.7.1 - Jun 10, 2022
-    - 0.7.0 - Dec 11, 2021
-    - 0.6.9 - May 14, 2021
+  - 0.7.1 - Jun 10, 2022
+  - 0.7.0 - Dec 11, 2021
+  - 0.6.9 - May 14, 2021
 
 Various useful techniques
 -------------------------
@@ -309,7 +313,8 @@ or in sbt shell:
 
 - `myproject/scalafmt`: Format main sources of myproject project
 - `myproject/test:scalafmt`: Format test sources of myproject project
-- `scalafmtCheck`: Check if the scala sources under the project has been formatted.
+- `scalafmtCheck`: Check if the scala sources under the project has been
+  formatted.
 - `scalafmtSbt`: Format *.sbt and project/*.scala files.
 - `scalafmtSbtCheck`: Check if the files has been formatted by scalafmtSbt.
 - `scalafmtOnly`: Format a single given file.
@@ -359,10 +364,10 @@ https://www.scalatest.org/user_guide/tagging_your_tests
 
 Set the SBT logging level in your build.sbt file with this setting:
 `logLevel := Level.Debug`
-Or, if you’re working interactively from the SBT command line and don’t want to add
-this to your build.sbt file, use this syntax:
-`> set logLevel := Level.Debug`. All of the SBT log levels are: Debug, Info, Warning,
-Error.
+Or, if you’re working interactively from the SBT command line and don’t want to
+add this to your build.sbt file, use this syntax:
+`> set logLevel := Level.Debug`. All of the SBT log levels are: Debug, Info,
+Warning, Error.
 
 ### Package
 
@@ -380,8 +385,8 @@ $ jar tvf target/scala-2.12/hocon_2.12-0.1.0.jar
    130 Wed Apr 29 19:15:58 PDT 2020 lightbend.conf
 ```
 
-To build against all versions listed in `crossScalaVersions`, prefix the action to
-run with `+`. For example:  
+To build against all versions listed in `crossScalaVersions`, prefix the action
+to run with `+`. For example:  
 `> + package`
 
 Assembly
@@ -401,13 +406,15 @@ You can list its contents with the usual jar tvf command:
 $ jar tvf target/scala-2.12/hocon-assembly-0.1.0.jar
 ```
 
-Add `test in assembly := {}` to project settings to skip the test during assembly.
+Add `test in assembly := {}` to project settings to skip the test during
+assembly.
 
 for version 1.0.0 and after, assembly no longer runs test by default.
 
 ### To exclude Scala library
 
-(JARs that start with `scala-` and are included in the binary Scala distribution)
+(JARs that start with `scala-` and are included in the binary Scala
+distribution)
 to run with `scala` command:
 
 for version 1.0.0 and after:
@@ -443,15 +450,16 @@ https://coderwall.com/p/6gr84q/sbt-assembly-spark-and-you
 Publishing
 ----------
 
-The `publishLocal` task will publish to the “local” Ivy repository. By default, this
-is at `$HOME/.ivy2/local/`. Other builds on the same machine can then list the
-project as a dependency.
+The `publishLocal` task will publish to the “local” Ivy repository. By default,
+this is at `$HOME/.ivy2/local/`. Other builds on the same machine can then list
+the project as a dependency.
 
-The `publish` action is used to publish your project to a remote repository. To use
-publishing, you need to specify the repository to publish to and the credentials to
-use.
+The `publish` action is used to publish your project to a remote repository. To
+use publishing, you need to specify the repository to publish to and the
+credentials to use.
 
-- scala-sbt's [SBT Publishing](https://www.scala-sbt.org/1.x/docs/Publishing.html)
+-
+scala-sbt's [SBT Publishing](https://www.scala-sbt.org/1.x/docs/Publishing.html)
 
 ### Sonatype OSSRH (OSS Repository Hosting)
 
@@ -469,7 +477,8 @@ use.
   http://tutorials.jenkov.com/maven/publish-to-central-maven-repository.html
   ) Jan 25, 2020
 
-- Leonard Ehrenfried's [An in depth guide to deploying to Maven Central with sbt](
+- Leonard
+  Ehrenfried's [An in depth guide to deploying to Maven Central with sbt](
   https://leonard.io/blog/2017/01/an-in-depth-guide-to-deploying-to-maven-central/
   ) Jan 15, 2017
 
@@ -493,12 +502,12 @@ Step-by-step
   https://github.com/whitechno/OSSRH-58349  
   to verify github account ownership.
 - com.github.whitechno has been prepared, now user(s) whitechno can:
-    - Deploy snapshot artifacts into repository  
-      https://oss.sonatype.org/content/repositories/snapshots
-    - Deploy release artifacts into the staging repository  
-      https://oss.sonatype.org/service/local/staging/deploy/maven2
-    - Release staged artifacts into repository 'Releases'  
-      Please comment on this ticket when you promoted your first release, thanks
+  - Deploy snapshot artifacts into repository  
+    https://oss.sonatype.org/content/repositories/snapshots
+  - Deploy release artifacts into the staging repository  
+    https://oss.sonatype.org/service/local/staging/deploy/maven2
+  - Release staged artifacts into repository 'Releases'  
+    Please comment on this ticket when you promoted your first release, thanks
 
 Cross-building
 --------------
@@ -506,31 +515,31 @@ Cross-building
 https://www.scala-sbt.org/release/docs/Cross-Build.html
 
 The underlying mechanism used to indicate which version of Scala a library was
-compiled against is to append `_<scala-binary-version>` to the library’s name. For
-example, the artifact name `dispatch-core_2.12` is used when compiled against Scala
-2.12.0, 2.12.1 or any 2.12.x version. This fairly simple approach allows
-interoperability with users of Maven, Ant and other build tools.
+compiled against is to append `_<scala-binary-version>` to the library’s name.
+For example, the artifact name `dispatch-core_2.12` is used when compiled
+against Scala 2.12.0, 2.12.1 or any 2.12.x version. This fairly simple approach
+allows interoperability with users of Maven, Ant and other build tools.
 
-Define the versions of Scala to build against in the `crossScalaVersions` setting.
-Versions of Scala 2.10.2 or later are allowed.
+Define the versions of Scala to build against in the `crossScalaVersions`
+setting. Versions of Scala 2.10.2 or later are allowed.
 
 *Note:* `crossScalaVersions` must be set to Nil on the root project
 (or all aggregating projects) to avoid double publishing.
 
-To build against all versions listed in `crossScalaVersions`, prefix the action to
-run with `+`. For example:  
+To build against all versions listed in `crossScalaVersions`, prefix the action
+to run with `+`. For example:  
 `> + test`
 
 You can use `++ <version> [command]` to temporarily switch the Scala version
-currently being used to build the subprojects given that `<version>` is listed in
-their `crossScalaVersions`.
+currently being used to build the subprojects given that `<version>` is listed
+in their `crossScalaVersions`.
 
 When a `[command]` is passed in to `++`, it will execute the command on the
 subprojects that supports the given `<version>`.
 
 Sometimes you might want to force the Scala version switch regardless of the
-`crossScalaVersions` values. You can use `++ <version>!` with exclamation mark for
-that. For example:  
+`crossScalaVersions` values. You can use `++ <version>!` with exclamation mark
+for that. For example:  
 `> ++ 2.13.0-M5! -v`
 
 
@@ -560,13 +569,14 @@ Scala Worksheets in IntelliJ
 
 "Use compile server for Scala" tick box is in  
 `Preferences > Build, Execution, Deployment > Compiler > Scala Compiler > Scala Compile Server`  
-you can also get to this view from the speedometer-like icon in the bottom right of
-IntelliJ, which can be used to Stop/Run Scala Compile Server.
+you can also get to this view from the speedometer-like icon in the bottom right
+of IntelliJ, which can be used to Stop/Run Scala Compile Server.
 
 "Run worksheet in the compiler process" tick box is in  
 `Preferences > Languages & Frameworks > Scala > Worksheet (tab)`  
 A typical way to use this feature is to do development on a single Scala version
-(no `+` prefix) and then cross-build (using `+`) occasionally and when releasing.
+(no `+` prefix) and then cross-build (using `+`) occasionally and when
+releasing.
 
 #### Experiments
 
@@ -625,8 +635,8 @@ Run type: REPL
 Slow start because of "Getting the hostname ... was slow"
 ---------------------------------------------------------
 
-Sometimes the startup time for test and run might be pretty long and you might see
-the following command:  
+Sometimes the startup time for test and run might be pretty long and you might
+see the following command:  
 `[warn] Getting the hostname Olegs-MacBook-Pro was slow (18020.887197 ms). This is likely because the computer's hostname is not set. You can set the hostname with the command: scutil --set HostName $(scutil --get LocalHostName).`
 
 I found the following solution.
@@ -760,8 +770,8 @@ In terminal shell:
 run 'evicted' to see detailed eviction warnings.
 ```
 
-With some plugins (like `sbt-native-packager`), sbt might show eviction warning on
-sbt shell start, however `> evicted` command shows nothing.
+With some plugins (like `sbt-native-packager`), sbt might show eviction warning
+on sbt shell start, however `> evicted` command shows nothing.
 
 Remember
 that [SBT is recursive](https://www.scala-sbt.org/1.x/docs/Organizing-Build.html#sbt+is+recursive)
@@ -801,18 +811,20 @@ sbt:Hello> evicted
 
 ### Is it wise to fix eviction warnings of library dependencies?
 
-Is it a good idea to fix SBT eviction warning messages using `dependencyOverrides` in
-build.sbt as per [SBT Documentation Eviction warning](
+Is it a good idea to fix SBT eviction warning messages
+using `dependencyOverrides` in build.sbt as
+per [SBT Documentation Eviction warning](
 https://www.scala-sbt.org/1.x/docs/Library-Management.html#Eviction+warning
 )?
 
 If these warnings are for dependencies you use directly in your code, you should
 definitely add the upgraded version to your libraryDependencies.
 
-For evicted transitive dependencies (those dependencies only used directly by your
-own dependencies), it's likely best to simply leave the warnings in place. This
-provides documentation to you about possible incompatibilities in your dependencies,
-and could help you debug runtime problems that arise due to such incompatibilities.
+For evicted transitive dependencies (those dependencies only used directly by
+your own dependencies), it's likely best to simply leave the warnings in place.
+This provides documentation to you about possible incompatibilities in your
+dependencies, and could help you debug runtime problems that arise due to such
+incompatibilities.
 
-Remember, setting dependencyOverrides merely hides the warning, it doesn't guarantee
-compatibility between your libraries and the version you set.
+Remember, setting dependencyOverrides merely hides the warning, it doesn't
+guarantee compatibility between your libraries and the version you set.

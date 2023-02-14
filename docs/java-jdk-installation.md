@@ -120,4 +120,3 @@ Setting JAVA_HOME on macOS Mojave (10.14) to Lion (10.7)
         Java(TM) SE Runtime Environment (build 1.8.0_361-b09)
         Java HotSpot(TM) 64-Bit Server VM (build 25.361-b09, mixed mode)
 
-
