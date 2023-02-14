@@ -150,6 +150,7 @@ Versions of key dependencies
 
 - sbt-scalafmt (Scalafmt sbt plugin)  
   https://github.com/scalameta/sbt-scalafmt/releases
+  - 2.5.0 - Nov 14, 2022
   - 2.4.6 - Dec 24, 2021
   - 2.4.5 - Dec 04, 2021
   - 2.4.4 - Nov 18, 2021
@@ -164,6 +165,8 @@ Versions of key dependencies
 
 - Scalafmt  
   https://github.com/scalameta/scalafmt/releases
+  - 3.7.1 - Jan 23, 2023
+  - 3.7.0 - Jan 18, 2023
   - 3.6.1 - Oct 31, 2022
   - 3.6.0 - Oct 17, 2022
   - 3.5.9 - Aug 11, 2022
