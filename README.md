@@ -103,6 +103,7 @@ Versions of key dependencies
 - ScalaTest  
   https://www.scalatest.org  
   https://github.com/scalatest/scalatest/releases
+  - 3.2.15 - Jan 06, 2023
   - 3.2.14 - Sep 29, 2022
   - 3.2.13 - Jul 30, 2022
   - 3.2.12 - May 05, 2022
