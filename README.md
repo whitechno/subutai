@@ -247,6 +247,9 @@ Versions of common dependencies
 - Joda-Time  
   https://github.com/JodaOrg/joda-time/releases  
   https://www.joda.org/joda-time/changes-report.html
+  - 2.12.5 - Mar 30, 2023
+  - 2.12.4 - Mar 24, 2023
+  - 2.12.3 - Mar 23, 2023
   - 2.12.2 - Dec 17, 2022
   - 2.12.1 - Oct 29, 2022
   - 2.12.0 - Oct 13, 2022
