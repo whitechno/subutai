@@ -173,6 +173,15 @@ Versions of key dependencies
 
 - Scalafmt  
   https://github.com/scalameta/scalafmt/releases
+  - 3.7.12 - Aug 03, 2023
+  - 3.7.11 - Jul 26, 2023
+  - 3.7.10 - Jul 16, 2023
+  - 3.7.9 - Jul 12, 2023
+  - 3.7.8 - Jul 10, 2023
+  - 3.7.7 - Jul 05, 2023
+  - 3.7.6 - Jul 03, 2023
+  - 3.7.5 - Jun 29, 2023
+  - 3.7.4 - May 30, 2023
   - 3.7.3 - Mar 28, 2023
   - 3.7.2 - Feb 23, 2023
   - 3.7.1 - Jan 23, 2023
