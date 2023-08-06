@@ -73,9 +73,17 @@ Installing the JDK
     
     JDK 8u371-b11 April 18, 2023
     jdk-8u371-macosx-x64.dmg
+    
+    JDK 8u381-b09 July 18, 2023
+    jdk-8u381-macosx-x64.dmg
 
 Uninstalling the JDK
 --------------------
+
+    Starting from version 8u371, no need to uninstall. New versions installed to
+    /Library/Java/JavaVirtualMachines/jdk-1.8.jdk/
+
+Old instructions:
 
     To uninstall the JDK, you must have Administrator privileges and 
     execute the remove command either as root or by using the sudo(8) tool.
@@ -99,7 +107,7 @@ Setting JAVA_HOME on macOS Mojave (10.14) to Lion (10.7)
     % vim ~/.bash_profile
 
     Add the following two lines (or edit version):
-        export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_371`
+        export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_381`
         PATH=$JAVA_HOME/bin:$PATH
     Make sure you also have this line at the end:
         export PATH
@@ -109,7 +117,7 @@ Setting JAVA_HOME on macOS Mojave (10.14) to Lion (10.7)
     Test the result of change:
 
     % echo $JAVA_HOME
-        /Library/Java/JavaVirtualMachines/jdk1.8.0_361.jdk/Contents/Home
+        OLD: /Library/Java/JavaVirtualMachines/jdk1.8.0_361.jdk/Contents/Home
         /Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home
 
     % echo $PATH
@@ -120,7 +128,7 @@ Setting JAVA_HOME on macOS Mojave (10.14) to Lion (10.7)
         /Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home/bin/java
 
     % java -version
-        java version "1.8.0_371"
-        Java(TM) SE Runtime Environment (build 1.8.0_371-b11)
-        Java HotSpot(TM) 64-Bit Server VM (build 25.371-b11, mixed mode)
+        java version "1.8.0_381"
+        Java(TM) SE Runtime Environment (build 1.8.0_381-b09)
+        Java HotSpot(TM) 64-Bit Server VM (build 25.381-b09, mixed mode)
 
