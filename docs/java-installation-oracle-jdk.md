@@ -1,5 +1,5 @@
-This is a brief installation guide for Java SDK on Mac OS
-=========================================================
+Brief installation guide for Oracle Java SDK on Mac OS
+======================================================
 
 See
 https://docs.oracle.com/javase/8/docs/technotes/guides/install/mac_jdk.html
