@@ -82,6 +82,7 @@ Versions of key dependencies
 - Scala  
   https://github.com/scala/scala/releases
   - 2.13
+    - 2.13.12 - Sep 11, 2023
     - 2.13.11 - Jun 07, 2023
     - 2.13.10 - Oct 13, 2022
     - 2.13.9 - Sep 21, 2022
