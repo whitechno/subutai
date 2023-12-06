@@ -43,11 +43,12 @@ Check downloaded Java versions:
 ```
 $ /usr/libexec/java_home -V
 Matching Java Virtual Machines (4):
-    17.0.8.1 (x86_64) "Homebrew" - "OpenJDK 17.0.8.1" /usr/local/Cellar/openjdk@17/17.0.8.1/libexec/openjdk.jdk/Contents/Home
+    17.0.9 (x86_64) "Homebrew" - "OpenJDK 17.0.9" /usr/local/Cellar/openjdk@17/17.0.9/libexec/openjdk.jdk/Contents/Home
     1.8.381.09 (x86_64) "Oracle Corporation" - "Java" /Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home
-    1.8.0_382 (x86_64) "Homebrew" - "OpenJDK 8" /usr/local/Cellar/openjdk@8/1.8.0-382_1/libexec/openjdk.jdk/Contents/Home
+    1.8.0_392 (x86_64) "Homebrew" - "OpenJDK 8" /usr/local/Cellar/openjdk@8/1.8.0-392/libexec/openjdk.jdk/Contents/Home
     1.8.0_381 (x86_64) "Oracle Corporation" - "Java SE 8" /Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home
-/usr/local/Cellar/openjdk@17/17.0.8.1/libexec/openjdk.jdk/Contents/Home
+/usr/local/Cellar/openjdk@17/17.0.9/libexec/openjdk.jdk/Contents/Home
+
 
 $ echo $JAVA_HOME
 /usr/local/Cellar/openjdk@17/17.0.8.1/libexec/openjdk.jdk/Contents/Home
