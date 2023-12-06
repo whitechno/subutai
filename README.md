@@ -154,6 +154,7 @@ Versions of key dependencies
 
 - typesafe config
   https://github.com/lightbend/config/tags
+  - 1.4.3 - Oct 17, 2023
   - 1.4.2 - Feb 01, 2022
   - 1.4.1 - Oct 22, 2020
   - 1.4.0 - Oct 14, 2019
