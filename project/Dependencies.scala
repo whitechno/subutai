@@ -10,10 +10,12 @@ object Dependencies {
     val scalatest      = "3.2.17"
     val typesafeConfig = "1.4.3"
     val jodatime       = "2.12.5"
-    val json4s         = "4.0.6"
     val requests       = "0.8.0"
     val gigahorse      = "0.6.0"
     val typesafePlay   = "2.9.2"
+    def json4s(scalaBinaryVer: String): String =
+      if (scalaBinaryVer == "2.11") "4.0.6" // Last version available for Scala 2.11
+      else "4.0.7"
     def scalacheck(scalaBinaryVer: String): String =
       if (scalaBinaryVer == "2.11") "1.15.2" // Last version available for Scala 2.11
       else "1.17.0"
@@ -26,12 +28,15 @@ object Dependencies {
     val scalatest      = "org.scalatest" %% "scalatest"        % V.scalatest
     val typesafeConfig = "com.typesafe"   % "config"           % V.typesafeConfig
     val jodatime       = "joda-time"      % "joda-time"        % V.jodatime
-    val json4sCore     = "org.json4s"    %% "json4s-core"      % V.json4s
-    val json4sJackson  = "org.json4s"    %% "json4s-jackson"   % V.json4s
-    val json4sNative   = "org.json4s"    %% "json4s-native"    % V.json4s
     val requests       = "com.lihaoyi"   %% "requests"         % V.requests
     val gigahorse      = "com.eed3si9n"  %% "gigahorse-okhttp" % V.gigahorse
     val typesafePlayJson = "com.typesafe.play" %% "play-json" % V.typesafePlay
+//    def json4sCore(scalaBinaryVer: String): ModuleID =
+//      "org.json4s" %% "json4s-core" % V.json4s(scalaBinaryVer)
+    def json4sJackson(scalaBinaryVer: String): ModuleID =
+      "org.json4s" %% "json4s-jackson" % V.json4s(scalaBinaryVer)
+//    def json4sNative(scalaBinaryVer: String): ModuleID =
+//      "org.json4s" %% "json4s-native" % V.json4s(scalaBinaryVer)
     def scalacheck(scalaBinaryVer: String): ModuleID =
       "org.scalacheck" %% "scalacheck" % V.scalacheck(scalaBinaryVer)
     def breeze(scalaBinaryVer: String): ModuleID =

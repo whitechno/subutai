@@ -304,10 +304,12 @@ Versions of common dependencies
 - json4s  
   https://github.com/json4s/json4s/tags  
   https://search.maven.org/search?q=org.json4s
+  - 4.1.0-M4 - Nov 18, 2023
   - 4.1.0-M3 - Apr 29, 2023
   - 4.1.0-M2 - Oct 14, 2022
   - 4.1.0-M1 - Jan 06, 2022
-  - 4.0.6 - Sep 28, 2022
+  - 4.0.7 - Dec 03, 2023
+  - 4.0.6 - Sep 28, 2022 Last version still available for Scala 2.11
   - 4.0.5 - Apr 05, 2022
   - 4.0.4 - Jan 22, 2022
   - 4.0.3 - Jul 26, 2021
