@@ -1,7 +1,7 @@
 package example
 
 object TestMain_01_twoInts2Long extends App {
-  val MAX_UNSIGNED_INT32: Long = -1L >>> 32 //= 0xffffffffL = 4294967295L
+  val MAX_UNSIGNED_INT32: Long = -1L >>> 32 // = 0xffffffffL = 4294967295L
   def int2uint(i: Int): Long   = i & MAX_UNSIGNED_INT32
 
   println("\nint2uint:")

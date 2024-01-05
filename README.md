@@ -356,7 +356,7 @@ Scala:
 `> sbt scalaVersion`
 
 To see which version of Java does SBT use:  
-`> sbt "eval System.getProperty(\"java.version\")" "eval System.getProperty(\"java.home\")"`  
+`$ sbt "eval System.getProperty(\"java.version\")" "eval System.getProperty(\"java.home\")"`  
 or in sbt shell:  
 `sbt:subutai> eval System.getProperty("java.version")`   
 `sbt:subutai> eval System.getProperty("java.home")`
@@ -415,10 +415,9 @@ https://www.scalatest.org/user_guide/tagging_your_tests
 )
 
 Set the SBT logging level in your build.sbt file with this setting:
-`logLevel := Level.Debug`
-Or, if you’re working interactively from the SBT command line and don’t want to
-add this to your build.sbt file, use this syntax:
-`> set logLevel := Level.Debug`. All of the SBT log levels are: Debug, Info,
+`logLevel := Level.Debug`. Or, if you’re working interactively from the SBT
+command line and don’t want to add this to your build.sbt file, use this
+syntax:`> set logLevel := Level.Debug`. All SBT log levels are: Debug, Info,
 Warning, Error.
 
 ### Package

@@ -46,7 +46,7 @@ class TestSpec_json4s_jackson extends AnyFlatSpec with Matchers {
     """)
 
     val person: Person = json.extract[Person]
-    //println(person)
+    // println(person)
 
     val df: SimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
     df.setTimeZone(TimeZone.getTimeZone("UTC"))
@@ -64,11 +64,11 @@ class TestSpec_json4s_jackson extends AnyFlatSpec with Matchers {
       ).toString
 
     val obj = Child("Mary", 5, Some(dt))
-    //println("obj: " + obj)
+    // println("obj: " + obj)
     val ser = write(obj)
-    //println("ser: " + ser)
+    // println("ser: " + ser)
     val deser = read[Child](ser)
-    //println("deser: " + deser)
+    // println("deser: " + deser)
     obj.toString shouldBe deser.toString
     deser.birthdate shouldBe Some(dt)
   }

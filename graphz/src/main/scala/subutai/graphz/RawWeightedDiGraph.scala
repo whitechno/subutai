@@ -1,14 +1,13 @@
 package subutai.graphz
 
-/**
- * Represents Weighted Directed Graph in a compact format.
- * @param vertices
- *   Vertex labels as Strings, must be unique. If vertex is in edges, it could be
- *   omitted from vertices. Only single disconnected vertices must always be included
- *   here.
- * @param edges
- *   Directed edges with weights represented as adjacency lists.
- */
+/** Represents Weighted Directed Graph in a compact format.
+  * @param vertices
+  *   Vertex labels as Strings, must be unique. If vertex is in edges, it could be
+  *   omitted from vertices. Only single disconnected vertices must always be
+  *   included here.
+  * @param edges
+  *   Directed edges with weights represented as adjacency lists.
+  */
 case class RawWeightedDiGraph(
     vertices: Seq[String]                       = Nil,
     edges: Seq[(String, Seq[(String, Double)])] = Nil

@@ -1,11 +1,12 @@
 package zzz.trie
 
-/**
- * Simple Trie implementation for words built of only ascii a to z letters,
- * and using '*' for any other chars.
- * TODO: add Abstract SimpleTrie
- * TODO: add Ternary Search Tree
- */
+/** Simple Trie implementation for words built of only ascii a to z letters, and
+  * using '*' for any other chars.
+  *
+  * TODO: add Abstract SimpleTrie
+  *
+  * TODO: add Ternary Search Tree
+  */
 case class SimpleTrie[V](
     value: Option[V]                    = None,
     refs: Vector[Option[SimpleTrie[V]]] = Vector.fill(SimpleTrie.REFS_LENGTH)(None)
@@ -68,10 +69,10 @@ object SimpleTrie {
 //  implicit def defaultUpdate[T](v1: Option[T], v2: Option[T]): Option[T] =
 //    Seq(v1, v2).flatten.lastOption
 
-  private val FIRST_LETTER: Int    = 'a'.toInt //=97
-  private val LAST_LETTER: Int     = 'z'.toInt //=122
+  private val FIRST_LETTER: Int    = 'a'.toInt // =97
+  private val LAST_LETTER: Int     = 'z'.toInt // =122
   private val ANY_CHAR: Char       = '*' // used for any non-a-to-z char
-  private val ALPHABET_LENGTH: Int = LAST_LETTER - FIRST_LETTER + 1 //=26
+  private val ALPHABET_LENGTH: Int = LAST_LETTER - FIRST_LETTER + 1 // =26
   private val REFS_LENGTH: Int     = ALPHABET_LENGTH + 1 // +1 for "any" char
 
   private[trie] def c2i(c: Char): Int = {
@@ -86,9 +87,7 @@ object SimpleTrie {
   }
 }
 
-/**
- * for better visualization of [[SimpleTrie]]
- */
+/** for better visualization of [[SimpleTrie]] */
 case class SimpleTrieMap[V](
     value: Option[V]                  = None,
     refs: Map[Char, SimpleTrieMap[V]] = Map.empty[Char, SimpleTrieMap[V]]

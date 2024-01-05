@@ -2,7 +2,7 @@ package example.scalaVersions
 
 // scala-versions / runMain example.scalaVersions.ScalaVersionsMain
 private object ScalaVersionsMain extends App {
-  //sys.props.toSeq.foreach(println)
+  // sys.props.toSeq.foreach(println)
   println("ScalaVersions Main: " + VersionNumber.run)
 }
 

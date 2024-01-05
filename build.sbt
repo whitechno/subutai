@@ -127,7 +127,7 @@ lazy val json4s = project
     commonSettings,
     libraryDependencies ++= Seq(
       L.json4sJackson(scalaBinaryVersion.value) % Test,
-      L.scalatest     % Test
+      L.scalatest                               % Test
     )
   )
 

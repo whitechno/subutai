@@ -10,11 +10,11 @@ class TestSpec_10_breeze_Quickstart extends AnyFlatSpec with Matchers {
   "Breeze linalg Vector" should "create DenseVector and SparseVector" in {
     // Let's create a vector:
     val x = DenseVector.zeros[Double](size = 5)
-    //println(x)
+    // println(x)
     x shouldBe DenseVector(0.0, 0.0, 0.0, 0.0, 0.0)
 
     val y = SparseVector.zeros[Double](size = 5)
-    //println(y)
+    // println(y)
     y shouldBe SparseVector(length = 5)((0, 0))
     y shouldBe SparseVector[Double](length = 5)(Nil: _*)
   }
@@ -26,7 +26,7 @@ class TestSpec_10_breeze_Quickstart extends AnyFlatSpec with Matchers {
     the end (x(i) == x(x.length + i)). */
     val x = DenseVector.zeros[Double](size = 5)
     x(4) = 2
-    //println(x)
+    // println(x)
     x shouldBe DenseVector(0.0, 0.0, 0.0, 0.0, 2.0)
     x(-1) shouldBe 2.0
   }
@@ -41,7 +41,7 @@ class TestSpec_10_breeze_Quickstart extends AnyFlatSpec with Matchers {
     val x = DenseVector.zeros[Double](size = 5)
     x(1) = 2
     x(3 to 4) := .5
-    //println(x)
+    // println(x)
     x shouldBe DenseVector(0.0, 2.0, 0.0, 0.5, 0.5)
 
     x(0 to 1) := DenseVector(.1, .2)
@@ -50,7 +50,7 @@ class TestSpec_10_breeze_Quickstart extends AnyFlatSpec with Matchers {
 
   "Breeze linalg Matrix" should "create DenseMatrix" in {
     val m = DenseMatrix.zeros[Int](rows = 5, cols = 5)
-    //println(m)
+    // println(m)
     m.toString shouldBe
       s"""0  0  0  0  0  
          |0  0  0  0  0  
@@ -66,11 +66,11 @@ class TestSpec_10_breeze_Quickstart extends AnyFlatSpec with Matchers {
     // column
     m(::, 1) shouldBe DenseVector(0, 0, 0, 0, 0)
     // row
-    //println(m(4,::))
+    // println(m(4,::))
     m(4, ::) shouldBe Transpose(DenseVector(0, 0, 0, 0, 0))
 
     m(4, ::) := DenseVector(1, 2, 3, 4, 5).t // transpose to match row shape
-    //println(m)
+    // println(m)
     m.toString shouldBe
       s"""0  0  0  0  0  
          |0  0  0  0  0  
@@ -90,7 +90,7 @@ class TestSpec_10_breeze_Quickstart extends AnyFlatSpec with Matchers {
 
   it should "support literal matrix creation using a simple tuple-based syntax" in {
     val m = DenseMatrix((3, 1), (-1, -2))
-    //println(m)
+    // println(m)
     m.toString shouldBe
       s"""3   1   
          |-1  -2  """.stripMargin
@@ -99,14 +99,14 @@ class TestSpec_10_breeze_Quickstart extends AnyFlatSpec with Matchers {
   it should "support slicing and updating sub-matrices" in {
     val m = DenseMatrix.zeros[Int](rows = 5, cols = 5)
 
-    val sub = m((0 to 1), (0 to 1))
-    //println(sub)
+    val sub = m(0 to 1, 0 to 1)
+    // println(sub)
     sub.toString shouldBe
       s"""0  0  
          |0  0  """.stripMargin
 
     m(0 to 1, 0 to 1) := DenseMatrix((3, 1), (-1, -2))
-    //println(m)
+    // println(m)
     m.toString shouldBe
       s"""3   1   0  0  0  
          |-1  -2  0  0  0  
@@ -118,7 +118,7 @@ class TestSpec_10_breeze_Quickstart extends AnyFlatSpec with Matchers {
   "Breeze linalg operators" should "support Vector dot product" in {
     val a = DenseVector.ones[Double](size = 5)
     val b = DenseVector.fill(size = 5)(v = 2d)
-    //println(a.dot(b))
+    // println(a.dot(b))
     a.dot(b) shouldBe 10d
   }
 
@@ -135,12 +135,12 @@ class TestSpec_10_breeze_Quickstart extends AnyFlatSpec with Matchers {
     val dm = DenseMatrix((1.0, 2.0, 3.0), (4.0, 5.0, 6.0))
     // "foreach" column:
     val res = dm(::, *) + DenseVector(3.0, 4.0)
-    //println(res)
+    // println(res)
     res.toString shouldBe
       s"""4.0  5.0  6.0   
          |8.0  9.0  10.0  """.stripMargin
     res(::, *) := DenseVector(13.0, 14.0)
-    //println(res)
+    // println(res)
     res.toString shouldBe
       s"""13.0  13.0  13.0  
          |14.0  14.0  14.0  """.stripMargin
@@ -161,17 +161,14 @@ class TestSpec_10_breeze_Quickstart extends AnyFlatSpec with Matchers {
     val sample5: IndexedSeq[Int] = poi.sample(n = 5) // like Vector(5, 4, 5, 7, 4)
     val probs: Vector[Double]    = Vector(5, 4, 5, 7, 4).map(poi.probabilityOf)
     probs shouldBe DenseVector(
-      0.10081881344492458,
-      0.16803135574154085,
-      0.10081881344492458,
-      0.02160403145248382,
-      0.16803135574154085
+      0.10081881344492458, 0.16803135574154085, 0.10081881344492458,
+      0.02160403145248382, 0.16803135574154085
     )
     // meanAndVariance requires doubles, but Poisson samples over Ints
     val doublePoi: Rand[Double] = for (x <- poi) yield x.toDouble
     import breeze.stats.meanAndVariance, meanAndVariance.MeanAndVariance
     val mav: MeanAndVariance = meanAndVariance(doublePoi.samples.take(n = n))
-    //println(mav) // like MeanAndVariance(3.004400000000006,2.989879627962779,10000)
+    // println(mav) // like MeanAndVariance(3.004400000000006,2.989879627962779,10000)
     mav.count.toInt shouldBe n
     assert(math.abs(mav.mean - mean) < 0.2)
     assert(math.abs(mav.variance - variance) < 0.2)
@@ -199,8 +196,8 @@ class TestSpec_10_breeze_Quickstart extends AnyFlatSpec with Matchers {
     halfLife shouldBe 1.3862943611198906
     // tests below fail for breeze 1.0 (and thus for Scala 2.11),
     // but pass for breeze 1.1 and after (for Scala 2.12 and 2.13)
-    //expo.probability(0.0, log(2) / expo.rate) shouldBe 0.5
-    //expo.probability(0.0, 6) shouldBe 0.950212931632136
+    // expo.probability(0.0, log(2) / expo.rate) shouldBe 0.5
+    // expo.probability(0.0, 6) shouldBe 0.950212931632136
   }
 
   "breeze.optimize" should "provide LBFGS optimization routine" in {
@@ -253,7 +250,7 @@ class TestSpec_10_breeze_Quickstart extends AnyFlatSpec with Matchers {
       .subjectTo(x0 - x1 * 3 + x2 <= 30)
       .subjectTo(x0 <= 40)
     val result: Result = maximize(lpp)
-    //println(result)
+    // println(result)
     result.valueOf(x0) shouldBe 40d
     result.result shouldBe DenseVector(40d, 17.5, 42.5)
     result.value shouldBe 202.5
