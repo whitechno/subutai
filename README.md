@@ -116,6 +116,7 @@ Versions of key dependencies
 - ScalaTest  
   https://www.scalatest.org  
   https://github.com/scalatest/scalatest/releases
+  - 3.2.18 - Feb 7, 2024
   - 3.2.17 - Sep 12, 2023
   - 3.2.16 - May 15, 2023
   - 3.2.15 - Jan 06, 2023
@@ -183,6 +184,7 @@ Versions of key dependencies
 
 - Scalafmt  
   https://github.com/scalameta/scalafmt/releases
+  - 3.8.0 - Feb 19, 2024
   - 3.7.17 - Nov 16, 2023
   - 3.7.16 - Nov 10, 2023
   - 3.7.15 - Oct 24, 2023
@@ -281,6 +283,8 @@ Versions of common dependencies
 - Joda-Time  
   https://github.com/JodaOrg/joda-time/releases  
   https://www.joda.org/joda-time/changes-report.html
+  - 2.12.7 - Feb 4, 2024
+  - 2.12.6 - Jan 6, 2024
   - 2.12.5 - Mar 30, 2023
   - 2.12.4 - Mar 24, 2023
   - 2.12.3 - Mar 23, 2023
