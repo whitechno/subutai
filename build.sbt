@@ -163,6 +163,19 @@ lazy val `scala-versions` = project
     commonSettings
   )
 
+/** Scala 2.12 only because we use
+  * {{{
+  * scala.collection.generic.{ CanBuildFrom, FilterMonadic }
+  * }}} removed in 2.13
+  */
+lazy val `stateful-iterator` = project
+  .settings(
+    scalaVersion       := V.scala212,
+    crossScalaVersions := List(V.scala211, V.scala212),
+    commonSettings,
+    libraryDependencies += L.scalatest % Test
+  )
+
 lazy val trie = project
   .settings(
     scalaVersion       := V.scala213,
