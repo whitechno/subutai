@@ -75,19 +75,31 @@ object SimpleTrie {
   private val ALPHABET_LENGTH: Int = LAST_LETTER - FIRST_LETTER + 1 // =26
   private val REFS_LENGTH: Int     = ALPHABET_LENGTH + 1 // +1 for "any" char
 
+  /** Get index of the char */
   private[trie] def c2i(c: Char): Int = {
     val cInt = c.toInt
     if (cInt < FIRST_LETTER || cInt > LAST_LETTER) 0
     else c.toInt - FIRST_LETTER + 1
   }
 
+  /** Get char from the index */
   private[trie] def i2c(i: Int): Char = {
     if (i == 0) ANY_CHAR
     else (i + FIRST_LETTER - 1).toChar
   }
 }
 
-/** for better visualization of [[SimpleTrie]] */
+/** Use [[SimpleTrieMap]] for better visualization of [[SimpleTrie]].
+  *
+  * E.g., empty trie `= SimpleTrie[Int]` prints out as
+  * {{{
+  *   SimpleTrie(None,Vector(None, None, None, None, None, None, None, None, None,
+  *   None, None, None, None, None, None, None, None, None, None, None, None, None,
+  *   None, None, None, None, None))
+  * }}}
+  * but in [[SimpleTrieMap]] representation it prints out as
+  * {{{SimpleTrieMap(None,Map())}}}
+  */
 case class SimpleTrieMap[V](
     value: Option[V]                  = None,
     refs: Map[Char, SimpleTrieMap[V]] = Map.empty[Char, SimpleTrieMap[V]]

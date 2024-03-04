@@ -1,5 +1,6 @@
 package zzz.trie
 
+// trie/test:runMain zzz.trie.TestMain_01_SimpleTrie
 object TestMain_01_SimpleTrie extends App {
 
   // example: counting words
@@ -11,7 +12,7 @@ object TestMain_01_SimpleTrie extends App {
 
   val trie: SimpleTrie[Int] = SimpleTrie[Int]
   println(s"My empty SimpleTrie: ${trie}")
-  println(trie.toSimpleTrieMap)
+  println(s"My empty SimpleTrieMap: ${trie.toSimpleTrieMap}")
 
   // insert
   val trie1: SimpleTrie[Int] = trie.insert("hello", Some(1))
