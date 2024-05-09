@@ -66,8 +66,8 @@ case class SimpleTrie[V](
 object SimpleTrie {
 
   def apply[V]: SimpleTrie[V] = SimpleTrie[V]()
-//  implicit def defaultUpdate[T](v1: Option[T], v2: Option[T]): Option[T] =
-//    Seq(v1, v2).flatten.lastOption
+  implicit def defaultUpdate[T](v1: Option[T], v2: Option[T]): Option[T] =
+    Seq(v1, v2).flatten.lastOption
 
   private val FIRST_LETTER: Int    = 'a'.toInt // =97
   private val LAST_LETTER: Int     = 'z'.toInt // =122

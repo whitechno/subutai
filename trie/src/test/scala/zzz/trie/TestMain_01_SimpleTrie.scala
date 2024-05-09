@@ -5,10 +5,9 @@ object TestMain_01_SimpleTrie extends App {
 
   // example: counting words
 
-  implicit def updateCount(
-      count1: Option[Int],
-      count2: Option[Int]
-  ): Option[Int] = Some(Seq(count1, count2).flatten.sum)
+//  import SimpleTrie.defaultUpdate
+  implicit def updateCount(count1: Option[Int], count2: Option[Int]): Option[Int] =
+    Some(Seq(count1, count2).flatten.sum)
 
   val trie: SimpleTrie[Int] = SimpleTrie[Int]
   println(s"My empty SimpleTrie: ${trie}")
