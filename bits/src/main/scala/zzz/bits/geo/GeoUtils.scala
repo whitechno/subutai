@@ -115,13 +115,13 @@ object GeoUtils {
 //
 
 object GeoCoder {
-  def signedShift(iValue: Long, iNumShift: Int, iSignBit: Long): Long =
+  private def signedShift(iValue: Long, iNumShift: Int, iSignBit: Long): Long =
     if (iValue >= 0)
       iValue << iNumShift
     else
       ((iValue * -1L) << iNumShift) | iSignBit
 
-  def signedUnshift(
+  private def signedUnshift(
       iValue: Long,
       iMask: Long,
       iNumShift: Int,
