@@ -90,6 +90,10 @@ Versions of key dependencies
   - 2.13
     - 2.13.14 - May 01, 2024
     - 2.13.13 - Feb 26, 2024
+      - Support binary integer literals using `0b`, as in Java. For example:
+        ```
+        scala> 0b00101010
+        val res0: Int = 42
     - 2.13.12 - Sep 11, 2023
     - 2.13.11 - Jun 07, 2023
     - 2.13.10 - Oct 13, 2022
