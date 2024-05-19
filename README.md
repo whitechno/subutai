@@ -154,6 +154,8 @@ Versions of key dependencies
 
 - ScalaCheck  
   https://github.com/typelevel/scalacheck/releases
+  - 1.18.0 - Apr 17, 2024
+  - 1.17.1 - Apr 16, 2024
   - 1.17.0 - Sep 15, 2022
   - 1.16.0 - Apr 07, 2022
   - 1.15.4 - May 03, 2021
