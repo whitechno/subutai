@@ -68,6 +68,15 @@ lazy val helloCore = (project in file("core"))
 
 lazy val algs4j = project
 
+lazy val bits = project
+  .settings(
+    scalaVersion := V.scala212,
+    commonSettings,
+    libraryDependencies ++= Seq(
+      L.scalatest % Test
+    )
+  )
+
 lazy val breeze = project
   .settings(
     scalaVersion := V.scala213,
