@@ -33,6 +33,7 @@ Versions of key dependencies
 
 - SBT  
   https://github.com/sbt/sbt/releases
+  - 1.10.0 - May 05, 2024
   - 1.9.9 - Feb 22, 2024
     - To fix sbt 1.9.8's `UnsatisfiedLinkError` with `stat`, sbt 1.9.9 removes
       native code that was used to get the millisecond-precision timestamp that
