@@ -10,7 +10,7 @@ object Dependencies {
     val scalatest      = "3.2.18"
     val typesafeConfig = "1.4.3"
     val jodatime       = "2.12.7"
-    val requests       = "0.8.0"
+    val requests       = "0.8.2"
     val gigahorse      = "0.6.0"
     val typesafePlay   = "2.9.2"
     def json4s(scalaBinaryVer: String): String =

@@ -277,6 +277,7 @@ Versions of key dependencies
 
 - sbt-assembly  
   https://github.com/sbt/sbt-assembly/releases
+  - 2.2.0 - Mar 13, 2024
   - 2.1.5 - Nov 19, 2023
   - 2.1.4 - Oct 26, 2023
   - 2.1.3 - Sep 17, 2023
@@ -324,6 +325,7 @@ Versions of common dependencies
 - json4s  
   https://github.com/json4s/json4s/tags  
   https://search.maven.org/search?q=org.json4s
+  - 4.1.0-M5 - Mar 14, 2024
   - 4.1.0-M4 - Nov 18, 2023
   - 4.1.0-M3 - Apr 29, 2023
   - 4.1.0-M2 - Oct 14, 2022
@@ -356,6 +358,7 @@ Versions of common dependencies
 
 - requests-scala  
   https://github.com/com-lihaoyi/requests-scala/releases
+  - 0.8.2 - Apr 04, 2024
   - 0.8.0 - Dec 25, 2022
   - 0.7.1 - Jun 10, 2022
   - 0.7.0 - Dec 11, 2021
