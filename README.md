@@ -326,6 +326,7 @@ Versions of common dependencies
 - json4s  
   https://github.com/json4s/json4s/tags  
   https://search.maven.org/search?q=org.json4s
+  - 4.1.0-M6 - Jun 16, 2024
   - 4.1.0-M5 - Mar 14, 2024
   - 4.1.0-M4 - Nov 18, 2023
   - 4.1.0-M3 - Apr 29, 2023
@@ -359,6 +360,8 @@ Versions of common dependencies
 
 - requests-scala  
   https://github.com/com-lihaoyi/requests-scala/releases
+  - 0.9.0-RC1 - Jun 16, 2024
+  - 0.8.3 - May 29, 2024
   - 0.8.2 - Apr 04, 2024
   - 0.8.0 - Dec 25, 2022
   - 0.7.1 - Jun 10, 2022
