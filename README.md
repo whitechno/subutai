@@ -33,6 +33,7 @@ Versions of key dependencies
 
 - SBT  
   https://github.com/sbt/sbt/releases
+  - 1.10.1 - Jul 07, 2024
   - 1.10.0 - May 05, 2024
   - 1.9.9 - Feb 22, 2024
     - To fix sbt 1.9.8's `UnsatisfiedLinkError` with `stat`, sbt 1.9.9 removes
@@ -128,7 +129,8 @@ Versions of key dependencies
 - ScalaTest  
   https://www.scalatest.org  
   https://github.com/scalatest/scalatest/releases
-  - 3.2.18 - Feb 7, 2024
+  - 3.2.19 - Jun 25, 2024
+  - 3.2.18 - Feb 07, 2024
   - 3.2.17 - Sep 12, 2023
   - 3.2.16 - May 15, 2023
   - 3.2.15 - Jan 06, 2023
