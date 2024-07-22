@@ -2,17 +2,17 @@ subutai
 =======
 Experiments with SBT.
 
-Simplest SBT project setup (with new github repo)
+Simplest SBT project setup (with new GitHub repo)
 -------------------------------------------------
 
 1. Create repository (like `subutai`)
 2. In it `touch build.sbt`
 3. Set scala version(s) in build.sbt Add this line to build.sbt:  
    `ThisBuild / scalaVersion := "2.13.2"`
-3. Create `project/build.properties` with the following content:  
+4. Create `project/build.properties` with the following content:  
    `sbt.version = 1.3.12`.  
    Use `sbt> reboot` if changed.
-4. If needed, add `.gitignore` and `LICENSE`
+5. If needed, add `.gitignore` and `LICENSE`
 
 Now you can clone this new repository on your desktop with  
 `git clone https://github.com/whitechno/subutai.git`,  
@@ -34,13 +34,13 @@ Versions of key dependencies
 - SBT  
   https://github.com/sbt/sbt/releases
   - 1.10.1 - Jul 07, 2024
-  - 1.10.0 - May 05, 2024
+  - 1.10.0 – May 05, 2024
   - 1.9.9 - Feb 22, 2024
     - To fix sbt 1.9.8's `UnsatisfiedLinkError` with `stat`, sbt 1.9.9 removes
       native code that was used to get the millisecond-precision timestamp that
       was broken (JDK-8177809) on JDK 8 prior to OpenJDK 8u302.
   - 1.9.8 - Dec 13, 2023
-  - 1.9.7 - Oct 22, 2023
+  - 1.9.7 – Oct 22, 2023
   - 1.9.6 - Sep 15, 2023
   - 1.9.5 - Sep 13, 2023 - broken, don't use it
   - 1.9.4 - Aug 23, 2023
@@ -48,12 +48,12 @@ Versions of key dependencies
   - 1.9.2 - Jul 09, 2023
   - 1.9.1 - Jun 25, 2023
   - 1.9.0 - Jun 02, 2023
-  - 1.8.3 - May 12, 2023
+  - 1.8.3 – May 12, 2023
   - 1.8.2 - Jan 04, 2023
   - 1.8.1 - Jan 03, 2023
   - 1.8.0 - Nov 10, 2022
-  - 1.7.3 - Oct 30, 2022
-  - 1.7.2 - Oct 02, 2022
+  - 1.7.3 – Oct 30, 2022
+  - 1.7.2 – Oct 02, 2022
   - 1.7.1 - Jul 11, 2022
   - 1.7.0 - Jul 10, 2022
   - 1.6.2 - Jan 31, 2022
@@ -64,10 +64,10 @@ Versions of key dependencies
   - 1.5.6 - Dec 09, 2021
   - 1.5.5 - Jul 12, 2021
   - 1.5.4 - Jun 13, 2021
-  - 1.5.3 - May 31, 2021
-  - 1.5.2 - May 09, 2021
-  - 1.5.1 - Apr 25, 2021
-  - 1.5.0 - Apr 04, 2021
+  - 1.5.3 – May 31, 2021
+  - 1.5.2 – May 09, 2021
+  - 1.5.1 – Apr 25, 2021
+  - 1.5.0 – Apr 04, 2021
   - 1.4.9 - Mar 09, 2021
   - 1.4.8 - Mar 07, 2021
   - 1.4.7 - Jan 30, 2021
@@ -76,20 +76,20 @@ Versions of key dependencies
   - 1.4.4 - Nov 22, 2020
   - 1.4.3 - Nov 15, 2020
   - 1.4.2 - Nov 01, 2020
-  - 1.4.1 - Oct 19, 2020
-  - 1.4.0 - Oct 04, 2020
+  - 1.4.1 – Oct 19, 2020
+  - 1.4.0 – Oct 04, 2020
   - 1.3.13 - Jun 27, 2020
-  - 1.3.12 - May 30, 2020
-  - 1.3.11 - May 29, 2020
+  - 1.3.12 – May 30, 2020
+  - 1.3.11 – May 29, 2020
     - There was a regression in sbt 1.3.11. Please use sbt 1.3.12 instead.
-  - 1.3.10 - Apr 14, 2020
+  - 1.3.10 – Apr 14, 2020
   - 1.3.9 - Mar 31, 2020
   - 1.3.8 - Feb 3, 2020
 
 - Scala  
   https://github.com/scala/scala/releases
   - 2.13
-    - 2.13.14 - May 01, 2024
+    - 2.13.14 – May 01, 2024
     - 2.13.13 - Feb 26, 2024
       - Support binary integer literals using `0b`, as in Java. For example:
         ```
@@ -97,7 +97,7 @@ Versions of key dependencies
         val res0: Int = 42
     - 2.13.12 - Sep 11, 2023
     - 2.13.11 - Jun 07, 2023
-    - 2.13.10 - Oct 13, 2022
+    - 2.13.10 – Oct 13, 2022
     - 2.13.9 - Sep 21, 2022
       - Library maintainers should avoid publishing libraries using Scala
         2.13.9. Please use 2.13.10 instead. 2.13.9 has a regression where
@@ -105,11 +105,11 @@ Versions of key dependencies
         value classes (case class ... extends AnyVal).
     - 2.13.8 - Jan 12, 2022
     - 2.13.7 - Nov 01, 2021
-    - 2.13.6 - May 17, 2021
+    - 2.13.6 – May 17, 2021
     - 2.13.5 - Feb 22, 2021
     - 2.13.4 - Nov 19, 2020
     - 2.13.3 - Jun 25, 2020
-    - 2.13.2 - Apr 22, 2020
+    - 2.13.2 – Apr 22, 2020
     - 2.13.1 - Sep 18, 2019
   - 2.12
     - 2.12.19 - Feb 26, 2024
@@ -117,7 +117,7 @@ Versions of key dependencies
     - 2.12.17 - Sep 16, 2022
     - 2.12.16 - Jun 10, 2022
     - 2.12.15 - Sep 14, 2021
-    - 2.12.14 - May 27, 2021
+    - 2.12.14 – May 27, 2021
     - 2.12.13 - Jan 12, 2021
     - 2.12.12 - Jul 12, 2020
     - 2.12.11 - Mar 16, 2020
@@ -393,18 +393,18 @@ or in sbt shell:
 
 - `myproject/scalafmt`: Format main sources of myproject project
 - `myproject/test:scalafmt`: Format test sources of myproject project
-- `scalafmtCheck`: Check if the scala sources under the project has been
+- `scalafmtCheck`: Check if the scala sources under the project have been
   formatted.
 - `scalafmtSbt`: Format *.sbt and project/*.scala files.
-- `scalafmtSbtCheck`: Check if the files has been formatted by scalafmtSbt.
+- `scalafmtSbtCheck`: Check if the files have been formatted by scalafmtSbt.
 - `scalafmtOnly`: Format a single given file.
 - `scalafmtAll`: Execute the scalafmt task for all configurations in which it is
   enabled.  
-  (By default this means the Compile and Test configurations.) (available as of
+  (By default, this means the Compile and Test configurations.) (available as of
   v2.0.0-RC5)
 - `scalafmtCheckAll`: Execute the `scalafmtCheck` task for all configurations in
   which it is enabled.  
-  (By default this means the Compile and Test configurations.) (available as of
+  (By default, this means the Compile and Test configurations.) (available as of
   v2.0.0-RC5)
 
 ### clean;compile;test;run
@@ -575,18 +575,18 @@ scala-sbt's [SBT Publishing](https://www.scala-sbt.org/1.x/docs/Publishing.html)
 
 Step-by-step
 
-- Created Sonatype JIRA account and filed JIRA issue to claim my namespace  
+- Created a Sonatype JIRA account and filed JIRA issue to claim my namespace  
   https://issues.sonatype.org/browse/OSSRH-58349
 - Created a public repo called  
   https://github.com/whitechno/OSSRH-58349  
-  to verify github account ownership.
-- com.github.whitechno has been prepared, now user(s) whitechno can:
+  to verify GitHub account ownership.
+- `com.github.whitechno` has been prepared, now user(s) `whitechno` can:
   - Deploy snapshot artifacts into repository  
     https://oss.sonatype.org/content/repositories/snapshots
   - Deploy release artifacts into the staging repository  
     https://oss.sonatype.org/service/local/staging/deploy/maven2
   - Release staged artifacts into repository 'Releases'  
-    Please comment on this ticket when you promoted your first release, thanks
+    Please comment on this ticket when you promote your first release, thanks
 
 Cross-building
 --------------
@@ -630,7 +630,7 @@ Other Special topics
 Reading resources
 -----------------
 
-See stackoverflow's [How to read files from resources folder in Scala?](
+See stackoverflow's [How to read files from the resources folder in Scala?](
 https://stackoverflow.com/questions/27360977/how-to-read-files-from-resources-folder-in-scala
 )
 

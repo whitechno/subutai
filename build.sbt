@@ -72,9 +72,7 @@ lazy val bits = project
   .settings(
     scalaVersion := V.scala212,
     commonSettings,
-    libraryDependencies ++= Seq(
-      L.scalatest % Test
-    )
+    libraryDependencies += L.scalatest % Test
   )
 
 lazy val breeze = project
@@ -186,6 +184,14 @@ lazy val `stateful-iterator` = project
   )
 
 lazy val trie = project
+  .settings(
+    scalaVersion       := V.scala213,
+    crossScalaVersions := supportedScalaVersions,
+    commonSettings
+  )
+
+/** For scratches and small experiments */
+lazy val zzz = project
   .settings(
     scalaVersion       := V.scala213,
     crossScalaVersions := supportedScalaVersions,
