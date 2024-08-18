@@ -5,13 +5,13 @@ import scala.util.matching.Regex
 // zzz/test:runMain zzz.regex.TestMain_01_UrlInUrlQuery
 object TestMain_01_UrlInUrlQuery extends App {
 
-  // Ex 1
+  // Ex 1 words
 
   println(
     """\w+""".r.findAllIn("A simple example.").toList
   ) // List(A, simple, example)
 
-  // Ex 2
+  // Ex 2 mad hatter
 
   val hathaway = "hathatthattthatttt"
 
@@ -42,7 +42,7 @@ object TestMain_01_UrlInUrlQuery extends App {
   println(madhatterAllMatchIn.map(_.group(1))) // List(h, h, h, h)
   println(madhatterAllMatchIn.map(_.group(2))) // List(ath, atth, attth, atttt)
 
-  // Ex 3
+  // Ex 3 url in url
 
   val url = "https://abc.com?a=http://aaa.edu&b=ftp://xyz.com&c=3&d=http://ddd.org/"
 
@@ -75,5 +75,19 @@ object TestMain_01_UrlInUrlQuery extends App {
   println(
     urlAllMatchIn2.map(_.matched)
   ) // List(https://abc.com, http://aaa.edu, ftp://xyz.com, http://ddd.org/)
+
+  // Ex 4 Vizio UAS
+
+  val vizioUas =
+    "Mozilla/5.0 (X11; Linux armv7l) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.5359.124 Safari/537.36 CrKey/1.0.999999 VIZIO SmartCast(Conjure/MTKC-108.600.31.0-prod FW/1.600.31.1-5 Model/V505-J09) CrKey/1.56.500000"
+  val vizioRx: Regex = "FW/(.+) Model/(.+)\\)".r
+  val (osv, mod) = vizioRx
+    .findFirstMatchIn(vizioUas)
+    .map { case vizioRx(osv, mod) => (Some(osv), Some(mod)) }
+    .getOrElse((None, None))
+  println(osv, mod) // (Some(1.600.31.1-5),Some(V505-J09))
+  println(
+    vizioRx.findFirstMatchIn("").map { case vizioRx(osv, mod) => (osv, mod) }
+  ) // None
 
 }
