@@ -40,6 +40,7 @@ Versions of key dependencies
       native code that was used to get the millisecond-precision timestamp that
       was broken (JDK-8177809) on JDK 8 prior to OpenJDK 8u302.
   - 1.9.8 - Dec 13, 2023
+    - Has `UnsatisfiedLinkError`, don't use it.
   - 1.9.7 – Oct 22, 2023
   - 1.9.6 - Sep 15, 2023
   - 1.9.5 - Sep 13, 2023 - broken, don't use it
