@@ -33,6 +33,11 @@ Versions of key dependencies
 
 - SBT  
   https://github.com/sbt/sbt/releases
+  - 1.10.6 - Nov 29, 2024
+  - 1.10.5 - Nov 03, 2024
+  - 1.10.4 - Oct 28, 2024
+  - 1.10.3 - Oct 19, 2024
+  - 1.10.2 - Sep 15, 2024
   - 1.10.1 - Jul 07, 2024
   - 1.10.0 – May 05, 2024
   - 1.9.9 - Feb 22, 2024
@@ -90,6 +95,7 @@ Versions of key dependencies
 - Scala  
   https://github.com/scala/scala/releases
   - 2.13
+    - 2.13.15 – Sep 25, 2024
     - 2.13.14 – May 01, 2024
     - 2.13.13 - Feb 26, 2024
       - Support binary integer literals using `0b`, as in Java. For example:
@@ -113,6 +119,7 @@ Versions of key dependencies
     - 2.13.2 – Apr 22, 2020
     - 2.13.1 - Sep 18, 2019
   - 2.12
+    - 2.12.20 - Sep 04, 2024
     - 2.12.19 - Feb 26, 2024
     - 2.12.18 - Jun 07, 2023
     - 2.12.17 - Sep 16, 2022
