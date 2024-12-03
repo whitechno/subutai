@@ -23,13 +23,16 @@ Now you have a minimal setup to start using Scala with SBT.
 You can also switch scalaVersion temporarily:  
 `sbt:Hello>  ++2.12.11! -v`  
 `!` is to force version switch (without it, the switch happens only in projects
-where this particular version is included in `crossScalaVersions` of
-project `settings`)  
+where this particular version is included in `crossScalaVersions` of project
+`settings`)  
 `-v` is for verbose
 
 
 Versions of key dependencies
 ----------------------------
+
+- Java
+  - Updated to Java 17.0.13 on Dec 2, 2024
 
 - SBT  
   https://github.com/sbt/sbt/releases
@@ -164,6 +167,7 @@ Versions of key dependencies
 
 - ScalaCheck  
   https://github.com/typelevel/scalacheck/releases
+  - 1.18.1 - Sep 15, 2024
   - 1.18.0 - Apr 17, 2024
   - 1.17.1 - Apr 16, 2024
   - 1.17.0 - Sep 15, 2022
@@ -208,6 +212,7 @@ Versions of key dependencies
 
 - Scalafmt  
   https://github.com/scalameta/scalafmt/releases
+  - 3.8.3 - Jul 25, 2024
   - 3.8.2 - Jun 14, 2024
   - 3.8.1 - Mar 29, 2024
   - 3.8.0 - Feb 19, 2024
@@ -288,6 +293,7 @@ Versions of key dependencies
 
 - sbt-assembly  
   https://github.com/sbt/sbt-assembly/releases
+  - 2.3.0 - Oct 06, 2024
   - 2.2.0 - Mar 13, 2024
   - 2.1.5 - Nov 19, 2023
   - 2.1.4 - Oct 26, 2023
@@ -310,6 +316,7 @@ Versions of common dependencies
 - Joda-Time  
   https://github.com/JodaOrg/joda-time/releases  
   https://www.joda.org/joda-time/changes-report.html
+  - 2.13.0 - Sep 15, 2024
   - 2.12.7 - Feb 4, 2024
   - 2.12.6 - Jan 6, 2024
   - 2.12.5 - Mar 30, 2023
@@ -336,6 +343,8 @@ Versions of common dependencies
 - json4s  
   https://github.com/json4s/json4s/tags  
   https://search.maven.org/search?q=org.json4s
+  - 4.1.0-M8 - Nov 06, 2024
+  - 4.1.0-M7 - Sep 09, 2024
   - 4.1.0-M6 - Jun 16, 2024
   - 4.1.0-M5 - Mar 14, 2024
   - 4.1.0-M4 - Nov 18, 2023
@@ -370,6 +379,9 @@ Versions of common dependencies
 
 - requests-scala  
   https://github.com/com-lihaoyi/requests-scala/releases
+  - 0.9.0 - Jul 22, 2024
+    - Dropping compatibility with JDK 8, and will require JDK 11 and above going
+      forward. People who need to use JDK 8 can continue using version 0.8.3
   - 0.9.0-RC1 - Jun 16, 2024
   - 0.8.3 - May 29, 2024
   - 0.8.2 - Apr 04, 2024
@@ -452,9 +464,9 @@ https://www.scalatest.org/user_guide/tagging_your_tests
 
 Set the SBT logging level in your build.sbt file with this setting:
 `logLevel := Level.Debug`. Or, if you’re working interactively from the SBT
-command line and don’t want to add this to your build.sbt file, use this
-syntax:`> set logLevel := Level.Debug`. All SBT log levels are: Debug, Info,
-Warning, Error.
+command line and don’t want to add this to your build.sbt file, use this syntax:
+`> set logLevel := Level.Debug`. All SBT log levels are: Debug, Info, Warning,
+Error.
 
 ### Package
 
@@ -867,9 +879,9 @@ that [SBT is recursive](https://www.scala-sbt.org/1.x/docs/Organizing-Build.html
 
 The eviction warning you are seeing is not for your main project, but for the
 meta-project!
-You can check that by running the evicted command in the meta project using
-the `reload plugins` command. To return to the main project execute
-the `reload return` command
+You can check that by running the evicted command in the meta project using the
+`reload plugins` command. To return to the main project execute the
+`reload return` command
 
 ```
 $ sbt
@@ -898,9 +910,8 @@ sbt:Hello> evicted
 
 ### Is it wise to fix eviction warnings of library dependencies?
 
-Is it a good idea to fix SBT eviction warning messages
-using `dependencyOverrides` in build.sbt as
-per [SBT Documentation Eviction warning](
+Is it a good idea to fix SBT eviction warning messages using
+`dependencyOverrides` in build.sbt as per [SBT Documentation Eviction warning](
 https://www.scala-sbt.org/1.x/docs/Library-Management.html#Eviction+warning
 )?
 

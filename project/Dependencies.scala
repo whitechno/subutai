@@ -9,8 +9,8 @@ object Dependencies {
     val scala213       = "2.13.15"
     val scalatest      = "3.2.19"
     val typesafeConfig = "1.4.3"
-    val jodatime       = "2.12.7"
-    val requests       = "0.8.3"
+    val jodatime       = "2.13.0"
+    val requests       = "0.9.0"
     val gigahorse      = "0.6.0"
     val typesafePlay   = "2.9.2"
     def json4s(scalaBinaryVer: String): String =
@@ -18,7 +18,7 @@ object Dependencies {
       else "4.0.7"
     def scalacheck(scalaBinaryVer: String): String =
       if (scalaBinaryVer == "2.11") "1.15.2" // Last version available for Scala 2.11
-      else "1.18.0"
+      else "1.18.1"
     def breeze(scalaBinaryVer: String): String =
       if (scalaBinaryVer == "2.11") "1.0" // Last version available for Scala 2.11
       else "2.0.1-RC2"
