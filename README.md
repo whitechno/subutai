@@ -32,10 +32,26 @@ Versions of key dependencies
 ----------------------------
 
 - Java
-  - Updated to Java 17.0.13 on Dec 2, 2024
+  - 17
+    - 17.0.13 on Dec 2, 2024
+    - 17.0.15 on May 24, 2025
 
 - SBT  
   https://github.com/sbt/sbt/releases
+  - 1.11.0 - May 24, 2025
+    - The Central Repository (aka Maven Central) has long been the pillar of the
+      JVM ecosystem including Scala. The mechanism to publish libraries to the
+      Central has been hosted by Sonatype as OSS Repository Hosting (OSSRH) via
+      HTTP PUT, but in March it was announced that the endpoint will be sunset
+      in June 2025 in favor of the Central Portal
+      at https://central.sonatype.com/. sbt 1.11.0 implements a built-in support
+      to publish to Central Repository via the Central Portal.
+  - 1.10.11 - Mar 16, 2025
+  - 1.10.10 - Mar 03, 2025
+  - 1.10.9 - Mar 03, 2025
+  - 1.10.8 - Mar 03, 2025
+    - sbt 1.10.8 is dead on arrival, please use 1.10.9 when it comes out.
+  - 1.10.7 - Dec 22, 2024
   - 1.10.6 - Nov 29, 2024
   - 1.10.5 - Nov 03, 2024
   - 1.10.4 - Oct 28, 2024
@@ -98,6 +114,7 @@ Versions of key dependencies
 - Scala  
   https://github.com/scala/scala/releases
   - 2.13
+    - 2.13.16 – Jan 15, 2025
     - 2.13.15 – Sep 25, 2024
     - 2.13.14 – May 01, 2024
     - 2.13.13 - Feb 26, 2024
@@ -195,6 +212,8 @@ Versions of key dependencies
 
 - sbt-scalafmt (Scalafmt sbt plugin)  
   https://github.com/scalameta/sbt-scalafmt/releases
+  - 2.5.4 - Jan 16, 2025
+  - 2.5.3 - Jan 13, 2025
   - 2.5.2 - Aug 30, 2023
   - 2.5.1 - Aug 29, 2023
   - 2.5.0 - Nov 14, 2022
@@ -212,6 +231,16 @@ Versions of key dependencies
 
 - Scalafmt  
   https://github.com/scalameta/scalafmt/releases
+  - 3.9.6 - May 05, 2025
+  - 3.9.5 - Apr 29, 2025
+  - 3.9.4 - Mar 12, 2025
+  - 3.9.3 - Mar 06, 2025
+  - 3.9.2 - Feb 28, 2025
+  - 3.9.1 - Feb 21, 2025
+  - 3.9.0 - Feb 16, 2025
+  - 3.8.6 - Jan 23, 2025
+  - 3.8.5 - Jan 16, 2025
+  - 3.8.4 - Jan 12, 2025
   - 3.8.3 - Jul 25, 2024
   - 3.8.2 - Jun 14, 2024
   - 3.8.1 - Mar 29, 2024
@@ -431,7 +460,7 @@ or in sbt shell:
 
 ```text
 sbt> reload;+update
-sbt> clean;+test:compile;+test
+sbt> clean;+compile;+test:compile;+test
 ```
 
 Run one particular main class:  

@@ -6,7 +6,7 @@ object Dependencies {
     // val scala210       = "2.10.7"
     val scala211       = "2.11.12"
     val scala212       = "2.12.20"
-    val scala213       = "2.13.15"
+    val scala213       = "2.13.16"
     val scalatest      = "3.2.19"
     val typesafeConfig = "1.4.3"
     val jodatime       = "2.13.0"
