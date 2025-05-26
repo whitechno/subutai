@@ -1,5 +1,5 @@
-# Python Configuration for IntelliJ IDEA
-
+Python Configuration for IntelliJ IDEA
+======================================
 May 25, 2025
 
 This directory contains Python scripts for JSON formatting and other utilities.
@@ -20,16 +20,18 @@ SDK. This is the simplest setup, but it has a disadvantage that all
 pip-installed packages are installed globally. Virtualenv is a better choice in
 this regard.
 
-## Configuration Steps
+Configuration Steps
+-------------------
 
 1. **Open the Project in IntelliJ IDEA**
+
 
 2. **Configure the Python Interpreter**:
 
 - Go to File > Project Structure > Project Settings > Modules
 - Select the "python_scripts" module
 - Go to the "Dependencies" tab
-- Click on "Module SDK" dropdown
+- Click on the "Module SDK" dropdown
 - Select "Python 3.13" if it exists
 - If it doesn't exist, click on "New..." and follow these steps:
   - Select "Python SDK"
@@ -53,9 +55,10 @@ If IntelliJ still doesn't recognize the Python module:
   - `.idea/modules/python_scripts.iml` (should use "Python 3.13")
   - `.idea/misc.xml` (should have a "Black" component with sdkName as "Python
     3.13")
+
 - `.idea/modules.xml` should list module python_scripts
 
-See "Notes" below for more details.
+- See "Notes" below for more details.
 
 2. **Invalidate Caches and Restart**:
 
@@ -70,14 +73,14 @@ See "Notes" below for more details.
 
 ## Notes
 
-`.idea/modules.xml` should have this line in `<modules>`:
+- `.idea/modules.xml` should have this line in `<modules>`:
 ```xml
 
 <module fileurl="file://$PROJECT_DIR$/.idea/modules/python_scripts.iml"
         filepath="$PROJECT_DIR$/.idea/modules/python_scripts.iml"/>
 ```
 
-`.idea/modules/python_scripts.iml`:
+- `.idea/modules/python_scripts.iml`:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="PYTHON_MODULE" version="4">
@@ -86,9 +89,9 @@ See "Notes" below for more details.
     </component>
     <component name="NewModuleRootManager" inherit-compiler-output="true">
         <exclude-output/>
-        <content url="file://$MODULE_DIR$/../../bash_scripts/python_scripts">
+        <content url="file://$MODULE_DIR$/../../all_scripts/python_scripts">
             <sourceFolder
-                    url="file://$MODULE_DIR$/../../bash_scripts/python_scripts"
+                    url="file://$MODULE_DIR$/../../all_scripts/python_scripts"
                     isTestSource="false"/>
         </content>
         <orderEntry type="jdk" jdkName="Python 3.13" jdkType="Python SDK"/>
@@ -97,7 +100,7 @@ See "Notes" below for more details.
 </module>
 ```
 
-`.idea/misc.xml`:
+- `.idea/misc.xml`:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">

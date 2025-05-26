@@ -7,7 +7,7 @@ to be specified in any order relative to each other.
 In other words both of these commands should result in the same parsed arguments:
 
   $ bash arg-parser.sh -a 111 -b "3 5" "222 444"
-  $ bash arg-parser.sh "222 444" 111 -a --my-flag-with-argument="3 5"
+  $ bash arg-parser.sh 111 "222 444" -a --my-flag-with-argument="3 5"
 Both commands should result in the following output:
   MY_FLAG_OPT: >0<
   MY_FLAG_ARG: >3 5<
