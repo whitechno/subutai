@@ -1,19 +1,18 @@
-#!/usr/bin/python
 """
 Convert JSON data to human-readable form.
 
 Usage:
-    prettyJSON2.py inputFile [outputFile]
+    python3 prettyJSON2.py inputFile [outputFile]
 
 Examples:
-    python prettyJSON2.py foo.json
+    python3 prettyJSON2.py test.json
 
-    echo '{"b": 1, "a": 2}' | python prettyJSON2.py
+    echo '{"b": 1, "a": 2}' | python3 prettyJSON2.py -
 """
 import sys, json
 
 
-def main(args):
+def main(args: list[str]) -> bool:
     try:
         if args[1] == '-':
             inputFile = sys.stdin
@@ -33,7 +32,7 @@ def main(args):
     return True
 
 
-def usage():
+def usage() -> None:
     print(__doc__)
 
 

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 Convert JSON data to human-readable form.
@@ -6,14 +6,16 @@ Convert JSON data to human-readable form.
 (Reads from stdin and writes to stdout)
 
 Examples:
-  echo '{"foo": "lorem", "bar": "ipsum"}' | python prettyJSON.py
+  echo '{"foo": "lorem", "bar": "ipsum"}' | python3 prettyJSON.py
 
   # ensure_ascii=False to avoid printing "D\u00fcsseldorf"
   echo '{ "Düsseldorf": "lorem", "bar": "ipsum" }' | ./prettyJSON.py
 
-  cat foo.json | python prettyJSON.py
+  cat foo.json | ./prettyJSON.py
   or
-  python prettyJSON.py < foo.json
+  python3 prettyJSON.py < foo.json
+
+`chmod +x prettyJSON.py`
 """
 import sys
 
