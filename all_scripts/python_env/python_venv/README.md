@@ -26,8 +26,8 @@ options:
                         symlinks are the default for the platform.
   --clear               Delete the contents of the environment directory if it 
                         already exists, before environment creation.
-  --upgrade             Upgrade the environment directory to use this version of 
-                        Python, assuming Python has been upgraded in-place.
+  --upgrade             Upgrade the environment directory to use this version
+                        of Python, assuming Python has been upgraded in-place.
   --without-pip         Skips installing or upgrading pip in the virtual 
                         environment (pip is bootstrapped by default)
   --prompt PROMPT       Provides an alternative prompt prefix for this environment.
@@ -96,8 +96,88 @@ you move an environment because you moved a parent directory of it, you should
 recreate the environment in its new location. Otherwise, software installed into
 the environment may not work as expected.
 
+
+pip install
+===========
+Install:
+```shell
+pip install -r requirements.txt
+```
+
+To uninstall Python packages that were installed with
+`pip install -r requirements.txt`, you have several options:
+
+## Option 1: Uninstall using the same requirements file
+
+You can use the same requirements.txt file to uninstall all packages:
+
+```shell script
+pip uninstall -y -r requirements.txt
+```
+
+The `-y` flag automatically confirms all uninstallations without prompting.
+
+## Option 2: Generate a new uninstall requirements file
+
+If some packages in your requirements.txt are commented out (like in your file),
+you might want to create a separate file with only the packages you want to
+uninstall:
+
+```shell script
+# Create a file with only the packages to uninstall
+grep -v '^#' requirements.txt > to_uninstall.txt
+
+# Then uninstall using that file
+pip uninstall -y -r to_uninstall.txt
+```
+
+## Option 3: Uninstall specific packages individually
+
+If you only want to uninstall certain packages:
+
+```shell script
+pip uninstall mypy mypy-extensions
+```
+
+## Option 4: Recreate your virtual environment
+
+If you're using a virtual environment and want to start fresh:
+
+```shell script
+# Deactivate current environment
+deactivate
+
+# Delete and recreate the environment
+rm -rf your_env_directory
+python -m venv your_env_directory
+
+# Activate the new environment
+source your_env_directory/bin/activate  # Linux/Mac
+# or
+your_env_directory\Scripts\activate  # Windows
+```
+
+## Option 5: Using pip-autoremove (for dependencies)
+
+If you want to remove packages along with their dependencies that aren't used by
+other packages:
+
+```shell script
+# Install pip-autoremove
+pip install pip-autoremove
+
+# Remove a package and its unused dependencies
+pip-autoremove mypy -y
+```
+
+Remember that if you've installed other packages that depend on those in your
+requirements.txt file, you might encounter issues after uninstalling. It's
+generally safest to work within isolated virtual environments for Python
+projects.
+
+
 Static Type Checkers
---------------------
+====================
 
 Python 3.13 supports several mature static type checkers that can help ensure
 your code's type safety. Here's an overview of the main options available:
@@ -186,3 +266,122 @@ All of these checkers support Python 3.13's typing features, including:
 - TypedDict improvements
 - And other type-related enhancements
 
+Running Static Type Checks with Mypy
+====================================
+After installing mypy from your requirements.txt file, you can run static type
+checking on your Python code in several ways.
+
+Basic Usage
+-----------
+The simplest way to run mypy is to provide the file or directory you want to
+check:
+```shell script
+mypy your_file.py
+```
+or for multiple files:
+```shell script
+mypy file1.py file2.py directory/
+mypy .
+```
+
+Common Command Line Options
+---------------------------
+Mypy offers several command line options to customize type checking:
+
+### 1. Strictness Levels
+```shell script
+# Enable strict type checking (recommended)
+mypy --strict your_file.py
+
+# Or for a less strict check (more permissive)
+mypy --disallow-untyped-defs your_file.py
+```
+The `--strict` flag enables all strict type checking options at
+once [[1]](https://mypy.readthedocs.io/en/stable/command_line.html).
+
+### 2. Python Version\
+
+Specify which Python version's features to use it for type checking:
+```shell script
+# For Python 3.13 specifically
+mypy --python-version 3.13 your_file.py
+```
+
+### 3. Ignoring Errors
+```shell script
+# Ignore specific errors using error codes
+mypy --ignore-missing-imports your_file.py
+```
+
+### 4. Generating Reports
+```shell script
+# Generate a report showing type coverage
+mypy --html-report ./reports your_file.py
+```
+
+Configuration File
+------------------
+For projects, it's usually better to create a `mypy.ini` or `setup.cfg` file
+with your configuration:
+```textmate
+# mypy.ini
+[mypy]
+python_version = 3.13
+warn_return_any = True
+disallow_untyped_defs = True
+disallow_incomplete_defs = True
+
+# Per-module options
+[mypy.module_name]
+ignore_missing_imports = True
+```
+
+Then run mypy without specifying options each time:
+```shell script
+mypy your_file.py
+```
+
+Running on Your Project
+-----------------------
+For a typical project setup, you might want to:
+1. Create a configuration file
+2. Run mypy on your entire package:
+
+```shell script
+# Check an entire package
+mypy your_package/
+
+# Alternatively, find and check all Python files
+mypy $(find . -name "*.py")
+```
+
+Example for a Script
+--------------------
+Let's say you have a script named `pretty_json.py` like in your repository. You
+could check it with:
+
+```shell script
+# Basic check
+mypy pretty_json.py
+
+# Strict check
+mypy --strict pretty_json.py
+
+# With specific settings
+mypy --disallow-untyped-defs --disallow-incomplete-defs pretty_json.py
+```
+
+Mypy will analyze the code and output any type errors it finds, such as
+incompatible types, missing annotations, or incorrect function
+calls [[2]](https://mypy.readthedocs.io/en/stable/getting_started.html).
+
+Integration with Development Tools
+----------------------------------
+You can also integrate mypy with:
+- **Pre-commit hooks**: Run mypy before committing code
+- **CI/CD pipelines**: Run mypy as part of your continuous integration
+- **IDEs**: Many IDEs like PyCharm, VS Code (with the appropriate plugin) can
+  run mypy in real-time
+
+This setup ensures your code is consistently type-checked throughout
+development.

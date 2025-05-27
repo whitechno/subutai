@@ -1,10 +1,10 @@
 # Static type checking
 mypy==1.8.0
-mypy-extensions==1.0.0
+#mypy-extensions==1.0.0
 
 # Type stubs for standard library and third-party packages
-types-setuptools==69.0.0.0
-typing_extensions==4.9.0
+#types-setuptools==69.0.0.0
+#typing_extensions==4.9.0
 
 # Optional: Type stub collection for common packages
 # Uncomment as needed for your project
