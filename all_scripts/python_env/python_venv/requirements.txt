@@ -1,5 +1,5 @@
 # Static type checking
-mypy==1.8.0
+mypy #==1.8.0
 #mypy-extensions==1.0.0
 
 # Type stubs for standard library and third-party packages

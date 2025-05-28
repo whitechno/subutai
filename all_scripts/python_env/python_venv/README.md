@@ -97,17 +97,34 @@ recreate the environment in its new location. Otherwise, software installed into
 the environment may not work as expected.
 
 
-pip install
-===========
-Install:
+pip install with requirements.txt
+=================================
+
+Install
+-------
 ```shell
 pip install -r requirements.txt
+pip install -U -r requirements.txt # upgrade
 ```
 
+[Requirement Specifiers](
+https://pip.pypa.io/en/stable/reference/requirement-specifiers/
+)
+
+[Requirements File Format](
+https://pip.pypa.io/en/stable/reference/requirements-file-format/
+)
+
+[pip install Examples](
+https://pip.pypa.io/en/stable/cli/pip_install/#examples
+)
+
+Uninstall
+---------
 To uninstall Python packages that were installed with
 `pip install -r requirements.txt`, you have several options:
 
-## Option 1: Uninstall using the same requirements file
+### Option 1: Uninstall using the same requirements file
 
 You can use the same requirements.txt file to uninstall all packages:
 
@@ -117,7 +134,7 @@ pip uninstall -y -r requirements.txt
 
 The `-y` flag automatically confirms all uninstallations without prompting.
 
-## Option 2: Generate a new uninstall requirements file
+### Option 2: Generate a new uninstall requirements file
 
 If some packages in your requirements.txt are commented out (like in your file),
 you might want to create a separate file with only the packages you want to
@@ -131,7 +148,7 @@ grep -v '^#' requirements.txt > to_uninstall.txt
 pip uninstall -y -r to_uninstall.txt
 ```
 
-## Option 3: Uninstall specific packages individually
+### Option 3: Uninstall specific packages individually
 
 If you only want to uninstall certain packages:
 
@@ -139,7 +156,7 @@ If you only want to uninstall certain packages:
 pip uninstall mypy mypy-extensions
 ```
 
-## Option 4: Recreate your virtual environment
+### Option 4: Recreate your virtual environment
 
 If you're using a virtual environment and want to start fresh:
 
@@ -157,7 +174,7 @@ source your_env_directory/bin/activate  # Linux/Mac
 your_env_directory\Scripts\activate  # Windows
 ```
 
-## Option 5: Using pip-autoremove (for dependencies)
+### Option 5: Using pip-autoremove (for dependencies)
 
 If you want to remove packages along with their dependencies that aren't used by
 other packages:
