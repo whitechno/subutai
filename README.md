@@ -35,6 +35,7 @@ Versions of key dependencies
   - 17
     - 17.0.13 on Dec 2, 2024
     - 17.0.15 on May 24, 2025
+    - Set `jenv local 17` to add `.java-version` in the project root.
 
 - SBT  
   https://github.com/sbt/sbt/releases

@@ -164,6 +164,12 @@ class TestSpec_10_breeze_Quickstart extends AnyFlatSpec with Matchers {
       0.10081881344492458, 0.16803135574154085, 0.10081881344492458,
       0.02160403145248382, 0.16803135574154085
     )
+    /* On Apple Silicone (M2 chip)
+       openjdk64-17.0.15, temurin64-21.0.7 or openjdk64-23.0.2 Java
+    DenseVector(
+      0.1008188134449244, 0.1680313557415407, 0.1008188134449244,
+      0.0216040314524838, 0.1680313557415407)
+     */
     // meanAndVariance requires doubles, but Poisson samples over Ints
     val doublePoi: Rand[Double] = for (x <- poi) yield x.toDouble
     import breeze.stats.meanAndVariance, meanAndVariance.MeanAndVariance
