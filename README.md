@@ -346,6 +346,8 @@ Versions of common dependencies
 - Joda-Time  
   https://github.com/JodaOrg/joda-time/releases  
   https://www.joda.org/joda-time/changes-report.html
+  - 2.14.0 - Mar 29, 2025
+  - 2.13.1 - Feb 03, 2025
   - 2.13.0 - Sep 15, 2024
   - 2.12.7 - Feb 4, 2024
   - 2.12.6 - Jan 6, 2024
@@ -373,6 +375,7 @@ Versions of common dependencies
 - json4s  
   https://github.com/json4s/json4s/tags  
   https://search.maven.org/search?q=org.json4s
+  - 4.1.0-M9 - Jan 10, 2025
   - 4.1.0-M8 - Nov 06, 2024
   - 4.1.0-M7 - Sep 09, 2024
   - 4.1.0-M6 - Jun 16, 2024

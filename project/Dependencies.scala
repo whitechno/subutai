@@ -9,7 +9,7 @@ object Dependencies {
     val scala213       = "2.13.16"
     val scalatest      = "3.2.19"
     val typesafeConfig = "1.4.3"
-    val jodatime       = "2.13.0"
+    val jodatime       = "2.14.0"
     val requests       = "0.9.0"
     val gigahorse      = "0.6.0"
     val typesafePlay   = "2.9.2"
