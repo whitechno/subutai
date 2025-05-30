@@ -158,7 +158,9 @@ pip uninstall mypy mypy-extensions
 
 ### Option 4: Recreate your virtual environment
 
-If you're using a virtual environment and want to start fresh:
+**This is by far the best option.**
+
+If you're using a virtual environment and want to start fresh.
 
 ```shell script
 # Deactivate current environment
@@ -172,6 +174,9 @@ python -m venv your_env_directory
 source your_env_directory/bin/activate  # Linux/Mac
 # or
 your_env_directory\Scripts\activate  # Windows
+
+# install all the packages needed by the environment
+pip install -r requirements.txt
 ```
 
 ### Option 5: Using pip-autoremove (for dependencies)
@@ -316,7 +321,7 @@ mypy --disallow-untyped-defs your_file.py
 The `--strict` flag enables all strict type checking options at
 once [[1]](https://mypy.readthedocs.io/en/stable/command_line.html).
 
-### 2. Python Version\
+### 2. Python Version
 
 Specify which Python version's features to use it for type checking:
 ```shell script
