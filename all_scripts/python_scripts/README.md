@@ -25,7 +25,6 @@ Configuration Steps
 
 1. **Open the Project in IntelliJ IDEA**
 
-
 2. **Configure the Python Interpreter**:
 
 - Go to File > Project Structure > Project Settings > Modules
