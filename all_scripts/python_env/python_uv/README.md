@@ -37,17 +37,3 @@ YouTube
 [LangGraph Complete Course for Beginners – Complex AI Agents with Python](
 https://www.youtube.com/watch?v=jGg_1h0qzaM)
 
-### virtualenv
-
-<https://virtualenv.pypa.io/en/latest/installation.html>
-
-[virtualenv](
-https://pypi.org/project/virtualenv/
-) is a CLI tool that needs a Python interpreter to run. If you already have a
-Python 3.7+ interpreter, the best is to use `pipx` to install `virtualenv` into
-an isolated environment. This has the added benefit that later you’ll be able to
-upgrade `virtualenv` without affecting other parts of the system.
-```shell
-pipx install virtualenv
-virtualenv --help
-```
