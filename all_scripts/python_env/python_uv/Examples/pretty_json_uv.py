@@ -2,10 +2,10 @@
 Convert JSON data to human-readable form.
 
 Usage:
-    python3 pretty_json.py inputFile
+    python3 pretty_json_uv.py inputFile
 
 Examples:
-    python3 pretty_json.py foo.json
+    python3 pretty_json_uv.py foo.json
 """
 import sys, json
 
