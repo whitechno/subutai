@@ -11,6 +11,8 @@ import sys, json
 
 
 def main(args: list[str]) -> bool:
+    print("sys.prefix: ", sys.prefix)
+    print("sys.base_prefix: ", sys.base_prefix)
     try:
         inputFile = open(args[1])
         input = json.load(inputFile)

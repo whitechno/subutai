@@ -2,7 +2,17 @@ Python Tools
 ============
 June 1, 2025
 
-Everything here is about macOS/bash.
+The right Python tool stack?
+- pyenv: install and manage multiple versions of Python
+  - <https://github.com/pyenv/pyenv>
+- pipx: install and manage Python CLI packages
+  - <https://github.com/pypa/pipx>
+- uv: set and manage Python virtual environments
+  - <https://github.com/astral-sh/uv>
+- mypy: static type checker for Python
+  - <https://mypy.readthedocs.io>
+
+_This doc covers macOS/bash only._
 
 Python with Homebrew
 --------------------
@@ -366,6 +376,8 @@ or run directly in a temporary Virtual Environment.
 
 Virtual Environment location is /Users/owhite/.local/pipx/venvs.
 Symlinks to apps are placed in /Users/owhite/.local/bin.
+
+Get help for commands with pipx COMMAND --help
 ```
 
 ```text
@@ -455,6 +467,7 @@ $ pipx run pycowsay mooo
 
 ```
 
+Example: install `uv`.
 ```text
 $ pipx install uv
   installed package uv 0.7.9, installed using Python 3.13.3
@@ -468,6 +481,21 @@ $ uv venv .venv
 Using CPython 3.12.10 interpreter at: /Users/owhite/.pyenv/versions/3.12.10/bin/python3.12
 Creating virtual environment at: .venv
 Activate with: source .venv/bin/activate
+```
+
+If an application installed by pipx requires additional packages, you can add
+them with `pipx inject`. For example, if you have `ipython` installed and want
+to add the `matplotlib` package to it, you would use:
+```text
+pipx inject ipython matplotlib
+```
+You can inject multiple packages by specifying them all on the command line, or
+by listing them in a text file, with one package per line, or a combination. For
+example:
+```text
+pipx inject ipython matplotlib pandas
+# or:
+pipx inject ipython -r useful-packages.txt
 ```
 
 virtualenv
@@ -488,6 +516,8 @@ virtualenv --help
 
 Other notes
 -----------
+
+Several examples of twin primes
 ```text
 3, 5
 5, 7
@@ -496,3 +526,8 @@ Other notes
 1,000,037, 1,000,039
 1,000,000,007, 1,000,000,009
 ```
+
+Structure-randomness dichotomy decomposes complex mathematical objects into two
+parts: structured components with predictable patterns and pseudorandom
+components that appear patternless, enabling mathematicians to apply specialized
+techniques to analyze each part separately.

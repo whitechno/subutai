@@ -2,10 +2,6 @@ Python UV
 =========
 May 30, 2025
 
-- pyenv
-- pipx
-- uv
-
 Starter references
 ------------------
 
@@ -23,7 +19,7 @@ UV is a modern, blazing-fast Python package and project manager written in Rust.
 UV simplifies virtual environment management, dependency handling, and Python
 version control, making it a one-stop solution for Python developers.
 
-- Install `uv` using `pipx`:
+### Install `uv` using `pipx`:
 ```text
 $ pipx install uv
   installed package uv 0.7.9, installed using Python 3.13.3
@@ -31,9 +27,13 @@ $ pipx install uv
     - uv
     - uvx
 done! ✨ 🌟 ✨
+
+$ pipx upgrade uv
+upgraded package uv from 0.7.9 to 0.7.12 
+(location: /Users/owhite/.local/pipx/venvs/uv)
 ```
 
-- Set Python version using `pyenv`:
+### Set Python version using `pyenv`:
 ```text
 $ cd all_scripts/python_env/python_uv/
 
@@ -54,7 +54,7 @@ $ python --version
 Python 3.12.10
 ```
 
-- Set virtual env using `uv`
+### Set virtual env using `uv`
 ```text
 $ uv venv .venv
 Using CPython 3.12.10 interpreter at: /Users/owhite/.pyenv/versions/3.12.10/bin/python3.12
@@ -62,13 +62,21 @@ Creating virtual environment at: .venv
 Activate with: source .venv/bin/activate
 ```
 
-- Activate it:
+### Activate it:
 ```text
 $ source .venv/bin/activate
+
 (.venv) MacBook-Pro:python_uv owhite$ which python
 /Users/owhite/dev/whitechno-github/subutai/all_scripts/python_env/python_uv/.venv/bin/python
-```
 
+$ python Examples/pretty_json_uv.py Examples/foo.json 
+sys.prefix:  /Users/owhite/dev/whitechno-github/subutai/all_scripts/python_env/python_uv/.venv
+sys.base_prefix:  /Users/owhite/.pyenv/versions/3.12.10
+{
+    "bar": "ipsum",
+    "foo": "lorem"
+}
+```
 
 Related references
 ------------------
