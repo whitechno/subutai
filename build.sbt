@@ -219,12 +219,14 @@ printTask := {
     DefaultMavenRepository,
     Resolver.mavenCentral,
     JavaNet2Repository,
-    Resolver.sonatypeOssRepos("public"), // (or “snapshots”, “staging”, “releases”)
-    Resolver.sonatypeOssRepos("snapshots"),
+    // Resolver.sonatypeOssRepos("public"), // (or “snapshots”, “staging”, “releases”)
+    Resolver.sonatypeCentralRepo("public"),
+    // Resolver.sonatypeOssRepos("snapshots"),
+    Resolver.sonatypeCentralSnapshots,
     Resolver.typesafeRepo("releases"), // (or “snapshots”)
     Resolver.typesafeIvyRepo("releases"), // (or “snapshots”)
     Resolver.sbtPluginRepo("releases"), // (or “snapshots”)
-    Resolver.bintrayRepo("owner", "repo"),
+    // Resolver.bintrayRepo("owner", "repo"),
     Resolver.jcenterRepo,
     Resolver.ivyStylePatterns,
     Resolver.mavenStylePatterns

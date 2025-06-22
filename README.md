@@ -27,6 +27,11 @@ where this particular version is included in `crossScalaVersions` of project
 `settings`)  
 `-v` is for verbose
 
+Upgrading 4 outdated packages:
+pixman 0.46.0 -> 0.46.2
+openjdk 23.0.2 -> 24.0.1
+curl 8.13.0 -> 8.14.1
+sbt 1.11.0 -> 1.11.2
 
 Versions of key dependencies
 ----------------------------
@@ -39,6 +44,7 @@ Versions of key dependencies
 
 - SBT  
   https://github.com/sbt/sbt/releases
+  - 1.11.2
   - 1.11.0 - May 24, 2025
     - The Central Repository (aka Maven Central) has long been the pillar of the
       JVM ecosystem including Scala. The mechanism to publish libraries to the
