@@ -31,6 +31,7 @@ done! ✨ 🌟 ✨
 $ pipx upgrade uv
 upgraded package uv from 0.7.9 to 0.7.12 
 (location: /Users/owhite/.local/pipx/venvs/uv)
+upgraded package uv from 0.7.12 to 0.7.13
 ```
 
 ### Set Python version using `pyenv`:
@@ -41,6 +42,8 @@ $ pyenv versions
 * system (set by /Users/owhite/.pyenv/version)
   3.12.10
 
+# Sets a local application-specific Python version by writing the version name 
+# to a .python-version file in the current directory.
 $ pyenv local 3.12
 
 $ pyenv versions
@@ -52,6 +55,10 @@ $ cat .python-version
 
 $ python --version
 Python 3.12.10
+
+
+# unset the local version:
+$ pyenv local --unset
 ```
 
 ### Set virtual env using `uv`
@@ -64,6 +71,7 @@ Activate with: source .venv/bin/activate
 
 ### Activate it:
 ```text
+# activate:
 $ source .venv/bin/activate
 
 (.venv) MacBook-Pro:python_uv owhite$ which python
@@ -76,6 +84,9 @@ sys.base_prefix:  /Users/owhite/.pyenv/versions/3.12.10
     "bar": "ipsum",
     "foo": "lorem"
 }
+
+# deactivate:
+$ deactivate
 ```
 
 Related references

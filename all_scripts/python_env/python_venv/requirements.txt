@@ -1,10 +1,11 @@
 #
 # Static type checking with mypy
 #
-mypy #==1.16.0
+mypy #==1.16.0 1.16.1
 # It usually installs two dependencies
 #mypy-extensions==1.1.0
-#typing_extensions==4.13.2
+#typing_extensions==4.13.2 4.14.0
+#pathspec  0.12.1
 
 # Type stubs for standard library and third-party packages
 #types-setuptools==69.0.0.0

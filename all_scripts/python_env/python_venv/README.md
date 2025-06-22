@@ -63,14 +63,20 @@ $ source .venv/bin/activate
 
 $ echo $VIRTUAL_ENV
 subutai/all_scripts/python_env/python_venv/.venv
+
+# deactivate a virtual environment:
+$ deactivate
 ```
 
-You can deactivate a virtual environment by typing `deactivate` in your shell.
+Upgrade:
+```text
+$ python3 -m venv --upgrade --upgrade-deps .venv
+```
 
 When a Python interpreter is running from a virtual environment, `sys.prefix`
 and `sys.exec_prefix` point to the directories of the virtual environment,
 whereas `sys.base_prefix` and `sys.base_exec_prefix` point to those of the base
-Python used to create the environment. It is sufficient to check
+Python used to create the environment. It is enough to check
 `sys.prefix != sys.base_prefix` to determine if the current interpreter is
 running from a virtual environment.
 ```text
@@ -79,6 +85,20 @@ running from a virtual environment.
 subutai/all_scripts/python_env/python_venv/.venv
 >>> print(sys.base_prefix)
 /usr/local/opt/python@3.13/Frameworks/Python.framework/Versions/3.13
+```
+
+Run example:
+```text
+$ python Examples/pretty_json.py Examples/foo.json
+sys.prefix:  /Users/owhite/dev/whitechno-github/subutai/all_scripts/python_env/python_venv/.venv
+sys.base_prefix:  /usr/local/opt/python@3.13/Frameworks/Python.framework/Versions/3.13
+sys.version:  3.13.5 (main, Jun 11 2025, 15:36:57) [Clang 16.0.0 (clang-1600.0.26.6)]
+sys.version_info:  sys.version_info(major=3, minor=13, micro=5, releaselevel='final', serial=0)
+platform.python_version():  3.13.5
+{
+    "bar": "ipsum",
+    "foo": "lorem"
+}
 ```
 
 ## WARNING:
@@ -97,14 +117,13 @@ recreate the environment in its new location. Otherwise, software installed into
 the environment may not work as expected.
 
 
-pip install with requirements.txt
-=================================
+`pip install` with requirements.txt
+===================================
 
 Install
 -------
-```shell
-pip install -r requirements.txt
-pip install -U -r requirements.txt # upgrade
+```text
+(.venv)$ pip install -r requirements.txt
 ```
 
 [Requirement Specifiers](
@@ -118,6 +137,22 @@ https://pip.pypa.io/en/stable/reference/requirements-file-format/
 [pip install Examples](
 https://pip.pypa.io/en/stable/cli/pip_install/#examples
 )
+
+Upgrade
+-------
+```text
+# Upgrade all specified packages to the newest available version. 
+# The handling of dependencies depends on the upgrade-strategy used.
+(.venv)$ pip install -U -r requirements.txt
+
+(.venv)$ pip install -U --upgrade-strategy eager -r requirements.txt
+--upgrade-strategy <upgrade_strategy>
+  Determines how dependency upgrading should be handled [default: only-if-needed]. 
+  "eager" - dependencies are upgraded regardless of whether the currently installed 
+  version satisfies the requirements of the upgraded package(s). 
+  "only-if-needed" -  are upgraded only when they do not satisfy the requirements 
+  of the upgraded package(s).
+```
 
 Uninstall
 ---------

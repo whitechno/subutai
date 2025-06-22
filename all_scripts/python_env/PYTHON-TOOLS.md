@@ -14,6 +14,15 @@ The right Python tool stack?
 
 _This doc covers macOS/bash only._
 
+brew upgrade log
+----------------
+
+- 2025-06-22
+  - brew uninstall python@3.11
+  - pyenv 2.6.0 -> 2.6.3
+  - python@3.13 3.13.3_1 -> 3.13.5
+  - python@3.12 3.12.10_1 -> 3.12.11
+
 Python with Homebrew
 --------------------
 
@@ -125,6 +134,9 @@ Required: autoconf ✔, openssl@3 ✔, pkgconf ✔, readline ✔
 
 $ which pyenv
 /usr/local/bin/pyenv
+
+$ pyenv --version
+pyenv 2.6.0
 ```
 
 ### Set up a shell environment (bash)
@@ -223,13 +235,33 @@ For full documentation, see: https://github.com/pyenv/pyenv#readme
 $ pyenv versions
 * system (set by /Users/owhite/.pyenv/version)
 
+$ which python3
+/Users/owhite/.pyenv/shims/python3
+
 $ pyenv prefix
+/usr/local
+
+$ pyenv prefix system
 /usr/local
 
 # Displays the full path to the executable that pyenv 
 # will invoke when you run the given command:
 $ pyenv which python3
 /usr/local/bin/python3
+
+# python3.13 and python3.12 installed by Homebrew
+
+$ pyenv which python3.13
+/usr/local/bin/python3.13
+
+$ python3 -V
+Python 3.13.3
+
+$ pyenv which python3.12
+/usr/local/bin/python3.12
+
+$ python3.12 -V
+Python 3.12.10
 ```
 
 **Install Python with Pyenv**
@@ -385,6 +417,10 @@ Get help for commands with pipx COMMAND --help
 # are in your PATH environment variable:
 $ pipx ensurepath
 Success! Added /Users/owhite/.local/bin to the PATH environment variable.
+
+$ cat .bashrc 
+# Created by `pipx` on 2025-06-02 17:24:09
+export PATH="$PATH:/Users/owhite/.local/bin"
 
 # optional to allow pipx actions with --global argument
 sudo pipx ensurepath --global
