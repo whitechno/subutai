@@ -44,7 +44,8 @@ Versions of key dependencies
 
 - SBT  
   https://github.com/sbt/sbt/releases
-  - 1.11.2
+  - 1.11.2 - Jun 07, 2025
+  - 1.11.1 - Jun 01, 2025
   - 1.11.0 - May 24, 2025
     - The Central Repository (aka Maven Central) has long been the pillar of the
       JVM ecosystem including Scala. The mechanism to publish libraries to the
