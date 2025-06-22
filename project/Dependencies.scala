@@ -13,6 +13,7 @@ object Dependencies {
     val requests       = "0.9.0"
     val gigahorse      = "0.6.0"
     val typesafePlay   = "2.9.2"
+
     def json4s(scalaBinaryVer: String): String =
       if (scalaBinaryVer == "2.11") "4.0.6" // Last version available for Scala 2.11
       else "4.0.7"

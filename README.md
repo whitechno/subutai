@@ -27,12 +27,6 @@ where this particular version is included in `crossScalaVersions` of project
 `settings`)  
 `-v` is for verbose
 
-Upgrading 4 outdated packages:
-pixman 0.46.0 -> 0.46.2
-openjdk 23.0.2 -> 24.0.1
-curl 8.13.0 -> 8.14.1
-sbt 1.11.0 -> 1.11.2
-
 Versions of key dependencies
 ----------------------------
 
@@ -239,6 +233,7 @@ Versions of key dependencies
 
 - Scalafmt  
   https://github.com/scalameta/scalafmt/releases
+  - 3.9.7 - May 30, 2025
   - 3.9.6 - May 05, 2025
   - 3.9.5 - Apr 29, 2025
   - 3.9.4 - Mar 12, 2025
@@ -330,6 +325,7 @@ Versions of key dependencies
 
 - sbt-assembly  
   https://github.com/sbt/sbt-assembly/releases
+  - 2.3.1 - Jan 19, 2025
   - 2.3.0 - Oct 06, 2024
   - 2.2.0 - Mar 13, 2024
   - 2.1.5 - Nov 19, 2023
@@ -382,6 +378,7 @@ Versions of common dependencies
 - json4s  
   https://github.com/json4s/json4s/tags  
   https://search.maven.org/search?q=org.json4s
+  - 4.1.0-M10 - Jun 11, 2025
   - 4.1.0-M9 - Jan 10, 2025
   - 4.1.0-M8 - Nov 06, 2024
   - 4.1.0-M7 - Sep 09, 2024
