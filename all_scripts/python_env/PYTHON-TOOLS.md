@@ -112,6 +112,12 @@ NOTE: Most Pyenv-provided Python releases are source releases and are built from
 source as part of the installation (that's why you need Python build
 dependencies preinstalled).
 
+### pyenv install log
+
+- 2025-06-24
+  - 3.12.11
+
+
 ### Prerequisite: mac build environment
 ```shell
 $ xcode-select --install
@@ -278,6 +284,19 @@ $ pyenv latest -k 3
 $ pyenv install -l | less
 ... it is pretty long ...
 
+$ pyenv install -l | grep "3\.12\."
+  3.12.0
+  3.12.1
+  3.12.2
+  3.12.3
+  3.12.4
+  3.12.5
+  3.12.6
+  3.12.7
+  3.12.8
+  3.12.9
+  3.12.10
+
 $ pyenv install 3.12
 python-build: use openssl@3 from homebrew
 python-build: use readline from homebrew
@@ -288,6 +307,16 @@ python-build: use tcl-tk from homebrew
 python-build: use readline from homebrew
 python-build: use zlib from xcode sdk
 Installed Python-3.12.10 to /Users/owhite/.pyenv/versions/3.12.10
+
+
+# Displays the latest installed version with the given prefix
+$ pyenv latest 3
+3.12.10
+$ pyenv latest 3.12
+3.12.10
+
+$ ls -la $PYENV_ROOT/versions/
+drwxr-xr-x  6 owhite  staff  192 Jun  1 17:40 3.12.10
 ```
 
 **shell**
